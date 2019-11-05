@@ -1,5 +1,5 @@
 export const colors = {
-  primaryColor: "hsl(200, 100%, 41%)",
+  primaryColor: "hsl(200, 100%, 21%)",
   logoColor: "hsl(189, 100%, 41%)",
   navTextColor: "hsl(0, 0%, 93%)",
   linkColor: "hsl(241, 100%, 77%)",

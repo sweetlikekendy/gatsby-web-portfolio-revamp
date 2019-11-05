@@ -60,8 +60,8 @@ const Layout = ({ children }) => {
             list-style: none;
           }
           main {
-            max-width: 1200px;
-            margin: 0 auto;
+            /* max-width: 1200px; */
+            /* margin: 0 auto; */
           }
           a {
             color: ${colors.linkColor};

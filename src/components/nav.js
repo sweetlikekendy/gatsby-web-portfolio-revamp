@@ -16,7 +16,7 @@ const Nav = props => {
           display: flex;
           justify-content: space-evenly;
           align-items: center;
-          font-size: 20px;
+          font-size: 18px;
 
           a {
             text-decoration: none;

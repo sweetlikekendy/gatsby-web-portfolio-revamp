@@ -12,6 +12,7 @@ const headerStyles = css`
   padding: 1rem 0;
   position: sticky;
   top: 0;
+  z-index: 10;
   .header-container {
     display: flex;
     margin: 0 auto;
