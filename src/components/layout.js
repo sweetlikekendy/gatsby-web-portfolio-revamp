@@ -11,7 +11,8 @@ import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
 
 import Header from "./header"
-import { colors } from "../styles/theme"
+import { colors, pageWidth } from "../styles/theme"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -39,6 +40,13 @@ const Layout = ({ children }) => {
           *:before,
           *:after {
             box-sizing: inherit;
+          }
+          body {
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 5.07274e-9) 61.98%,
+              rgba(0, 70, 105, 0.25) 100%
+            );
           }
           body,
           h1,
@@ -71,14 +79,6 @@ const Layout = ({ children }) => {
             color: ${colors.hoverColor};
             text-decoration: none;
           }
-          a {
-            color: ${colors.primaryColor};
-            text-decoration: underline;
-          }
-          a:hover {
-            color: ${colors.secondaryColor};
-            text-decoration: none;
-          }
           h1,
           h2,
           h3,
@@ -91,10 +91,16 @@ const Layout = ({ children }) => {
           body {
             color: ${colors.textColor};
           }
+          .inner {
+            max-width: ${pageWidth};
+            margin: 0 auto;
+          }
         `}
       />
 
       <main>{children}</main>
+
+      <Footer />
     </>
   )
 }

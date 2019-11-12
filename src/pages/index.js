@@ -4,6 +4,8 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import DecorativeHorizontalBar from "../components/decorative-horizontal-bar"
 import Hero from "../components/hero"
+import ProjectsSection from "../components/projects-section"
+import ContactSection from "../components/contact-section"
 
 const IndexPage = () => (
   <Layout>
@@ -11,12 +13,8 @@ const IndexPage = () => (
     <Image />
     <DecorativeHorizontalBar />
     <Hero />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <ProjectsSection />
+    <ContactSection />
   </Layout>
 )
 

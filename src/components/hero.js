@@ -4,23 +4,21 @@ import { css } from "@emotion/core"
 import { colors } from "../styles/theme"
 import SocialLinks from "./social-links"
 
+// TODO Make this responsive
+
 const Hero = props => {
   return (
     <div
       css={css`
         z-index: 2;
-        width: 800px;
-        height: 300px;
+        max-width: 800px;
         margin: -150px auto 210px;
         background-color: #fff;
         border: 1px solid ${colors.formBgColor};
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
       `}
     >
       <div
-        className="about-me"
+        className="top-about-me"
         css={css`
           height: 100%;
           padding: 2rem 1rem;
@@ -40,7 +38,7 @@ const Hero = props => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna a liqua. Tortor
           dignissim convallis aenean et tortor at risus viverra. Hac habitasse
-          platea dictumst vestibulum rhoncus est pellentesque. lacus vel.{" "}
+          platea dictumst vestibulum rhoncus est pellentesque. lacus vel.
         </p>
       </div>
       <div
@@ -49,6 +47,9 @@ const Hero = props => {
           background-color: ${colors.formBgColor};
           height: 70px;
           padding: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         `}
       >
         <SocialLinks
@@ -60,6 +61,7 @@ const Hero = props => {
           fill={colors.formBgColor}
           outline={colors.textPrimaryBodyColor}
           dimension={25}
+          hoverColor={colors.linkColor}
         />
       </div>
     </div>

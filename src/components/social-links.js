@@ -7,7 +7,18 @@ import GithubIcon from "./svgs/github-icon"
 import EnvelopeIcon from "./svgs/envelope-icon"
 import ResumeIcon from "./svgs/resume-icon"
 
-const SocialLinks = ({ fill, outline, dimension }) => {
+// TODO make margins reusable as props
+
+const SocialLinks = ({
+  fill,
+  outline,
+  dimension,
+  hoverColor,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+}) => {
   return (
     <ul
       css={css`
@@ -15,7 +26,7 @@ const SocialLinks = ({ fill, outline, dimension }) => {
         justify-content: center;
         align-items: center;
         li {
-          margin: 0 1rem;
+          margin-right: 2rem;
           a {
             display: flex;
             flex-direction: column;
@@ -26,22 +37,39 @@ const SocialLinks = ({ fill, outline, dimension }) => {
     >
       <li>
         <Link to="/">
-          <LinkedinIcon fill={fill} outline={outline} dimension={dimension} />
+          <LinkedinIcon
+            fill={fill}
+            outline={outline}
+            dimension={dimension}
+            hoverColor={hoverColor}
+          />
         </Link>
       </li>
       <li>
         <Link to="/">
-          <GithubIcon fill={outline} dimension={dimension} />
+          <GithubIcon
+            fill={outline}
+            dimension={dimension}
+            hoverColor={hoverColor}
+          />
         </Link>
       </li>
       <li>
         <Link to="/">
-          <EnvelopeIcon fill={outline} dimension={dimension} />
+          <EnvelopeIcon
+            fill={outline}
+            dimension={dimension}
+            hoverColor={hoverColor}
+          />
         </Link>
       </li>
       <li>
         <Link to="/">
-          <ResumeIcon fill={outline} dimension={dimension} />
+          <ResumeIcon
+            fill={outline}
+            dimension={dimension}
+            hoverColor={hoverColor}
+          />
         </Link>
       </li>
     </ul>

@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-const GithubIcon = ({ fill, dimension }) => {
+const GithubIcon = ({ fill, dimension, hoverColor }) => {
   return (
     <svg
       css={css`
@@ -10,6 +10,9 @@ const GithubIcon = ({ fill, dimension }) => {
         height: ${dimension}px;
         &:hover {
           transform: translateY(-2px);
+          path {
+            fill: ${hoverColor};
+          }
         }
       `}
       viewBox="0 0 256 250"

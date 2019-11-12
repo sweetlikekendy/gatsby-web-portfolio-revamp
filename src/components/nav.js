@@ -11,13 +11,15 @@ const Nav = props => {
     <nav
       css={css`
         .header-nav-menu {
-          width: 400px;
           height: 100%;
           display: flex;
-          justify-content: space-evenly;
           align-items: center;
           font-size: 18px;
+          white-space: nowrap;
 
+          li {
+            margin-left: 3rem;
+          }
           a {
             text-decoration: none;
             color: ${colors.navTextColor};

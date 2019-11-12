@@ -9,20 +9,18 @@ const headerBgColor = colors.textPrimaryBodyColor
 
 const headerStyles = css`
   background-color: ${headerBgColor};
-  padding: 1rem 0;
+  padding: 1rem;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 999;
   .header-container {
     display: flex;
-    margin: 0 auto;
-    max-width: ${pageWidth};
   }
 `
 
 const Header = ({ siteTitle }) => (
   <header css={headerStyles}>
-    <div className="header-container">
+    <div className="inner header-container">
       <h1
         css={css`
           color: ${colors.logoColor};

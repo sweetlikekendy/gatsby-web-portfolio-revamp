@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-const ResumeIcon = ({ fill, dimension }) => {
+const ResumeIcon = ({ fill, dimension, hoverColor }) => {
   return (
     <svg
       css={css`
@@ -10,6 +10,9 @@ const ResumeIcon = ({ fill, dimension }) => {
         height: ${dimension}px;
         &:hover {
           transform: translateY(-2px);
+          path {
+            fill: ${hoverColor};
+          }
         }
       `}
       viewBox="0 0 297.384 297.384"
