@@ -10,6 +10,7 @@ export const colors = {
   formBgColor: "hsl(0, 0%, 96%)",
   projectCodeBtnTextColor: "hsl(211, 93%, 92%)",
   projectCodeBtnBgColor: "hsl(210, 98%, 22%)",
+  sectionUnderline: "hsl(200, 100%, 72%)",
 }
 
 export const pageWidth = "1200px"

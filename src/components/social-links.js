@@ -25,6 +25,7 @@ const SocialLinks = ({
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         li {
           margin-right: 2rem;
           a {
@@ -32,6 +33,12 @@ const SocialLinks = ({
             flex-direction: column;
             justify-content: center;
           }
+        }
+        li:last-of-type {
+          margin-right: 0;
+        }
+        .github-icon {
+          margin-right: 0;
         }
       `}
     >

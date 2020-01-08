@@ -1,11 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 import SocialLinks from "./social-links"
 import { css } from "@emotion/core"
-import { colors, pageWidth } from "../styles/theme"
+import { colors } from "../styles/theme"
 import DecorativeHorizontalBar from "./decorative-horizontal-bar"
 
-const Footer = props => {
+const Footer = () => {
   return (
     <div
       css={css`
@@ -30,7 +29,7 @@ const Footer = props => {
           <SocialLinks
             fill={colors.textPrimaryBodyColor}
             outline={colors.navTextColor}
-            dimension="20"
+            dimension={parseInt(20)}
             hoverColor={colors.linkColor}
           />
           <p>Copyright © Kendy Nguyen</p>
@@ -39,7 +38,5 @@ const Footer = props => {
     </div>
   )
 }
-
-Footer.propTypes = {}
 
 export default Footer

@@ -87,13 +87,34 @@ const Layout = ({ children }) => {
           h6 {
             /* font-family: "Cabin"; */
             color: hsl(0, 0%, 0%);
+            letter-spacing: 0.075em;
           }
           body {
             color: ${colors.textColor};
+            letter-spacing: 0.05em;
           }
           .inner {
             max-width: ${pageWidth};
             margin: 0 auto;
+            @media screen and (max-width: 1200px) {
+              padding: 1rem;
+            }
+          }
+          .section-title {
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 700;
+            &:before {
+              content: "";
+              position: absolute;
+              height: 10px;
+              width: 100%;
+              bottom: -3px;
+              left: 0px;
+              z-index: -1;
+              background: ${colors.sectionUnderline};
+              border-radius: 1px;
+            }
           }
         `}
       />

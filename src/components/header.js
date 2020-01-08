@@ -1,9 +1,8 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { css, jsx } from "@emotion/core"
+import { css } from "@emotion/core"
 import Nav from "../components/nav"
-import { colors, pageWidth } from "../styles/theme"
+import { colors } from "../styles/theme"
 
 const headerBgColor = colors.textPrimaryBodyColor
 

@@ -1,21 +1,23 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { pageWidth } from "../styles/theme"
 import { css } from "@emotion/core"
+import Projects from "./projects"
 
-const ProjectsSection = props => {
+const ProjectsSection = () => {
   return (
     <section
+      className="inner"
       css={css`
         max-width: ${pageWidth};
         margin: 0 auto;
       `}
     >
-      <h2>Projects</h2>
+      <h2>
+        <span className="section-title">Projects</span>
+      </h2>
+      <Projects />
     </section>
   )
 }
-
-ProjectsSection.propTypes = {}
 
 export default ProjectsSection

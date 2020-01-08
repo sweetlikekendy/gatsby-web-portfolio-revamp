@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import Image from "../components/image"
+import HeaderImage from "../components/header-image"
 import SEO from "../components/seo"
 import DecorativeHorizontalBar from "../components/decorative-horizontal-bar"
 import Hero from "../components/hero"
@@ -10,7 +10,7 @@ import ContactSection from "../components/contact-section"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Image />
+    <HeaderImage />
     <DecorativeHorizontalBar />
     <Hero />
     <ProjectsSection />

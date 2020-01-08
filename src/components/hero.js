@@ -1,12 +1,11 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import { colors } from "../styles/theme"
 import SocialLinks from "./social-links"
 
 // TODO Make this responsive
 
-const Hero = props => {
+const Hero = () => {
   return (
     <div
       css={css`
@@ -60,14 +59,12 @@ const Hero = props => {
           `}
           fill={colors.formBgColor}
           outline={colors.textPrimaryBodyColor}
-          dimension={25}
+          dimension={parseInt(25)}
           hoverColor={colors.linkColor}
         />
       </div>
     </div>
   )
 }
-
-Hero.propTypes = {}
 
 export default Hero

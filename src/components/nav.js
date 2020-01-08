@@ -1,12 +1,11 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { css, jsx } from "@emotion/core"
-import { colors, pageWidth } from "../styles/theme"
+import { css } from "@emotion/core"
+import { colors } from "../styles/theme"
 
 const linkHoverColor = colors.linkColor
 
-const Nav = props => {
+const Nav = () => {
   return (
     <nav
       css={css`
@@ -44,7 +43,5 @@ const Nav = props => {
     </nav>
   )
 }
-
-Nav.propTypes = {}
 
 export default Nav
