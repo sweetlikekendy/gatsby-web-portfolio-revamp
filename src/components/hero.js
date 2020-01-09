@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 import { colors } from "../styles/theme"
 import SocialLinks from "./social-links"
 
-// TODO Make this responsive
+// TODO parallax effect
 
 const Hero = () => {
   return (

@@ -6,6 +6,7 @@ import { colors } from "../styles/theme"
 // import Burger from "./burger"
 // import MobileMenu from "./mobile-menu"
 const linkHoverColor = colors.linkColor
+const mobileMenuBgColor = colors.textPrimaryBodyColor
 
 // TODO refactor menu
 
@@ -120,11 +121,11 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #effffa;
+  background: ${mobileMenuBgColor};
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   height: 100vh;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -140,7 +141,7 @@ const StyledMenu = styled.nav`
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: #0d0c1d;
+    color: ${colors.navTextColor};
     text-decoration: none;
     transition: color 0.3s linear;
 
@@ -192,7 +193,7 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => (open ? "#0D0C1D" : "#EFFFFA")};
+    background: ${({ open }) => (open ? `${colors.navTextColor}` : "#EFFFFA")};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
