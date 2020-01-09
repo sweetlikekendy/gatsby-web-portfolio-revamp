@@ -7,6 +7,8 @@ import { colors } from "../styles/theme"
 // import MobileMenu from "./mobile-menu"
 const linkHoverColor = colors.linkColor
 
+// TODO refactor menu
+
 // #region right
 // const StyledMenu = styled.nav`
 //   display: flex;
