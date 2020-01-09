@@ -24,6 +24,15 @@ const Footer = () => {
           css={css`
             display: flex;
             justify-content: space-between;
+            @media screen and (max-width: 500px) {
+              flex-direction: column;
+              ul {
+                margin-bottom: 2rem;
+              }
+              p {
+                text-align: center;
+              }
+            }
           `}
         >
           <SocialLinks

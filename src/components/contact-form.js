@@ -23,6 +23,10 @@ const bgDivStyles = css`
   p {
     padding: 1rem;
   }
+
+  @media screen and (max-width: 375px) {
+    padding: 0;
+  }
 `
 
 const formStyles = css`
@@ -91,7 +95,19 @@ const formStyles = css`
         background-color: ${colors.hoverColor};
       }
     }
+    @media screen and (max-width: 350px) {
+      display: flex;
+      flex-direction: column-reverse;
+      button:first-of-type {
+        margin-right: 0;
+      }
+      .send {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
   }
+
   @media screen and (max-width: 400px) {
     grid-template-columns: 1fr;
     grid-template-areas: "firstName" "lastName" "email" "company" "message" "buttons";

@@ -30,6 +30,11 @@ const Hero = () => {
             padding: 1rem 4rem;
             line-height: 1.7;
           }
+          @media screen and (max-width: 375px) {
+            p {
+              padding: 0;
+            }
+          }
         `}
       >
         <h2>Hi! My name is Kendy</h2>

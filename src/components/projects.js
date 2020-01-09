@@ -52,6 +52,9 @@ const projectInfoStyles = css`
     margin: 0.5rem 0.5rem 0 0;
     padding: 0.5rem;
   }
+  .tech > p:last-of-type {
+    margin-top: 0.5rem;
+  }
 `
 
 const projectButtonsStyles = css`
@@ -83,13 +86,20 @@ const projectButtonsStyles = css`
     }
   }
 
-  @media screen and (max-width: 721px) {
+  @media screen and (max-width: 400px) {
     a {
+      width: 40%;
       margin-bottom: 1rem;
     }
   }
-  @media screen and (max-width: 400px) {
+
+  @media screen and (max-width: 350px) {
+    a {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
     flex-direction: column;
+    align-items: center;
   }
 `
 

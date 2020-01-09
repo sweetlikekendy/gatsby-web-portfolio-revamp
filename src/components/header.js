@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
 import Nav from "../components/nav"
-import { colors } from "../styles/theme"
+import { colors, pageWidth } from "../styles/theme"
 
 const headerBgColor = colors.textPrimaryBodyColor
 
@@ -13,22 +13,28 @@ const headerStyles = css`
   top: 0;
   z-index: 999;
   .header-container {
+    max-width: ${pageWidth};
+    margin: 0 auto;
     display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    @media screen and (max-width: 800px) {
+      flex-direction: row;
+    }
   }
 `
 
 const Header = ({ siteTitle }) => (
   <header css={headerStyles}>
-    <div className="inner header-container">
+    <div className="header-container">
+      <Nav />
       <h1
         css={css`
           color: ${colors.logoColor};
-          width: 100%;
         `}
       >
         KN
       </h1>
-      <Nav />
     </div>
   </header>
 )
