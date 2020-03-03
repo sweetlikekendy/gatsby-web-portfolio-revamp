@@ -1,9 +1,15 @@
 import React from "react"
 import ContactForm from "./contact-form"
-
-const ContactSection = () => {
+import { css } from "@emotion/core"
+const ContactSection = props => {
   return (
-    <section className="inner">
+    <section
+      className="inner"
+      css={css`
+        margin-top: 51px;
+      `}
+      {...props}
+    >
       <h2>
         <span className="section-title">Contact Me</span>
       </h2>

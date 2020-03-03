@@ -13,8 +13,8 @@ const IndexPage = () => (
     <HeaderImage />
     <DecorativeHorizontalBar />
     <Hero />
-    <ProjectsSection />
-    <ContactSection />
+    <ProjectsSection id="projects" />
+    <ContactSection id="contact-me" />
   </Layout>
 )
 

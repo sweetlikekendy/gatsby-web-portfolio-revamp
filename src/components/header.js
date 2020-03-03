@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import Nav from "../components/nav"
 import { colors, pageWidth } from "../styles/theme"
@@ -18,6 +19,10 @@ const headerStyles = css`
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+
+    a {
+      text-decoration: none;
+    }
     @media screen and (max-width: 800px) {
       flex-direction: row;
     }
@@ -28,13 +33,15 @@ const Header = ({ siteTitle }) => (
   <header css={headerStyles}>
     <div className="header-container">
       <Nav />
-      <h1
-        css={css`
-          color: ${colors.logoColor};
-        `}
-      >
-        KN
-      </h1>
+      <Link to="/">
+        <h1
+          css={css`
+            color: ${colors.logoColor};
+          `}
+        >
+          KN
+        </h1>
+      </Link>
     </div>
   </header>
 )

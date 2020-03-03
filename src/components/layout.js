@@ -31,23 +31,24 @@ const Layout = ({ children }) => {
       <Global
         styles={css`
           html {
-            box-sizing: border-box;
             font-size: 16px;
             line-height: 1.6;
             position: relative;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
           }
           *,
           *:before,
           *:after {
             box-sizing: inherit;
           }
+
+          html,
           body {
-            background: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 5.07274e-9) 61.98%,
-              rgba(0, 70, 105, 0.25) 100%
-            );
+            min-height: 100%;
+            box-sizing: border-box;
           }
+
           body,
           h1,
           h2,
@@ -93,6 +94,16 @@ const Layout = ({ children }) => {
             color: ${colors.textColor};
             letter-spacing: 0.05em;
           }
+          .bg-gradient {
+            /* position: absolute; */
+            /* bottom: 0; */
+            height: 100%;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 5.07274e-9) 61.98%,
+              rgba(0, 70, 105, 0.25) 100%
+            );
+          }
           .inner {
             max-width: ${pageWidth};
             margin: 0 auto;
@@ -119,9 +130,10 @@ const Layout = ({ children }) => {
         `}
       />
 
-      <main>{children}</main>
-
-      <Footer />
+      <div className="bg-gradient">
+        <main>{children}</main>
+        <Footer />
+      </div>
     </>
   )
 }

@@ -262,24 +262,17 @@ const Nav = () => {
     >
       <ul className="header-nav-menu">
         <li>
-          <Link to="/">Projects</Link>
+          <Link to="#projects">Projects</Link>
         </li>
         <li>
-          <Link to="/">Contact Me</Link>
+          <Link to="#contact-me">Contact Me</Link>
         </li>
       </ul>
-      {
-        <div id="mobile-menu">
-          <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
-        </div>
-      }
-      {
-        //   <div id="mobile-menu">
-        //   <Burger open={open} setOpen={setOpen} />
-        //   <MobileMenu open={open} setOpen={setOpen} />
-        // </div>
-      }
+
+      <div id="mobile-menu">
+        <Burger open={open} setOpen={setOpen} />
+        <Menu open={open} setOpen={setOpen} />
+      </div>
     </nav>
   )
 }

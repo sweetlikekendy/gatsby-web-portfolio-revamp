@@ -21,7 +21,7 @@ const Image = () => {
       ) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -56,13 +56,13 @@ const Image = () => {
         height: 300px;
         position: absolute;
         z-index: -1;
-        /* background-attachment: fixed; */
-        /* background-position: center; */
-        /* background-repeat: no-repeat; */
-        /* background-size: cover; */
         @media screen and (min-width: 800px) {
           height: 600px;
-          /* background-attachment: scroll; */
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: scroll;
         }
       `}
     />

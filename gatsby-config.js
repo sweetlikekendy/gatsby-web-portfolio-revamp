@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `KN Portfolio`,
+    title: `Kendy Nguyen`,
     description: `Kendy Nguyen's Portfolio`,
     author: `@kendynguyen`,
   },
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/KN-web-portfolio-icon.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-emotion`,

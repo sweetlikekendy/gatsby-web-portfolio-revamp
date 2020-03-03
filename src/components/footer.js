@@ -11,7 +11,8 @@ const Footer = () => {
   return (
     <div
       css={css`
-        padding-top: 5rem;
+        width: 100%;
+        margin-top: 5rem;
       `}
     >
       <DecorativeHorizontalBar />

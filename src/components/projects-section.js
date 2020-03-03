@@ -3,14 +3,15 @@ import { pageWidth } from "../styles/theme"
 import { css } from "@emotion/core"
 import Projects from "./projects"
 
-const ProjectsSection = () => {
+const ProjectsSection = props => {
   return (
     <section
       className="inner"
       css={css`
         max-width: ${pageWidth};
-        margin: 0 auto;
+        margin: 51px auto 0;
       `}
+      {...props}
     >
       <h2>
         <span className="section-title">Projects</span>
