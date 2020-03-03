@@ -3,8 +3,6 @@ import { css } from "@emotion/core"
 import { colors } from "../styles/theme"
 import SocialLinks from "./social-links"
 
-// TODO parallax effect
-
 const Hero = () => {
   return (
     <div
@@ -14,6 +12,11 @@ const Hero = () => {
         margin: -150px auto 210px;
         background-color: #fff;
         border: 1px solid ${colors.formBgColor};
+
+        @media screen and (max-width: 800px) {
+          margin: 1rem;
+          /* padding: 1rem; */
+        }
       `}
     >
       <div
@@ -32,7 +35,7 @@ const Hero = () => {
           }
           @media screen and (max-width: 375px) {
             p {
-              padding: 0;
+              padding: 1rem;
             }
           }
         `}

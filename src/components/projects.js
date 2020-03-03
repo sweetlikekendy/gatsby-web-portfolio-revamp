@@ -121,12 +121,12 @@ const Projects = () => {
             </div>
             <div className="project-buttons" css={projectButtonsStyles}>
               <Link to={`${project.demoLink}`}>
-                <PlayIcon fill="#fff" dimension="25" /> Demo
+                <PlayIcon fill="#fff" dimension={parseInt(25)} /> Demo
               </Link>
               <Link to={`${project.repoLink}`}>
                 <GithubIcon
                   fill={colors.projectCodeBtnTextColor}
-                  dimension="25"
+                  dimension={parseInt(25)}
                 />
                 Code
               </Link>

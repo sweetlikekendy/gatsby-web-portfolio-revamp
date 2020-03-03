@@ -1,10 +1,13 @@
 import React from "react"
 import SocialLinks from "./social-links"
 import { css } from "@emotion/core"
-import { colors } from "../styles/theme"
+import { colors, pageWidth } from "../styles/theme"
 import DecorativeHorizontalBar from "./decorative-horizontal-bar"
 
 const Footer = () => {
+  const date = new Date()
+  const year = date.getFullYear()
+
   return (
     <div
       css={css`
@@ -20,8 +23,9 @@ const Footer = () => {
         `}
       >
         <div
-          className="inner"
           css={css`
+            max-width: ${pageWidth};
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             @media screen and (max-width: 500px) {
@@ -41,7 +45,7 @@ const Footer = () => {
             dimension={parseInt(20)}
             hoverColor={colors.linkColor}
           />
-          <p>Copyright © Kendy Nguyen</p>
+          <p>© {year} Kendy Nguyen</p>
         </div>
       </footer>
     </div>
