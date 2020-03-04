@@ -1,0 +1,58 @@
+import React from "react"
+import { css } from "@emotion/core"
+import Arrow from "./svgs/arrow"
+import { colors } from "../styles/theme"
+
+const BackToTop = () => {
+  return (
+    <div
+      css={css`
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+          color: ${colors.textSecondaryBodyColor};
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+        @media screen and (min-width: 768px) {
+          margin: 6rem auto 2rem;
+        }
+      `}
+    >
+      <div
+        css={css`
+          /* display: inline-block; */
+          background-color: ${colors.linkColor};
+          border-radius: 50%;
+          height: 75px;
+          width: 75px;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          margin-bottom: 1rem;
+          a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          @media screen and (min-width: 768px) {
+            &:hover {
+              background-color: ${colors.hoverColor};
+              transform: translateY(-5px);
+              transition: all ease 0.3s;
+            }
+          }
+        `}
+      >
+        <a href="#header">
+          <Arrow size={parseInt(30)} fill={colors.projectCodeBtnTextColor} />
+        </a>
+      </div>
+      <p>Scroll to Top</p>
+    </div>
+  )
+}
+
+export default BackToTop

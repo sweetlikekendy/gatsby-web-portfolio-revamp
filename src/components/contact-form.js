@@ -1,5 +1,4 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState } from "react"
 import { css } from "@emotion/core"
 import { colors } from "../styles/theme"
 
@@ -63,6 +62,7 @@ const formStyles = css`
   button {
     padding: 1rem 2rem;
     border-radius: 3px;
+    text-transform: uppercase;
     cursor: pointer;
     border: ${`1px solid ${colors.linkColor}`};
 
@@ -95,7 +95,7 @@ const formStyles = css`
         background-color: ${colors.hoverColor};
       }
     }
-    @media screen and (max-width: 350px) {
+    @media screen and (max-width: 480px) {
       display: flex;
       flex-direction: column-reverse;
       button:first-of-type {
@@ -115,14 +115,41 @@ const formStyles = css`
 `
 
 const ContactForm = () => {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [company, setCompany] = useState("")
+  const [message, setMessage] = useState("")
+
+  const clearInput = e => {
+    e.preventDefault()
+    setFirstName("")
+    setLastName("")
+    setEmail("")
+    setCompany("")
+    setMessage("")
+  }
+
   return (
     <div css={bgDivStyles}>
       <p>
         Let’s get in contact! Please send me an email at{" "}
-        <Link to="/">kendyhnguyen1991@gmail.com</Link> or fill out this form
-        below
+        <a
+          href="mailto:kendyhnguyen1991@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          kendyhnguyen1991@gmail.com
+        </a>{" "}
+        or fill out this form below
       </p>
-      <form css={formStyles} name="contact" method="POST" data-netlify="true">
+      <form
+        css={formStyles}
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        // onSubmit={handleSubmit}
+      >
         <input type="hidden" name="form-name" value="contact" />
 
         <label
@@ -131,7 +158,15 @@ const ContactForm = () => {
           `}
         >
           First Name
-          <input type="text" name="first-name" />
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={e => {
+              e.preventDefault()
+              setFirstName((e.target.name = e.target.value))
+            }}
+          />
         </label>
 
         <label
@@ -140,7 +175,15 @@ const ContactForm = () => {
           `}
         >
           Last Name
-          <input type="text" name="last-name" />
+          <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={e => {
+              e.preventDefault()
+              setLastName((e.target.name = e.target.value))
+            }}
+          />
         </label>
 
         <label
@@ -149,7 +192,15 @@ const ContactForm = () => {
           `}
         >
           Email
-          <input type="text" name="email" />
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={e => {
+              e.preventDefault()
+              setEmail((e.target.name = e.target.value))
+            }}
+          />
         </label>
 
         <label
@@ -158,7 +209,15 @@ const ContactForm = () => {
           `}
         >
           Company
-          <input type="text" name="company" />
+          <input
+            type="text"
+            name="company"
+            value={company}
+            onChange={e => {
+              e.preventDefault()
+              setCompany((e.target.name = e.target.value))
+            }}
+          />
         </label>
 
         <label
@@ -167,7 +226,15 @@ const ContactForm = () => {
           `}
         >
           Message
-          <textarea rows="6" name="message" />
+          <textarea
+            rows="6"
+            name="message"
+            value={message}
+            onChange={e => {
+              e.preventDefault()
+              setMessage((e.target.name = e.target.value))
+            }}
+          />
         </label>
 
         <div
@@ -176,7 +243,9 @@ const ContactForm = () => {
             grid-area: buttons;
           `}
         >
-          <button className="clear">Clear</button>
+          <button className="clear" onClick={e => clearInput(e)}>
+            Clear
+          </button>
           <button className="send" type="submit">
             Send
           </button>

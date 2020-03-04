@@ -13,7 +13,7 @@ import BackgroundImage from "gatsby-background-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const Image = props => {
   const { mobileImage, desktopImage } = useStaticQuery(graphql`
     query {
       mobileImage: file(
@@ -65,6 +65,7 @@ const Image = () => {
           background-attachment: scroll;
         }
       `}
+      {...props}
     />
   )
 }

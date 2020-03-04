@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
-import { Link } from "gatsby"
 import LinkedinIcon from "./svgs/linkedin-icon"
 import GithubIcon from "./svgs/github-icon"
 import EnvelopeIcon from "./svgs/envelope-icon"
@@ -43,41 +42,53 @@ const SocialLinks = ({
       `}
     >
       <li>
-        <Link to="/">
+        <a
+          href="https://www.linkedin.com/in/kendy-nguyen-a51796a0/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <LinkedinIcon
             fill={fill}
             outline={outline}
             dimension={dimension}
             hoverColor={hoverColor}
           />
-        </Link>
+        </a>
       </li>
       <li>
-        <Link to="/">
+        <a
+          href="http://github.com/sweetlikekendy/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <GithubIcon
             fill={outline}
             dimension={dimension}
             hoverColor={hoverColor}
           />
-        </Link>
+        </a>
       </li>
       <li>
-        <Link to="/">
+        <a
+          href="mailto:kendyhnguyen1991@gmail.com"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           <EnvelopeIcon
             fill={outline}
             dimension={dimension}
             hoverColor={hoverColor}
           />
-        </Link>
+        </a>
       </li>
       <li>
-        <Link to="/">
+        <a href="/" target="_blank" rel="noreferrer noopener">
           <ResumeIcon
             fill={outline}
             dimension={dimension}
             hoverColor={hoverColor}
           />
-        </Link>
+        </a>
       </li>
     </ul>
   )

@@ -13,6 +13,7 @@ const headerStyles = css`
   position: sticky;
   top: 0;
   z-index: 999;
+  bottom: 90px;
   .header-container {
     max-width: ${pageWidth};
     margin: 0 auto;
@@ -22,9 +23,6 @@ const headerStyles = css`
 
     a {
       text-decoration: none;
-    }
-    @media screen and (max-width: 800px) {
-      flex-direction: row;
     }
   }
 `

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import { allProjects } from "../allProjects"
 import { colors } from "../styles/theme"
@@ -68,6 +67,7 @@ const projectButtonsStyles = css`
     border-radius: 3px;
     display: flex;
     justify-content: center;
+    text-transform: uppercase;
   }
   /* Demo button */
   a:first-of-type {
@@ -120,16 +120,24 @@ const Projects = () => {
               ))}
             </div>
             <div className="project-buttons" css={projectButtonsStyles}>
-              <Link to={`${project.demoLink}`}>
+              <a
+                href={`${project.demoLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <PlayIcon fill="#fff" dimension={parseInt(25)} /> Demo
-              </Link>
-              <Link to={`${project.repoLink}`}>
+              </a>
+              <a
+                href={`${project.repoLink}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <GithubIcon
                   fill={colors.projectCodeBtnTextColor}
                   dimension={parseInt(25)}
                 />
                 Code
-              </Link>
+              </a>
             </div>
           </div>
         </div>

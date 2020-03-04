@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
+import { Link } from "gatsby"
 
 const mobileMenuStyles = css`
   display: flex;
@@ -44,15 +45,12 @@ const mobileMenuStyles = css`
 const MobileMenu = ({ open }) => {
   return (
     <nav css={mobileMenuStyles} open={open}>
-      <a href="/">
-        <span aria-label="about us">About us</span>
-      </a>
-      <a href="/">
+      <Link to="#projects">
         <span aria-label="projects">Projects</span>
-      </a>
-      <a href="/">
+      </Link>
+      <Link to="#contact-me">
         <span aria-label="contact me">Contact Me</span>
-      </a>
+      </Link>
     </nav>
   )
 }

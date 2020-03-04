@@ -6,6 +6,7 @@ import DecorativeHorizontalBar from "../components/decorative-horizontal-bar"
 import Hero from "../components/hero"
 import ProjectsSection from "../components/projects-section"
 import ContactSection from "../components/contact-section"
+import BackToTop from "../components/back-to-top"
 
 const IndexPage = () => (
   <Layout>
@@ -15,6 +16,7 @@ const IndexPage = () => (
     <Hero />
     <ProjectsSection id="projects" />
     <ContactSection id="contact-me" />
+    <BackToTop />
   </Layout>
 )
 

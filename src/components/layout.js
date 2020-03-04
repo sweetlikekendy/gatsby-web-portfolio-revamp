@@ -27,12 +27,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
       <Global
         styles={css`
           html {
-            font-size: 16px;
-            line-height: 1.6;
             position: relative;
             box-sizing: border-box;
             scroll-behavior: smooth;
@@ -49,6 +46,12 @@ const Layout = ({ children }) => {
             box-sizing: border-box;
           }
 
+          body {
+            font-size: 16px;
+            color: ${colors.textPrimaryBodyColor};
+            line-height: 1.6;
+            letter-spacing: 0.3em;
+          }
           body,
           h1,
           h2,
@@ -129,7 +132,7 @@ const Layout = ({ children }) => {
           }
         `}
       />
-
+      <Header id="header" />
       <div className="bg-gradient">
         <main>{children}</main>
         <Footer />
