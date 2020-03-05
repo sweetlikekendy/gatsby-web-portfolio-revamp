@@ -4,6 +4,12 @@ import Arrow from "./svgs/arrow"
 import { colors } from "../styles/theme"
 
 const BackToTop = () => {
+  const handleClick = e => {
+    e.preventDefault()
+    if (e.target.className === "to-top-link" || e.target.id === "arrow-up") {
+      window.scroll({ top: 0, left: 0, behavior: "smooth" })
+    }
+  }
   return (
     <div
       css={css`
@@ -31,11 +37,12 @@ const BackToTop = () => {
           width: 75px;
           box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
           margin-bottom: 1rem;
-          a {
+          div {
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
           }
           @media screen and (min-width: 768px) {
             &:hover {
@@ -46,9 +53,14 @@ const BackToTop = () => {
           }
         `}
       >
-        <a href="#header">
-          <Arrow size={parseInt(30)} fill={colors.projectCodeBtnTextColor} />
-        </a>
+        <div className="to-top-link" onClick={handleClick}>
+          <Arrow
+            id="arrow-up"
+            onClick={handleClick}
+            size={parseInt(30)}
+            fill={colors.projectCodeBtnTextColor}
+          />
+        </div>
       </div>
       <p>Scroll to Top</p>
     </div>

@@ -115,19 +115,43 @@ const formStyles = css`
 `
 
 const ContactForm = () => {
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [email, setEmail] = useState("")
-  const [company, setCompany] = useState("")
-  const [message, setMessage] = useState("")
+  const [inputs, setInputs] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    message: "",
+  })
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log({ ...inputs })
+    return (
+      <div>
+        <p>Confirm</p>
+      </div>
+    )
+  }
+
+  // Handle input change of form fields
+  const handleInputChange = e => {
+    e.preventDefault()
+    setInputs({
+      ...inputs,
+      [e.target.name]: [e.target.value],
+    })
+  }
+
+  // Clear input fields of form
   const clearInput = e => {
     e.preventDefault()
-    setFirstName("")
-    setLastName("")
-    setEmail("")
-    setCompany("")
-    setMessage("")
+    setInputs({
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      message: "",
+    })
   }
 
   return (
@@ -148,7 +172,8 @@ const ContactForm = () => {
         name="contact"
         method="POST"
         data-netlify="true"
-        // onSubmit={handleSubmit}
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
 
@@ -161,11 +186,8 @@ const ContactForm = () => {
           <input
             type="text"
             name="firstName"
-            value={firstName}
-            onChange={e => {
-              e.preventDefault()
-              setFirstName((e.target.name = e.target.value))
-            }}
+            value={inputs.firstName}
+            onChange={e => handleInputChange(e)}
           />
         </label>
 
@@ -178,11 +200,8 @@ const ContactForm = () => {
           <input
             type="text"
             name="lastName"
-            value={lastName}
-            onChange={e => {
-              e.preventDefault()
-              setLastName((e.target.name = e.target.value))
-            }}
+            value={inputs.lastName}
+            onChange={e => handleInputChange(e)}
           />
         </label>
 
@@ -195,11 +214,8 @@ const ContactForm = () => {
           <input
             type="text"
             name="email"
-            value={email}
-            onChange={e => {
-              e.preventDefault()
-              setEmail((e.target.name = e.target.value))
-            }}
+            value={inputs.email}
+            onChange={e => handleInputChange(e)}
           />
         </label>
 
@@ -212,11 +228,8 @@ const ContactForm = () => {
           <input
             type="text"
             name="company"
-            value={company}
-            onChange={e => {
-              e.preventDefault()
-              setCompany((e.target.name = e.target.value))
-            }}
+            value={inputs.company}
+            onChange={e => handleInputChange(e)}
           />
         </label>
 
@@ -229,11 +242,8 @@ const ContactForm = () => {
           <textarea
             rows="6"
             name="message"
-            value={message}
-            onChange={e => {
-              e.preventDefault()
-              setMessage((e.target.name = e.target.value))
-            }}
+            value={inputs.message}
+            onChange={e => handleInputChange(e)}
           />
         </label>
 

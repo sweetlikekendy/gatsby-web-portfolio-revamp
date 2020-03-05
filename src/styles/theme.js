@@ -14,3 +14,4 @@ export const colors = {
 }
 
 export const pageWidth = "1200px"
+export const headerHeight = "100px"

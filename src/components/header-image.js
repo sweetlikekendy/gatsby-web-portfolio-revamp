@@ -56,12 +56,12 @@ const Image = props => {
         height: 300px;
         position: absolute;
         z-index: -1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         @media screen and (min-width: 800px) {
           height: 600px;
           background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
           background-attachment: scroll;
         }
       `}

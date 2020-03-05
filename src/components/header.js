@@ -13,7 +13,6 @@ const headerStyles = css`
   position: sticky;
   top: 0;
   z-index: 999;
-  bottom: 90px;
   .header-container {
     max-width: ${pageWidth};
     margin: 0 auto;
@@ -28,7 +27,7 @@ const headerStyles = css`
 `
 
 const Header = ({ siteTitle }) => (
-  <header css={headerStyles}>
+  <header id="header" css={headerStyles}>
     <div className="header-container">
       <Nav />
       <Link to="/">

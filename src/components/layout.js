@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 import { Global, css } from "@emotion/core"
+import smoothscroll from "smoothscroll-polyfill"
 
 import Header from "./header"
 import { colors, pageWidth } from "../styles/theme"
@@ -25,6 +26,9 @@ const Layout = ({ children }) => {
   //   }
   // `)
 
+  // for smooth scroll on safari
+  smoothscroll.polyfill()
+
   return (
     <>
       <Global
@@ -39,7 +43,10 @@ const Layout = ({ children }) => {
           *:after {
             box-sizing: inherit;
           }
-
+          /* iOS smooth scrolling */
+          * {
+            -webkit-overflow-scrolling: touch;
+          }
           html,
           body {
             min-height: 100%;

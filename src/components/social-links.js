@@ -6,6 +6,7 @@ import GithubIcon from "./svgs/github-icon"
 import EnvelopeIcon from "./svgs/envelope-icon"
 import ResumeIcon from "./svgs/resume-icon"
 
+import Resume from "../KendyResume_WEBDEV.pdf"
 // TODO make margins reusable as props
 
 const SocialLinks = ({
@@ -82,7 +83,7 @@ const SocialLinks = ({
         </a>
       </li>
       <li>
-        <a href="/" target="_blank" rel="noreferrer noopener">
+        <a href={Resume} target="_blank" rel="noreferrer noopener">
           <ResumeIcon
             fill={outline}
             dimension={dimension}
