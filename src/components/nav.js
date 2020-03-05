@@ -7,7 +7,7 @@ const linkHoverColor = colors.linkColor
 const Nav = () => {
   // Scroll to the section
   // @param id is the id name of the section (string)
-  // @param height is the height of the header. used for offset (int)
+  // @param height is the height of the header. used for offsetting the scroll (int)
   const scrollToSection = (id, height) => {
     const bodyRect = document.body.getBoundingClientRect().top
     const element = document.getElementById(`${id}`)
@@ -20,6 +20,8 @@ const Nav = () => {
       behavior: "smooth",
     })
   }
+
+  // handle click event on nav menu items
   const handleClick = e => {
     const header = document.getElementById("header")
     const headerOffset = header.clientHeight
@@ -40,20 +42,21 @@ const Nav = () => {
           height: 100%;
           display: flex;
           align-items: center;
-          font-size: 18px;
           white-space: nowrap;
 
           li {
             margin-left: 1rem;
           }
-          p {
-            color: ${colors.navTextColor};
-          }
-          a {
+          button {
+            font-size: 18px;
             text-decoration: none;
             color: ${colors.navTextColor};
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
           }
-          a:hover {
+          button:hover {
             color: ${linkHoverColor};
           }
 
@@ -66,11 +69,15 @@ const Nav = () => {
       `}
     >
       <ul className="header-nav-menu">
-        <li onClick={handleClick}>
-          <p id="projects-link">Projects</p>
+        <li>
+          <button onClick={handleClick} id="projects-link">
+            Projects
+          </button>
         </li>
-        <li onClick={handleClick}>
-          <p id="contact-me-link">Contact Me</p>
+        <li>
+          <button onClick={handleClick} id="contact-me-link">
+            Contact Me
+          </button>
         </li>
       </ul>
     </nav>

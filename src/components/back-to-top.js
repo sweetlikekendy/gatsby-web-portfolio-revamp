@@ -37,12 +37,16 @@ const BackToTop = () => {
           width: 75px;
           box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
           margin-bottom: 1rem;
-          div {
+          button {
             height: 100%;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
           }
           @media screen and (min-width: 768px) {
             &:hover {
@@ -53,14 +57,14 @@ const BackToTop = () => {
           }
         `}
       >
-        <div className="to-top-link" onClick={handleClick}>
+        <button className="to-top-link" onClick={handleClick}>
           <Arrow
             id="arrow-up"
             onClick={handleClick}
             size={parseInt(30)}
             fill={colors.projectCodeBtnTextColor}
           />
-        </div>
+        </button>
       </div>
       <p>Scroll to Top</p>
     </div>
