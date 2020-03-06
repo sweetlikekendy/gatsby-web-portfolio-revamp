@@ -15,7 +15,7 @@ import Header from "./header"
 import { colors, pageWidth } from "../styles/theme"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -150,7 +150,7 @@ const Layout = ({ children }) => {
         `}
       />
       <div className="site">
-        <Header id="header" />
+        <Header id="header" location={location} />
         <main className="site-content">{children}</main>
         <Footer className="site-footer" />
       </div>

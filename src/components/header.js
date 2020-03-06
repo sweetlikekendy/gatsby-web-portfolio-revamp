@@ -18,7 +18,6 @@ const headerStyles = css`
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
 
     a {
       text-decoration: none;
@@ -26,10 +25,9 @@ const headerStyles = css`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, location }) => (
   <header id="header" css={headerStyles}>
     <div className="header-container">
-      <Nav />
       <Link to="/">
         <h1
           css={css`
@@ -39,6 +37,7 @@ const Header = ({ siteTitle }) => (
           KN
         </h1>
       </Link>
+      <Nav location={location} />
     </div>
   </header>
 )

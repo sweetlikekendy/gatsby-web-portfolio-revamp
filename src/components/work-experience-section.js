@@ -1,9 +1,10 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Projects from "./projects"
+import PropTypes from "prop-types"
+import WorkExperience from "./work-experience"
 import { pageWidth } from "../styles/theme"
 
-const ProjectsSection = props => {
+const WorkExperienceSection = props => {
   return (
     <section
       className="inner"
@@ -14,11 +15,13 @@ const ProjectsSection = props => {
       {...props}
     >
       <h2>
-        <span className="section-title">Projects</span>
+        <span className="section-title">Work Experience</span>
       </h2>
-      <Projects />
+      <WorkExperience />
     </section>
   )
 }
 
-export default ProjectsSection
+WorkExperienceSection.propTypes = {}
+
+export default WorkExperienceSection

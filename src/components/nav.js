@@ -4,11 +4,12 @@ import { css } from "@emotion/core"
 import { colors } from "../styles/theme"
 const linkHoverColor = colors.linkColor
 
-const Nav = () => {
+const Nav = ({ location }) => {
+  console.log("nav", location)
   // Scroll to the section
   // @param id is the id name of the section (string)
   // @param height is the height of the header. used for offsetting the scroll (int)
-  const scrollToSection = (id, height) => {
+  const scrollToSection = (id, height, location) => {
     const bodyRect = document.body.getBoundingClientRect().top
     const element = document.getElementById(`${id}`)
     const elementRect = element.getBoundingClientRect().top
@@ -27,17 +28,24 @@ const Nav = () => {
     const headerOffset = header.clientHeight
 
     e.preventDefault()
-    if (e.target.id === "projects-link") {
-      scrollToSection("projects", headerOffset)
-    }
-    if (e.target.id === "contact-me-link") {
-      scrollToSection("contact-me", headerOffset)
+    const id = e.target.id
+    switch (id) {
+      case "work-experience-link":
+        scrollToSection("work-experience", headerOffset, location)
+        break
+      case "projects-link":
+        scrollToSection("projects", headerOffset, location)
+        break
+      case "contact-me-link":
+        scrollToSection("contact-me", headerOffset, location)
+        break
     }
   }
 
   return (
     <nav
       css={css`
+        display: ${location === "/" ? "block" : "none"};
         .header-nav-menu {
           height: 100%;
           display: flex;
@@ -72,6 +80,11 @@ const Nav = () => {
       `}
     >
       <ul className="header-nav-menu">
+        <li>
+          <button onClick={handleClick} id="work-experience-link">
+            Work Experience
+          </button>
+        </li>
         <li>
           <button onClick={handleClick} id="projects-link">
             Projects
