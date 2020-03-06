@@ -10,14 +10,23 @@ const NotFoundPage = () => (
     <div
       css={css`
         height: 100%;
-        max-width: 700px;
-        margin: 2rem auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4rem;
         padding: 1rem;
       `}
     >
-      <h1>PAGE NOT FOUND</h1>
-      <p>You just hit a route that doesn't exist... the sadness.</p>
-      <Link to="/">Go back to the home page</Link>
+      <div
+        css={css`
+          height: 100%;
+          max-width: 700px;
+        `}
+      >
+        <h1>PAGE NOT FOUND</h1>
+        <p>You just hit a route that doesn't exist... :(</p>
+        <Link to="/">Go back to the home page</Link>
+      </div>
     </div>
   </Layout>
 )

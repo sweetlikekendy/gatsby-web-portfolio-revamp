@@ -55,6 +55,9 @@ const Nav = () => {
             border: none;
             outline: none;
             cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
           }
           button:hover {
             color: ${linkHoverColor};

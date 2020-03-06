@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 import { colors, pageWidth } from "../styles/theme"
 import DecorativeHorizontalBar from "./decorative-horizontal-bar"
 
-const Footer = () => {
+const Footer = props => {
   const date = new Date()
   const year = date.getFullYear()
 
@@ -14,6 +14,7 @@ const Footer = () => {
         width: 100%;
         margin-top: 5rem;
       `}
+      {...props}
     >
       <DecorativeHorizontalBar />
       <footer

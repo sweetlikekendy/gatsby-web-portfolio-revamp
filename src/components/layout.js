@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
           }
           html,
           body {
-            min-height: 100%;
+            height: 100%;
             box-sizing: border-box;
           }
 
@@ -107,12 +107,6 @@ const Layout = ({ children }) => {
           .bg-gradient {
             /* position: absolute; */
             /* bottom: 0; */
-            height: 100%;
-            background: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 5.07274e-9) 61.98%,
-              rgba(0, 70, 105, 0.25) 100%
-            );
           }
           .inner {
             max-width: ${pageWidth};
@@ -137,12 +131,28 @@ const Layout = ({ children }) => {
               border-radius: 1px;
             }
           }
+
+          /* Have footer stay at the bottom */
+          .site {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 5.07274e-9) 61.98%,
+              rgba(0, 70, 105, 0.25) 100%
+            );
+          }
+
+          .site-content {
+            flex-grow: 1;
+          }
         `}
       />
-      <Header id="header" />
-      <div className="bg-gradient">
-        <main>{children}</main>
-        <Footer />
+      <div className="site">
+        <Header id="header" />
+        <main className="site-content">{children}</main>
+        <Footer className="site-footer" />
       </div>
     </>
   )
