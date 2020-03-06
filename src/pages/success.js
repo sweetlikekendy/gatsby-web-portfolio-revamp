@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const SuccessPage = ({ location }) => {
-  // console.log(location)
   return (
     <Layout>
       <SEO title="Success" />

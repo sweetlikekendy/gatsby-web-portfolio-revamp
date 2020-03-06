@@ -25,7 +25,7 @@ const headerStyles = css`
   }
 `
 
-const Header = ({ siteTitle, location }) => (
+const Header = ({ location }) => (
   <header id="header" css={headerStyles}>
     <div className="header-container">
       <Link to="/">

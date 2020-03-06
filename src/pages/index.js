@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import HeaderImage from "../components/header-image"
 import DecorativeHorizontalBar from "../components/decorative-horizontal-bar"
 import Hero from "../components/hero"
-import WorkExperienceSection from "../components/work-experience-section"
 import ProjectsSection from "../components/projects-section"
 import ContactSection from "../components/contact-section"
 import BackToTop from "../components/back-to-top"
@@ -15,7 +14,6 @@ const IndexPage = () => (
     <HeaderImage />
     <DecorativeHorizontalBar />
     <Hero />
-    <WorkExperienceSection id="work-experience" />
     <ProjectsSection id="projects" />
     <ContactSection id="contact-me" />
     <BackToTop />
