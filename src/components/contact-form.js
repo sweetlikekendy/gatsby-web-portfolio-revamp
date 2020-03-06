@@ -123,15 +123,15 @@ const ContactForm = () => {
     message: "",
   })
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log({ ...inputs })
-    return (
-      <div>
-        <p>Confirm</p>
-      </div>
-    )
-  }
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   console.log({ ...inputs })
+  //   return (
+  //     <div>
+  //       <p>Confirm</p>
+  //     </div>
+  //   )
+  // }
 
   // Handle input change of form fields
   const handleInputChange = e => {
@@ -171,9 +171,10 @@ const ContactForm = () => {
         css={formStyles}
         name="contact"
         method="POST"
+        action="/success"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
 
@@ -253,7 +254,7 @@ const ContactForm = () => {
             grid-area: buttons;
           `}
         >
-          <button className="clear" onClick={e => clearInput(e)}>
+          <button className="clear" onClick={clearInput}>
             Clear
           </button>
           <button className="send" type="submit">

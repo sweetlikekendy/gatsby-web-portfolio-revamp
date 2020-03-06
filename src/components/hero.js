@@ -26,12 +26,14 @@ const Hero = () => {
           padding: 2rem 1rem;
           h2 {
             text-align: center;
+            letter-spacing: 3px;
             margin-bottom: 1rem;
           }
 
           p {
             padding: 1rem 4rem;
             line-height: 1.7;
+            letter-spacing: 1px;
           }
           @media screen and (max-width: 375px) {
             p {
