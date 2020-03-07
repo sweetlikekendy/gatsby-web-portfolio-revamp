@@ -1,68 +1,90 @@
-import React from "react"
+import React, { useState } from "react"
 import { css } from "@emotion/core"
-
+import styled from "@emotion/styled"
 import { colors } from "../styles/theme"
 const linkHoverColor = colors.linkColor
+const headerBgColor = colors.headerBgColor
+const navTextColor = colors.navTextColor
+const linkColor = colors.linkColor
 
 //#region left aligned
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${mobileMenuBgColor};
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
+  background-color: ${headerBgColor};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   height: 100vh;
   text-align: left;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   transition: transform 0.3s ease-in-out;
+  width: 75%;
+  overflow: hidden;
 
-  @media (max-width: 576px) {
-    width: 100%;
-  }
-
-  a {
+  button {
     font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: ${colors.navTextColor};
+    color: ${navTextColor};
     text-decoration: none;
     transition: color 0.3s linear;
-
-    @media (max-width: 576px) {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    &:hover {
-      color: #343078;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  @media screen and (min-width: 576px) {
+    button {
+      &:hover {
+        color: ${linkColor};
+      }
     }
   }
 `
 
-const Menu = ({ open }) => {
+const buttonStyles = css`
+  font-size: 18px;
+  text-decoration: none;
+  color: ${colors.navTextColor};
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+`
+
+const Menu = ({ open, handleClick }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span aria-label="projects">Projects</span>
-      </a>
-      <a href="/">
-        <span role="img" aria-label="contact me">
-          Contact Me
-        </span>
-      </a>
+      <button
+        id="mobile-projects-link"
+        css={buttonStyles}
+        onClick={handleClick}
+        aria-label="projects"
+      >
+        Projects
+      </button>
+      <button
+        id="mobile-contact-me-link"
+        css={buttonStyles}
+        onClick={handleClick}
+        aria-label="contact me"
+      >
+        Contact Me
+      </button>
     </StyledMenu>
   )
 }
 
 const StyledBurger = styled.button`
-  position: absolute;
+  position: fixed;
   top: 1.5rem;
-  left: 1rem;
+  right: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -81,23 +103,24 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => (open ? `${colors.navTextColor}` : "#EFFFFA")};
+    background: ${({ open }) => (open ? `${navTextColor}` : "#EFFFFA")};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
-    transform-origin: 1px;
+    transform-origin: right;
 
-    :first-child {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+    :first-of-type {
+      transform: ${({ open }) => (open ? "rotate(-43deg)" : "rotate(0)")};
     }
 
-    :nth-child(2) {
+    :nth-of-type(2) {
       opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
+      transform: ${({ open }) =>
+        open ? "translateX(-20px)" : "translateX(0)"};
     }
 
-    :nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+    :nth-of-type(3) {
+      transform: ${({ open }) => (open ? "rotate(43deg)" : "rotate(0)")};
     }
   }
 `
@@ -112,42 +135,44 @@ const Burger = ({ open, setOpen }) => {
   )
 }
 
+// Scroll to the section
+// @param id is the id name of the section (string)
+// @param height is the height of the header. used for offsetting the scroll (int)
+const scrollToSection = (id, height) => {
+  const bodyRect = document.body.getBoundingClientRect().top
+  const element = document.getElementById(`${id}`)
+  const elementRect = element.getBoundingClientRect().top
+  const elementPosition = elementRect - bodyRect
+  const offsetPosition = elementPosition - height
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  })
+}
+
+// handle click event on nav menu items
+const handleClick = e => {
+  const header = document.getElementById("header")
+  const headerOffset = header.clientHeight
+
+  e.preventDefault()
+  const id = e.target.id
+  console.log(e.target)
+  switch (id) {
+    case "mobile-projects-link":
+    case "projects-link":
+      scrollToSection("projects", headerOffset)
+      break
+    case "mobile-contact-me-link":
+    case "contact-me-link":
+      scrollToSection("contact-me", headerOffset)
+      break
+  }
+}
+
 const Nav = ({ location }) => {
-  // Scroll to the section
-  // @param id is the id name of the section (string)
-  // @param height is the height of the header. used for offsetting the scroll (int)
-  const scrollToSection = (id, height) => {
-    const bodyRect = document.body.getBoundingClientRect().top
-    const element = document.getElementById(`${id}`)
-    const elementRect = element.getBoundingClientRect().top
-    const elementPosition = elementRect - bodyRect
-    const offsetPosition = elementPosition - height
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    })
-  }
-
-  // handle click event on nav menu items
-  const handleClick = e => {
-    const header = document.getElementById("header")
-    const headerOffset = header.clientHeight
-
-    e.preventDefault()
-    const id = e.target.id
-    switch (id) {
-      case "work-experience-link":
-        scrollToSection("work-experience", headerOffset)
-        break
-      case "projects-link":
-        scrollToSection("projects", headerOffset)
-        break
-      case "contact-me-link":
-        scrollToSection("contact-me", headerOffset)
-        break
-    }
-  }
+  const [open, setOpen] = useState(false)
 
   return (
     <nav
@@ -155,50 +180,46 @@ const Nav = ({ location }) => {
         /* Not on index page, display none the nav menus. Ids only exist on index page */
         display: ${location === "/" ? "block" : "none"};
         .header-nav-menu {
-          height: 100%;
-          display: flex;
-          align-items: center;
-          white-space: nowrap;
-
-          li {
-            margin-left: 1rem;
-          }
-          button {
-            font-size: 18px;
-            text-decoration: none;
-            color: ${colors.navTextColor};
-            background-color: transparent;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 600;
-          }
-          button:hover {
-            color: ${linkHoverColor};
-          }
-
-          @media screen and (min-width: 768px) {
+          display: none;
+        }
+        #mobile-menu {
+          display: block;
+        }
+        @media screen and (min-width: 768px) {
+          .header-nav-menu {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            white-space: nowrap;
+            button:hover {
+              color: ${linkHoverColor};
+            }
             li {
               margin-left: 3rem;
             }
+          }
+          #mobile-menu {
+            display: none;
           }
         }
       `}
     >
       <ul className="header-nav-menu">
         <li>
-          <button onClick={handleClick} id="projects-link">
+          <button css={buttonStyles} onClick={handleClick} id="projects-link">
             Projects
           </button>
         </li>
         <li>
-          <button onClick={handleClick} id="contact-me-link">
+          <button css={buttonStyles} onClick={handleClick} id="contact-me-link">
             Contact Me
           </button>
         </li>
       </ul>
+      <div id="mobile-menu">
+        <Burger open={open} setOpen={setOpen} />
+        <Menu open={open} setOpen={setOpen} handleClick={handleClick} />
+      </div>
     </nav>
   )
 }

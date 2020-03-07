@@ -5,7 +5,7 @@ import { css } from "@emotion/core"
 import Nav from "../components/nav"
 import { colors, pageWidth } from "../styles/theme"
 
-const headerBgColor = colors.textPrimaryBodyColor
+const headerBgColor = colors.headerBgColor
 
 const headerStyles = css`
   background-color: ${headerBgColor};

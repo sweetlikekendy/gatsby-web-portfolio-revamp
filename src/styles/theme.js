@@ -7,6 +7,7 @@ export const colors = {
   textPrimaryBodyColor: "hsl(0, 0%, 15%)",
   textSecondaryBodyColor: "hsl(0, 0%, 40%)",
   bgColor: "hsl(0, 0%, 98%)",
+  headerBgColor: "hsl(0, 0%, 15%)",
   formBgColor: "hsl(0, 0%, 96%)",
   projectCodeBtnTextColor: "hsl(211, 93%, 92%)",
   projectCodeBtnBgColor: "hsl(210, 98%, 22%)",

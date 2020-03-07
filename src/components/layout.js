@@ -51,6 +51,7 @@ const Layout = ({ children, location }) => {
           body {
             height: 100%;
             box-sizing: border-box;
+            /* overflow-x: hidden; */
           }
 
           body {
@@ -137,6 +138,7 @@ const Layout = ({ children, location }) => {
             display: flex;
             min-height: 100vh;
             flex-direction: column;
+            /* overflow-x: hidden; */
             background: linear-gradient(
               180deg,
               rgba(0, 0, 0, 5.07274e-9) 61.98%,
