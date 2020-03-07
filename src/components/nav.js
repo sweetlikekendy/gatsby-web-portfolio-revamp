@@ -7,7 +7,6 @@ const headerBgColor = colors.headerBgColor
 const navTextColor = colors.navTextColor
 const linkColor = colors.linkColor
 
-//#region left aligned
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
@@ -48,7 +47,7 @@ const StyledMenu = styled.nav`
 const buttonStyles = css`
   font-size: 18px;
   text-decoration: none;
-  color: ${colors.navTextColor};
+  color: ${navTextColor};
   background-color: transparent;
   border: none;
   outline: none;
@@ -65,7 +64,7 @@ const Menu = ({ open, handleClick }) => {
         id="mobile-projects-link"
         css={buttonStyles}
         onClick={handleClick}
-        aria-label="projects"
+        aria-label="scroll to projects"
       >
         Projects
       </button>
@@ -73,7 +72,7 @@ const Menu = ({ open, handleClick }) => {
         id="mobile-contact-me-link"
         css={buttonStyles}
         onClick={handleClick}
-        aria-label="contact me"
+        aria-label="scroll to contact me"
       >
         Contact Me
       </button>
@@ -158,7 +157,6 @@ const handleClick = e => {
 
   e.preventDefault()
   const id = e.target.id
-  console.log(e.target)
   switch (id) {
     case "mobile-projects-link":
     case "projects-link":
@@ -206,18 +204,32 @@ const Nav = ({ location }) => {
     >
       <ul className="header-nav-menu">
         <li>
-          <button css={buttonStyles} onClick={handleClick} id="projects-link">
+          <button
+            css={buttonStyles}
+            aria-label="scroll to projects"
+            onClick={handleClick}
+            id="projects-link"
+          >
             Projects
           </button>
         </li>
         <li>
-          <button css={buttonStyles} onClick={handleClick} id="contact-me-link">
+          <button
+            css={buttonStyles}
+            aria-label="scroll to contact me"
+            onClick={handleClick}
+            id="contact-me-link"
+          >
             Contact Me
           </button>
         </li>
       </ul>
       <div id="mobile-menu">
-        <Burger open={open} setOpen={setOpen} />
+        <Burger
+          open={open}
+          setOpen={setOpen}
+          aria-label="hamburger menu button"
+        />
         <Menu open={open} setOpen={setOpen} handleClick={handleClick} />
       </div>
     </nav>

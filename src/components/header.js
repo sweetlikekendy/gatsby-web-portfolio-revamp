@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import Nav from "../components/nav"
@@ -7,40 +7,59 @@ import { colors, pageWidth } from "../styles/theme"
 
 const headerBgColor = colors.headerBgColor
 
-const headerStyles = css`
-  background-color: ${headerBgColor};
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  .header-container {
-    max-width: ${pageWidth};
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+const Header = ({ location }) => {
+  const [scrolledHeight, setScrolledHeight] = useState(0)
 
-    a {
-      text-decoration: none;
-    }
+  // find how far the user has scrolled
+  const findScrolledHeight = () => {
+    const yScrollAmount = window.scrollY
+    return setScrolledHeight(yScrollAmount)
   }
-`
 
-const Header = ({ location }) => (
-  <header id="header" css={headerStyles}>
-    <div className="header-container">
-      <Link to="/">
-        <h1
-          css={css`
-            color: ${colors.logoColor};
-          `}
-        >
-          KN
-        </h1>
-      </Link>
-      <Nav location={location} />
-    </div>
-  </header>
-)
+  useEffect(() => {
+    window.addEventListener("scroll", findScrolledHeight)
+  }, [scrolledHeight])
+
+  const headerStyles = css``
+  return (
+    <header
+      id="header"
+      css={css`
+        background-color: ${headerBgColor};
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        /* Add box shadow after the user has scrolled 20px */
+        box-shadow: ${scrolledHeight > 20 &&
+          "rgba(2, 12, 27, 0.7) 0px 10px 30px -10px"};
+        .header-container {
+          max-width: ${pageWidth};
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            text-decoration: none;
+          }
+        }
+      `}
+    >
+      <div className="header-container">
+        <Link to="/">
+          <h1
+            css={css`
+              color: ${colors.logoColor};
+            `}
+          >
+            KN
+          </h1>
+        </Link>
+        <Nav location={location} />
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -86,16 +86,11 @@ const projectButtonsStyles = css`
     }
   }
 
-  @media screen and (max-width: 400px) {
-    a {
-      width: 40%;
-      margin-bottom: 1rem;
-    }
-  }
-
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 500px) {
     a {
       width: 100%;
+    }
+    a:first-of-type {
       margin-bottom: 1rem;
     }
     flex-direction: column;
