@@ -26,7 +26,7 @@ const Hero = () => {
           padding: 2rem 1rem;
           h2 {
             text-align: center;
-            letter-spacing: 3px;
+            letter-spacing: 1.5px;
             margin-bottom: 1rem;
           }
 
@@ -47,10 +47,20 @@ const Hero = () => {
       >
         <h2>Hi! My name is Kendy</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna a liqua. Tortor
-          dignissim convallis aenean et tortor at risus viverra. Hac habitasse
-          platea dictumst vestibulum rhoncus est pellentesque. lacus vel.
+          I am a frontend developer based in San Diego, CA. My work experiences
+          come from freelancing for small businesses. I've dealt with Shopify
+          stores, and building small static sites with a static site generator
+          such as{" "}
+          <a
+            href="https://www.gatsbyjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gatsby
+          </a>
+          . My goal is to help small businesses increase their online presence
+          by building fast and responsive websites with a mobile-first
+          mentality!
         </p>
       </div>
       <div
