@@ -6,7 +6,11 @@ import { colors } from "../styles/theme"
 const BackToTop = () => {
   const handleClick = e => {
     e.preventDefault()
-    if (e.target.className === "to-top-link" || e.target.id === "arrow-up") {
+    if (
+      e.target.className === `to-top-link` ||
+      e.target.id === `arrow-up` ||
+      e.target.className.baseVal === `to-top-link`
+    ) {
       window.scroll({ top: 0, left: 0, behavior: "smooth" })
     }
   }
