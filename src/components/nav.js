@@ -166,6 +166,8 @@ const handleClick = e => {
     case "contact-me-link":
       scrollToSection("contact-me", headerOffset)
       break
+    default:
+      console.log(`Id of element not found`)
   }
 }
 

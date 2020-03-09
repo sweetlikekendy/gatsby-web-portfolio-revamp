@@ -20,7 +20,6 @@ const Header = ({ location }) => {
     window.addEventListener("scroll", findScrolledHeight)
   }, [scrolledHeight])
 
-  const headerStyles = css``
   return (
     <header
       id="header"
