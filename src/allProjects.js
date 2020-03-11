@@ -1,29 +1,56 @@
+import smartlandscapeImg from "./images/smartlandscape.png"
+import calvinelandscapeImg from "./images/calvine landscape.png"
 export const allProjects = [
   {
-    name: "This is a test Project",
-    techStack: ["html5", "css3", "javascript", "react", "sanity"],
-    img: "https://picsum.photos/id/12/300/300",
+    name: "Smart Landscape SD",
+    techStack: [
+      "html5",
+      "css3",
+      "javascript",
+      "react",
+      "gatsby",
+      "sanity",
+      "netlify",
+    ],
+    img: smartlandscapeImg,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    demoLink: "https://www.google.com",
-    repoLink: "https://www.github.com",
+      "Redesigned of another landscaping business page. Form from old website was not working, redesigned to have form on every single page.",
+    demoLink: "http://smartlandscapesd.com/",
   },
   {
-    name: "This is a test Project",
-    techStack: ["html5", "css3", "javascript", "react", "sanity"],
-    img: "https://picsum.photos/id/400/300/300",
+    name: "Calvine Landscape",
+    techStack: [
+      "html5",
+      "css3",
+      "javascript",
+      "react",
+      "gatsby",
+      "sanity",
+      "netlify",
+    ],
+    img: calvinelandscapeImg,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    demoLink: "https://www.google.com",
-    repoLink: "https://www.github.com",
+      "Redesigned a client's landscaping business page. Using Gatsby as a foundation, page speed greatly increased.",
+    demoLink: "http://calvinelandscape.com/",
   },
   {
-    name: "This is a test Project",
-    techStack: ["html5", "css3", "javascript", "react", "sanity"],
-    img: "https://picsum.photos/id/20/300/300",
+    name: "Let Me In",
+    techStack: [
+      "html5",
+      "css3",
+      "javascript",
+      "react",
+      "node",
+      "express",
+      "mongodb",
+    ],
+    img: "https://picsum.photos/id/12/200/200",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    demoLink: "https://www.google.com",
-    repoLink: "https://www.github.com",
+      "A CRUD application that allows a user to add a home to a database with the corresponding gate/access code. The user will be able to search for the home when they're on route. The search mechanics are case-sensitive.",
+    demoLink: "https://protected-oasis-33800.herokuapp.com/",
+    repoLink:
+      "https://github.com/sweetlikekendy/access-house-react-express-mongo",
   },
 ]
+
+export const techLinks = ["https://gatsbyjs.org", "https://sanity.io"]

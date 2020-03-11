@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { allProjects } from "../allProjects"
+import { allProjects, techLinks } from "../allProjects"
 import { colors } from "../styles/theme"
 import GithubIcon from "./svgs/github-icon"
 import PlayIcon from "./svgs/play-icon"
@@ -15,17 +15,19 @@ const projectStyles = css`
 const projectCardStyles = css`
   // margin: 1rem;
   border: 1px solid rgb(202, 202, 202);
-  width: 30%;
+  flex-basis: 30%;
+  margin-bottom: 2rem;
   img {
     width: 100%;
+    height: 300px;
+    object-fit: cover;
   }
 
   @media screen and (max-width: 1000px) {
-    width: 40%;
-    margin-bottom: 2rem;
+    flex-basis: 40%;
   }
   @media screen and (max-width: 600px) {
-    width: 100%;
+    flex-basis: 100%;
   }
 `
 
@@ -70,15 +72,16 @@ const projectButtonsStyles = css`
     text-transform: uppercase;
   }
   /* Demo button */
-  a:first-of-type {
+  .demo-button {
     color: #fff;
     background-color: ${colors.linkColor};
     &:hover {
       background-color: ${colors.hoverColor};
     }
   }
-  /* Github button */
-  a:last-of-type {
+
+  /* Github repo button */
+  .repo-button {
     background-color: ${colors.projectCodeBtnBgColor};
     color: ${colors.projectCodeBtnTextColor};
     &:hover {
@@ -103,36 +106,74 @@ const Projects = () => {
     <div className="projects" css={projectStyles}>
       {allProjects.map((project, index) => (
         <div key={index} className="project-card" css={projectCardStyles}>
+          {console.log(project.img)}
           <img src={project.img} alt="Project" />
           <div className="project-info" css={projectInfoStyles}>
             <h3>{project.name}</h3>
             <p>{project.description}</p>
             <div className="tech-used">
-              {project.techStack.map((tech, index) => (
-                <p key={index} className="tech">
-                  {tech}{" "}
-                </p>
-              ))}
+              {project.techStack.map((tech, index) => {
+                switch (tech) {
+                  case "gatsby":
+                    return (
+                      <a
+                        href={techLinks[0]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <p key={index} className="tech">
+                          {tech}{" "}
+                        </p>
+                      </a>
+                    )
+
+                  case "sanity":
+                    return (
+                      <a
+                        href={techLinks[1]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <p key={index} className="tech">
+                          {tech}{" "}
+                        </p>
+                      </a>
+                    )
+
+                  default:
+                    return (
+                      <p key={index} className="tech">
+                        {tech}{" "}
+                      </p>
+                    )
+                }
+              })}
             </div>
             <div className="project-buttons" css={projectButtonsStyles}>
-              <a
-                href={`${project.demoLink}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <PlayIcon fill="#fff" dimension={parseInt(25)} /> Demo
-              </a>
-              <a
-                href={`${project.repoLink}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GithubIcon
-                  fill={colors.projectCodeBtnTextColor}
-                  dimension={parseInt(25)}
-                />
-                Code
-              </a>
+              {project.demoLink && (
+                <a
+                  className="demo-button"
+                  href={`${project.demoLink}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <PlayIcon fill="#fff" dimension={parseInt(25)} /> Demo
+                </a>
+              )}
+              {project.repoLink && (
+                <a
+                  className="repo-button"
+                  href={`${project.repoLink}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubIcon
+                    fill={colors.projectCodeBtnTextColor}
+                    dimension={parseInt(25)}
+                  />
+                  Code
+                </a>
+              )}
             </div>
           </div>
         </div>
