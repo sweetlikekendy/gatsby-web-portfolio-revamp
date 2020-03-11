@@ -129,16 +129,6 @@ const ContactForm = () => {
     message: "",
   })
 
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   console.log({ ...inputs })
-  //   return (
-  //     <div>
-  //       <p>Confirm</p>
-  //     </div>
-  //   )
-  // }
-
   // Handle input change of form fields
   const handleInputChange = e => {
     e.preventDefault()
