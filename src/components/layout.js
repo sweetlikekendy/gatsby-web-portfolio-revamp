@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 import { Global, css } from "@emotion/core"
@@ -27,7 +27,9 @@ const Layout = ({ children, location }) => {
   // `)
 
   // for smooth scroll on safari
-  smoothscroll.polyfill()
+  useEffect(() => {
+    smoothscroll.polyfill()
+  }, [])
 
   return (
     <>
