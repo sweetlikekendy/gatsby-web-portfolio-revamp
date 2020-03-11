@@ -75,8 +75,10 @@ const projectButtonsStyles = css`
   .demo-button {
     color: #fff;
     background-color: ${colors.linkColor};
-    &:hover {
-      background-color: ${colors.hoverColor};
+    @media screen and (min-width: 1000px) {
+      &:hover {
+        background-color: ${colors.hoverColor};
+      }
     }
   }
 
@@ -84,8 +86,10 @@ const projectButtonsStyles = css`
   .repo-button {
     background-color: ${colors.projectCodeBtnBgColor};
     color: ${colors.projectCodeBtnTextColor};
-    &:hover {
-      background-color: ${colors.hoverColor};
+    @media screen and (min-width: 1000px) {
+      &:hover {
+        background-color: ${colors.hoverColor};
+      }
     }
   }
 

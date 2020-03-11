@@ -66,8 +66,10 @@ const formStyles = css`
     cursor: pointer;
     border: ${`1px solid ${colors.linkColor}`};
 
-    &:hover {
-      border: ${`1px solid ${colors.hoverColor}`};
+    @media screen and (min-width: 1000px) {
+      &:hover {
+        border: ${`1px solid ${colors.hoverColor}`};
+      }
     }
   }
 
@@ -84,15 +86,19 @@ const formStyles = css`
     .clear {
       background-color: ${colors.formBgColor};
       color: ${colors.linkColor};
-      &:hover {
-        color: ${colors.hoverColor};
+      @media screen and (min-width: 1000px) {
+        &:hover {
+          color: ${colors.hoverColor};
+        }
       }
     }
     .send {
       color: white;
       background-color: ${colors.linkColor};
-      &:hover {
-        background-color: ${colors.hoverColor};
+      @media screen and (min-width: 1000px) {
+        &:hover {
+          background-color: ${colors.hoverColor};
+        }
       }
     }
     @media screen and (max-width: 480px) {

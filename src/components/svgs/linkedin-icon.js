@@ -8,9 +8,11 @@ const LinkedinIcon = ({ fill, outline, dimension, hoverColor }) => {
       css={css`
         width: ${dimension}px;
         height: ${dimension}px;
-        &:hover {
-          path:first-of-type {
-            fill: ${hoverColor};
+        @media screen and (min-width: 1000px) {
+          &:hover {
+            path:first-of-type {
+              fill: ${hoverColor};
+            }
           }
         }
       `}

@@ -9,9 +9,11 @@ const PlayIcon = ({ fill, dimension, hoverColor }) => {
         width: ${dimension}px;
         height: ${dimension}px;
         margin-right: 0.75rem;
-        &:hover {
-          path:first-of-type {
-            fill: ${hoverColor};
+        @media screen and (min-width: 1000px) {
+          &:hover {
+            path:first-of-type {
+              fill: ${hoverColor};
+            }
           }
         }
       `}

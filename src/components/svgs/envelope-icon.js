@@ -8,9 +8,11 @@ const EnvelopeIcon = ({ fill, dimension, hoverColor }) => {
       css={css`
         width: ${dimension}px;
         height: ${dimension}px;
-        &:hover {
-          path {
-            fill: ${hoverColor};
+        @media screen and (min-width: 1000px) {
+          &:hover {
+            path {
+              fill: ${hoverColor};
+            }
           }
         }
       `}
