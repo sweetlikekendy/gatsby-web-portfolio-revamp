@@ -110,7 +110,6 @@ const Projects = () => {
     <div className="projects" css={projectStyles}>
       {allProjects.map((project, index) => (
         <div key={index} className="project-card" css={projectCardStyles}>
-          {console.log(project.img)}
           <img src={project.img} alt="Project" />
           <div className="project-info" css={projectInfoStyles}>
             <h3>{project.name}</h3>
