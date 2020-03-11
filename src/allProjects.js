@@ -14,7 +14,7 @@ export const allProjects = [
     ],
     img: smartlandscapeImg,
     description:
-      "Redesigned of another landscaping business page. Form from old website was not working, redesigned to have form on every single page.",
+      "Redesign of another landscaping business page. The form on the old website was not working, redesigned to have form on every single page.",
     demoLink: "http://smartlandscapesd.com/",
   },
   {
