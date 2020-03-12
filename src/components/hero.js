@@ -47,10 +47,9 @@ const Hero = () => {
       >
         <h2>Hi! My name is Kendy</h2>
         <p>
-          I am a frontend developer based in San Diego, CA. My work experiences
-          come from freelancing for small businesses. I've dealt with Shopify
-          stores, and building small static sites with a static site generator
-          such as{" "}
+          I am a web developer based in San Diego, CA. My work experiences come
+          from freelancing for small businesses. I've dealt with Shopify stores,
+          and building small static sites with a static site generator such as{" "}
           <a
             href="https://www.gatsbyjs.org/"
             target="_blank"
