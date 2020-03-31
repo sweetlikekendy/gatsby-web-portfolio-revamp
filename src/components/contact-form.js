@@ -208,12 +208,6 @@ const ContactForm = () => {
             .required("Required"),
           message: Yup.string().required("Required"),
         })}
-        // onSubmit={(values, { setSubmitting }) => {
-        //   setTimeout(() => {
-        //     alert(JSON.stringify(values, null, 2))
-        //     setSubmitting(false)
-        //   }, 400)
-        // }}
       >
         {formik => (
           <form
@@ -223,7 +217,6 @@ const ContactForm = () => {
             action="/success"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            // onSubmit={formik.handleSubmit}
           >
             <input type="hidden" name="form-name" value="contact" />
             <MyTextInput label="First Name" name="firstName" type="text" />
@@ -243,15 +236,10 @@ const ContactForm = () => {
                 grid-area: buttons;
               `}
             >
-              {/* <button className="clear" onClick={clearInput}>
-                Clear
-              </button> */}
               <button className="send" type="submit">
                 Send
               </button>
             </div>
-            {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre>
-            <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
           </form>
         )}
       </Formik>
