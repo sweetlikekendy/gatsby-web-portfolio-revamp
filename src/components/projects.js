@@ -120,26 +120,24 @@ const Projects = () => {
                   case "gatsby":
                     return (
                       <a
+                        key={index}
                         href={techLinks[0]}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <p key={index} className="tech">
-                          {tech}{" "}
-                        </p>
+                        <p className="tech">{tech} </p>
                       </a>
                     )
 
                   case "sanity":
                     return (
                       <a
+                        key={index}
                         href={techLinks[1]}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <p key={index} className="tech">
-                          {tech}{" "}
-                        </p>
+                        <p className="tech">{tech} </p>
                       </a>
                     )
 

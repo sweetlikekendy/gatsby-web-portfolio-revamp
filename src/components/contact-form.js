@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { css } from "@emotion/core"
+import { Formik, useField } from "formik"
+import * as Yup from "yup"
 import { colors } from "../styles/theme"
 
 const bgDivStyles = css`
@@ -37,6 +39,10 @@ const formStyles = css`
   padding: 0 1rem;
   label {
     color: ${colors.textSecondaryBodyColor};
+    text-transform: uppercase;
+  }
+  .error {
+    color: #fa3737;
   }
   input,
   textarea,
@@ -114,42 +120,58 @@ const formStyles = css`
     }
   }
 
+  #firstName {
+    grid-area: firstName;
+  }
+  #lastName {
+    grid-area: lastName;
+  }
+  #email {
+    grid-area: email;
+  }
+  #company {
+    grid-area: company;
+  }
+  #message {
+    grid-area: message;
+  }
+
   @media screen and (max-width: 400px) {
     grid-template-columns: 1fr;
     grid-template-areas: "firstName" "lastName" "email" "company" "message" "buttons";
   }
 `
 
+const MyTextInput = ({ label, ...props }) => {
+  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
+  // which we can spread on <input> and also replace ErrorMessage entirely.
+  const [field, meta] = useField(props)
+  return (
+    <div id={field.name}>
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <input className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
+  )
+}
+const MyTextArea = ({ label, ...props }) => {
+  // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
+  // which we can spread on <textarea> and also replace ErrorMessage entirely.
+  const [field, meta] = useField(props)
+  return (
+    <div id={field.name}>
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <textarea className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
+  )
+}
+
 const ContactForm = () => {
-  const [inputs, setInputs] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    company: "",
-    message: "",
-  })
-
-  // Handle input change of form fields
-  const handleInputChange = e => {
-    e.preventDefault()
-    setInputs({
-      ...inputs,
-      [e.target.name]: [e.target.value],
-    })
-  }
-
-  // Clear input fields of form
-  const clearInput = e => {
-    e.preventDefault()
-    setInputs({
-      firstName: "",
-      lastName: "",
-      email: "",
-      company: "",
-      message: "",
-    })
-  }
-
   return (
     <div css={bgDivStyles}>
       <p>
@@ -163,101 +185,76 @@ const ContactForm = () => {
         </a>{" "}
         or fill out this form below
       </p>
-      <form
-        css={formStyles}
-        name="contact"
-        method="POST"
-        action="/success"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        // onSubmit={handleSubmit}
+      <Formik
+        initialValues={{
+          firstName: "",
+          lastName: "",
+          email: "",
+          company: "",
+          message: "",
+        }}
+        validationSchema={Yup.object({
+          firstName: Yup.string()
+            .max(15, "Must be 15 characters or less")
+            .required("Required"),
+          lastName: Yup.string()
+            .max(20, "Must be 20 characters or less")
+            .required("Required"),
+          email: Yup.string()
+            .email("Invalid email address")
+            .required("Required"),
+          company: Yup.string()
+            .max(30, "Must be 30 characters or less")
+            .required("Required"),
+          message: Yup.string().required("Required"),
+        })}
+        // onSubmit={(values, { setSubmitting }) => {
+        //   setTimeout(() => {
+        //     alert(JSON.stringify(values, null, 2))
+        //     setSubmitting(false)
+        //   }, 400)
+        // }}
       >
-        <input type="hidden" name="form-name" value="contact" />
+        {formik => (
+          <form
+            css={formStyles}
+            name="contact"
+            method="POST"
+            action="/success"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            // onSubmit={formik.handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <MyTextInput label="First Name" name="firstName" type="text" />
+            <MyTextInput label="Last Name" name="lastName" type="text" />
+            <MyTextInput label="Email" name="email" type="text" />
+            <MyTextInput label="Company" name="company" type="text" />
+            <MyTextArea
+              label="Message"
+              name="message"
+              type="textarea"
+              rows="6"
+            />
 
-        <label
-          css={css`
-            grid-area: firstName;
-          `}
-        >
-          First Name
-          <input
-            type="text"
-            name="firstName"
-            value={inputs.firstName}
-            onChange={e => handleInputChange(e)}
-          />
-        </label>
-
-        <label
-          css={css`
-            grid-area: lastName;
-          `}
-        >
-          Last Name
-          <input
-            type="text"
-            name="lastName"
-            value={inputs.lastName}
-            onChange={e => handleInputChange(e)}
-          />
-        </label>
-
-        <label
-          css={css`
-            grid-area: email;
-          `}
-        >
-          Email
-          <input
-            type="text"
-            name="email"
-            value={inputs.email}
-            onChange={e => handleInputChange(e)}
-          />
-        </label>
-
-        <label
-          css={css`
-            grid-area: company;
-          `}
-        >
-          Company
-          <input
-            type="text"
-            name="company"
-            value={inputs.company}
-            onChange={e => handleInputChange(e)}
-          />
-        </label>
-
-        <label
-          css={css`
-            grid-area: message;
-          `}
-        >
-          Message
-          <textarea
-            rows="6"
-            name="message"
-            value={inputs.message}
-            onChange={e => handleInputChange(e)}
-          />
-        </label>
-
-        <div
-          className="buttons"
-          css={css`
-            grid-area: buttons;
-          `}
-        >
-          <button className="clear" onClick={clearInput}>
-            Clear
-          </button>
-          <button className="send" type="submit">
-            Send
-          </button>
-        </div>
-      </form>
+            <div
+              className="buttons"
+              css={css`
+                grid-area: buttons;
+              `}
+            >
+              {/* <button className="clear" onClick={clearInput}>
+                Clear
+              </button> */}
+              <button className="send" type="submit">
+                Send
+              </button>
+            </div>
+            {/* <pre>{JSON.stringify(formik.values, null, 2)}</pre>
+            <pre>{JSON.stringify(formik.errors, null, 2)}</pre> */}
+          </form>
+        )}
+      </Formik>
     </div>
   )
 }

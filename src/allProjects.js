@@ -1,5 +1,6 @@
 import smartlandscapeImg from "./images/smartlandscape.png"
 import calvinelandscapeImg from "./images/calvine landscape.png"
+import letMeInImg from "./images/let-me-in.png"
 export const allProjects = [
   {
     name: "Smart Landscape SD",
@@ -44,7 +45,7 @@ export const allProjects = [
       "express",
       "mongodb",
     ],
-    img: "https://picsum.photos/id/12/200/200",
+    img: letMeInImg,
     description:
       "A CRUD application that allows a user to add a home to a database with the corresponding gate/access code. The user will be able to search for the home when they're on route. The search mechanics are case-sensitive.",
     demoLink: "https://protected-oasis-33800.herokuapp.com/",
