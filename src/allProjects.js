@@ -4,6 +4,7 @@ import ccdcImg from "./images/ccdc.png"
 import nanocraftcbdImg from "./images/nanocraftcbd.png"
 import petlycbdImg from "./images/petlycbd.png"
 import letMeInImg from "./images/let-me-in.png"
+
 export const allProjects = [
   {
     name: "Chinatown Community Development Center",

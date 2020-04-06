@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import { allProjects, techLinks } from "../allProjects"
 import { colors } from "../styles/theme"
@@ -36,7 +37,7 @@ const projectInfoStyles = css`
   h3 {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    font-weight: 700px;
+    font-weight: 700;
   }
   p {
     color: ${colors.textSecondaryBodyColor};
@@ -105,12 +106,30 @@ const projectButtonsStyles = css`
   }
 `
 
+export const test = graphql`
+  query {
+    fileName: file(relativePath: { eq: "images/smartlandsdcape.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
 const Projects = () => {
   return (
     <div className="projects" css={projectStyles}>
       {allProjects.map((project, index) => (
         <div key={index} className="project-card" css={projectCardStyles}>
-          <img src={project.img} alt="Project" />
+          <a
+            href={`${project.demoLink}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={project.img} alt="Project" />
+          </a>
           <div className="project-info" css={projectInfoStyles}>
             <h3>{project.name}</h3>
             <p>{project.description}</p>
