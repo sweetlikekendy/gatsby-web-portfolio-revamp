@@ -1,45 +1,31 @@
 import smartlandscapeImg from "./images/smartlandscape.png"
 import calvinelandscapeImg from "./images/calvine landscape.png"
+import ccdcImg from "./images/ccdc.png"
+import nanocraftcbdImg from "./images/nanocraftcbd.png"
+import petlycbdImg from "./images/petlycbd.png"
 import letMeInImg from "./images/let-me-in.png"
 export const allProjects = [
   {
     name: "Chinatown Community Development Center",
     techStack: ["html5", "css3"],
-    img: smartlandscapeImg,
+    img: ccdcImg,
     description: "Redesign of a careers landing page.",
     demoLink: "https://chinatowncdc.applytojob.com/apply/",
   },
   {
     name: "Nanocraft CBD",
-    techStack: [
-      "html5",
-      "css3",
-      "javascript",
-      "react",
-      "gatsby",
-      "sanity",
-      "netlify",
-    ],
-    img: smartlandscapeImg,
+    techStack: ["shopify", "html5", "css3", "javascript"],
+    img: nanocraftcbdImg,
     description:
-      "Redesign of another landscaping business page. The form on the old website was not working, redesigned to have form on every single page.",
-    demoLink: "http://smartlandscapesd.com/",
+      "Redesigned product landing pages. Added more features to already existing theme",
+    demoLink: "http://nanocraftcbd.com/",
   },
   {
     name: "PETLYcbd",
-    techStack: [
-      "html5",
-      "css3",
-      "javascript",
-      "react",
-      "gatsby",
-      "sanity",
-      "netlify",
-    ],
-    img: smartlandscapeImg,
-    description:
-      "Redesign of another landscaping business page. The form on the old website was not working, redesigned to have form on every single page.",
-    demoLink: "http://smartlandscapesd.com/",
+    techStack: ["shopify", "html5", "css3", "javascript"],
+    img: petlycbdImg,
+    description: "Added more features to already existing theme",
+    demoLink: "http://petlycbd.com/",
   },
   {
     name: "Smart Landscape SD",

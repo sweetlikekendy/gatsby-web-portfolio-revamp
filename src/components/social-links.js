@@ -4,9 +4,7 @@ import { css } from "@emotion/core"
 import LinkedinIcon from "./svgs/linkedin-icon"
 import GithubIcon from "./svgs/github-icon"
 import EnvelopeIcon from "./svgs/envelope-icon"
-import ResumeIcon from "./svgs/resume-icon"
 
-import Resume from "../KendyResume_WEBDEV.pdf"
 // TODO make margins reusable as props
 
 const SocialLinks = ({
@@ -82,15 +80,6 @@ const SocialLinks = ({
           />
         </a>
       </li>
-      {/* <li>
-        <a href={Resume} target="_blank" rel="noreferrer noopener">
-          <ResumeIcon
-            fill={outline}
-            dimension={dimension}
-            hoverColor={hoverColor}
-          />
-        </a>
-      </li> */}
     </ul>
   )
 }

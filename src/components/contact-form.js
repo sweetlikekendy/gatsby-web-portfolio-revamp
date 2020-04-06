@@ -149,7 +149,7 @@ const MyTextInput = ({ label, ...props }) => {
   return (
     <div id={field.name}>
       <label htmlFor={props.id || props.name}>{label}</label>
-      <input className="text-input" {...field} {...props} />
+      <input className="text-input" {...field} {...props} required />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
@@ -163,7 +163,7 @@ const MyTextArea = ({ label, ...props }) => {
   return (
     <div id={field.name}>
       <label htmlFor={props.id || props.name}>{label}</label>
-      <textarea className="text-input" {...field} {...props} />
+      <textarea className="text-input" {...field} {...props} required />
       {meta.touched && meta.error ? (
         <div className="error">{meta.error}</div>
       ) : null}
