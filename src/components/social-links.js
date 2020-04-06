@@ -82,7 +82,7 @@ const SocialLinks = ({
           />
         </a>
       </li>
-      <li>
+      {/* <li>
         <a href={Resume} target="_blank" rel="noreferrer noopener">
           <ResumeIcon
             fill={outline}
@@ -90,7 +90,7 @@ const SocialLinks = ({
             hoverColor={hoverColor}
           />
         </a>
-      </li>
+      </li> */}
     </ul>
   )
 }

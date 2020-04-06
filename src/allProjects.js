@@ -3,6 +3,45 @@ import calvinelandscapeImg from "./images/calvine landscape.png"
 import letMeInImg from "./images/let-me-in.png"
 export const allProjects = [
   {
+    name: "Chinatown Community Development Center",
+    techStack: ["html5", "css3"],
+    img: smartlandscapeImg,
+    description: "Redesign of a careers landing page.",
+    demoLink: "https://chinatowncdc.applytojob.com/apply/",
+  },
+  {
+    name: "Nanocraft CBD",
+    techStack: [
+      "html5",
+      "css3",
+      "javascript",
+      "react",
+      "gatsby",
+      "sanity",
+      "netlify",
+    ],
+    img: smartlandscapeImg,
+    description:
+      "Redesign of another landscaping business page. The form on the old website was not working, redesigned to have form on every single page.",
+    demoLink: "http://smartlandscapesd.com/",
+  },
+  {
+    name: "PETLYcbd",
+    techStack: [
+      "html5",
+      "css3",
+      "javascript",
+      "react",
+      "gatsby",
+      "sanity",
+      "netlify",
+    ],
+    img: smartlandscapeImg,
+    description:
+      "Redesign of another landscaping business page. The form on the old website was not working, redesigned to have form on every single page.",
+    demoLink: "http://smartlandscapesd.com/",
+  },
+  {
     name: "Smart Landscape SD",
     techStack: [
       "html5",
