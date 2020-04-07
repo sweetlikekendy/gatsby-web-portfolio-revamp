@@ -1,8 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Projects from "./projects"
 import { pageWidth } from "../styles/theme"
-
+import Projects from "./project-gatsby-img"
 const ProjectsSection = props => {
   return (
     <section
