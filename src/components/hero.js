@@ -55,7 +55,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Gatsby
+            <span className="underline">Gatsby</span>
           </a>
           . My goal is to help small businesses increase their online presence
           by building fast and responsive websites with a mobile-first

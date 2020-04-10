@@ -181,7 +181,7 @@ const ContactForm = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          kendyhnguyen1991@gmail.com
+          <span className="underline">kendyhnguyen1991@gmail.com</span>
         </a>{" "}
         or fill out this form below
       </p>

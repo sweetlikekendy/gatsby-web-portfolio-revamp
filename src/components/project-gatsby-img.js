@@ -162,7 +162,9 @@ const ComponentA = () => (
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <p className="tech">{tech} </p>
+                          <p className="tech">
+                            <span className="underline">{tech}</span>{" "}
+                          </p>
                         </a>
                       )
 
@@ -174,7 +176,9 @@ const ComponentA = () => (
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <p className="tech">{tech} </p>
+                          <p className="tech">
+                            <span className="underline">{tech}</span>{" "}
+                          </p>
                         </a>
                       )
 

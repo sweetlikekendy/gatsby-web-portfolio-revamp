@@ -81,18 +81,10 @@ const Layout = ({ children, location }) => {
           ul {
             list-style: none;
           }
-          main {
-            /* max-width: 1200px; */
-            /* margin: 0 auto; */
-          }
           a {
-            color: ${colors.linkColor};
-            text-decoration: underline;
-          }
-          a:hover {
-            color: ${colors.hoverColor};
             text-decoration: none;
           }
+
           h1,
           h2,
           h3,
@@ -106,10 +98,6 @@ const Layout = ({ children, location }) => {
           body {
             color: ${colors.textColor};
             letter-spacing: 0.05em;
-          }
-          .bg-gradient {
-            /* position: absolute; */
-            /* bottom: 0; */
           }
           .inner {
             max-width: ${pageWidth};
@@ -128,9 +116,20 @@ const Layout = ({ children, location }) => {
               height: 10px;
               width: 100%;
               bottom: -3px;
-              left: 0px;
-              z-index: -1;
+              left: 0;
+
               background: ${colors.sectionUnderline};
+            }
+          }
+
+          .underline {
+            background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            transition: background-size 0.25s ease-in;
+            &:hover {
+              background-size: 100% 88%;
             }
           }
 

@@ -216,7 +216,6 @@ const Nav = ({ location }) => {
               left: 0;
               position: absolute;
               height: 10px;
-              z-index: -1;
               background: ${sectionUnderline};
               transition: width 0.3s ease 0s, left 0.3s ease 0s;
               width: 0;
