@@ -131,7 +131,6 @@ const Layout = ({ children, location }) => {
               left: 0px;
               z-index: -1;
               background: ${colors.sectionUnderline};
-              border-radius: 1px;
             }
           }
 

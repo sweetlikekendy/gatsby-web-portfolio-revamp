@@ -2,10 +2,8 @@ import React, { useState } from "react"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { colors } from "../styles/theme"
-const linkHoverColor = colors.linkColor
-const headerBgColor = colors.headerBgColor
-const navTextColor = colors.navTextColor
-const linkColor = colors.linkColor
+
+const { linkColor, headerBgColor, navTextColor, sectionUnderline } = colors
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -35,6 +33,7 @@ const StyledMenu = styled.nav`
     font-size: 1.5rem;
     text-align: center;
   }
+
   @media screen and (min-width: 576px) {
     button {
       &:hover {
@@ -191,12 +190,42 @@ const Nav = ({ location }) => {
             align-items: center;
             height: 100%;
             white-space: nowrap;
-            button:hover {
-              color: ${linkHoverColor};
-            }
+            /* button:hover {
+              color: ${linkColor};
+            } */
+           
             li {
               margin-left: 3rem;
+              position: relative;
             }
+            button {
+              color: #fff;
+              text-transform: uppercase;
+              text-decoration: none;
+              letter-spacing: 0.15em;
+              
+              display: inline-block;
+              position: relative;
+            }
+            button:after {
+              color: ${linkColor};
+              background: none repeat scroll 0 0 transparent;
+              bottom: -0.75em;
+              content: "";
+              display: block;
+              left: 0;
+              position: absolute;
+              height: 10px;
+              z-index: -1;
+              background: ${sectionUnderline};
+              transition: width 0.3s ease 0s, left 0.3s ease 0s;
+              width: 0;
+            }
+            button:hover:after {
+              width: 100%;
+              left: 0;
+            }
+           
           }
           #mobile-menu {
             display: none;
