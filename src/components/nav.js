@@ -5,6 +5,63 @@ import { colors } from "../styles/theme"
 
 const { linkColor, headerBgColor, navTextColor, sectionUnderline } = colors
 
+const StyledNav = styled.nav`
+  /* Not on index page, display none the nav menus. Ids only exist on index page */
+  display: ${props => (props.location === "/" ? "block" : "none")};
+  .header-nav-menu {
+    display: none;
+  }
+  #mobile-menu {
+    display: block;
+  }
+  @media screen and (min-width: 768px) {
+    .header-nav-menu {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      white-space: nowrap;
+      /* button:hover {
+        color: ${linkColor};
+      } */
+      
+      li {
+        margin-left: 3rem;
+        position: relative;
+      }
+      button {
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        
+        display: inline-block;
+        position: relative;
+      }
+      button:after {
+        color: ${linkColor};
+        background: none repeat scroll 0 0 transparent;
+        bottom: -0.75em;
+        content: "";
+        display: block;
+        left: 0;
+        position: absolute;
+        height: 10px;
+        background: ${sectionUnderline};
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      button:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      
+    }
+    #mobile-menu {
+      display: none;
+    }
+  }
+`
+
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
@@ -174,64 +231,7 @@ const Nav = ({ location }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav
-      css={css`
-        /* Not on index page, display none the nav menus. Ids only exist on index page */
-        display: ${location === "/" ? "block" : "none"};
-        .header-nav-menu {
-          display: none;
-        }
-        #mobile-menu {
-          display: block;
-        }
-        @media screen and (min-width: 768px) {
-          .header-nav-menu {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            white-space: nowrap;
-            /* button:hover {
-              color: ${linkColor};
-            } */
-           
-            li {
-              margin-left: 3rem;
-              position: relative;
-            }
-            button {
-              color: #fff;
-              text-transform: uppercase;
-              text-decoration: none;
-              letter-spacing: 0.15em;
-              
-              display: inline-block;
-              position: relative;
-            }
-            button:after {
-              color: ${linkColor};
-              background: none repeat scroll 0 0 transparent;
-              bottom: -0.75em;
-              content: "";
-              display: block;
-              left: 0;
-              position: absolute;
-              height: 10px;
-              background: ${sectionUnderline};
-              transition: width 0.3s ease 0s, left 0.3s ease 0s;
-              width: 0;
-            }
-            button:hover:after {
-              width: 100%;
-              left: 0;
-            }
-           
-          }
-          #mobile-menu {
-            display: none;
-          }
-        }
-      `}
-    >
+    <StyledNav location={location}>
       <ul className="header-nav-menu">
         <li>
           <button
@@ -262,7 +262,7 @@ const Nav = ({ location }) => {
         />
         <Menu open={open} setOpen={setOpen} handleClick={handleClick} />
       </div>
-    </nav>
+    </StyledNav>
   )
 }
 
