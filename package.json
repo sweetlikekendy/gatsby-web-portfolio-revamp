@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "autoprefixer": "^10.2.3",
     "formik": "^2.1.4",
     "gatsby": "^2.19.36",
     "gatsby-background-image": "^0.9.19",
@@ -14,17 +15,20 @@
     "gatsby-image": "^2.2.43",
     "gatsby-plugin-emotion": "^4.1.24",
     "gatsby-plugin-offline": "^3.0.39",
+    "gatsby-plugin-postcss": "^3.6.0",
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-remark-images": "^3.2.2",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-json": "^2.3.1",
     "gatsby-transformer-sharp": "^2.4.3",
+    "postcss": "^8.2.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "smoothscroll-polyfill": "^0.4.4",
+    "tailwindcss": "^2.0.2",
     "yup": "^0.28.3"
   },
   "devDependencies": {
