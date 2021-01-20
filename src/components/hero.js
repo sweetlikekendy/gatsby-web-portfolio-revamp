@@ -45,7 +45,7 @@ const Hero = () => {
           }
         `}
       >
-        <h2>Hi! My name is Kendy</h2>
+        <h2 className="text-2xl font-medium">Hi! My name is Kendy</h2>
         <p>
           I am a web developer based in San Diego, CA. My work experiences come
           from freelancing for small businesses. I've dealt with Shopify stores,
