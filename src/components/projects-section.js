@@ -12,7 +12,7 @@ const ProjectsSection = props => {
       `}
       {...props}
     >
-      <h2>
+      <h2 className="text-2xl">
         <span className="section-title">Projects</span>
       </h2>
       <Projects />

@@ -10,7 +10,7 @@ const ContactSection = props => {
       `}
       {...props}
     >
-      <h2>
+      <h2 className="text-2xl">
         <span className="section-title">Contact Me</span>
       </h2>
       <ContactForm />
