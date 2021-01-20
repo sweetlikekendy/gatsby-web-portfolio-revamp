@@ -23,9 +23,9 @@ const Header = ({ location }) => {
   return (
     <header
       id="header"
+      className="p-6"
       css={css`
         background-color: ${headerBgColor};
-        padding: 1rem;
         position: sticky;
         top: 0;
         z-index: 999;
