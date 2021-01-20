@@ -47,6 +47,7 @@ const Header = ({ location }) => {
       <div className="header-container">
         <Link to="/">
           <h1
+            className="text-3xl"
             css={css`
               color: ${colors.logoColor};
             `}
