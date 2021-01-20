@@ -146,7 +146,6 @@ const ComponentA = () => (
                 fluid={project.img.childImageSharp.fluid}
                 alt={project.img.alt}
               />
-              {console.log(project)}
             </a>
             <div className="project-info" css={projectInfoStyles}>
               <h3>{project.name}</h3>
