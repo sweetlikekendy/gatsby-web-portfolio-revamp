@@ -1,7 +1,6 @@
 import React from "react"
 import SocialLinks from "./social-links"
-import { css } from "@emotion/core"
-import { colors, pageWidth } from "../styles/theme"
+import { colors } from "../styles/theme"
 import DecorativeHorizontalBar from "./decorative-horizontal-bar"
 
 const Footer = props => {
@@ -9,48 +8,21 @@ const Footer = props => {
   const year = date.getFullYear()
 
   return (
-    <div
-      css={css`
-        width: 100%;
-        margin-top: 5rem;
-      `}
-      {...props}
-    >
+    <footer className="w-full mt-20" {...props}>
       <DecorativeHorizontalBar />
-      <footer
-        css={css`
-          background-color: ${colors.textPrimaryBodyColor};
-          color: ${colors.formBgColor};
-          padding: 1.25rem 1rem;
-        `}
-      >
-        <div
-          css={css`
-            max-width: ${pageWidth};
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            @media screen and (max-width: 500px) {
-              flex-direction: column;
-              ul {
-                margin-bottom: 2rem;
-              }
-              p {
-                text-align: center;
-              }
-            }
-          `}
-        >
+      <div className="bg-blueGray-800 text-blueGray-100 py-5 px-4">
+        <div className="max-w-6xl my-0 mx-auto flex flex-col justify-center items-center sm:justify-between sm:flex-row">
           <SocialLinks
+            className="mb-4 sm:mb-0"
             fill={colors.textPrimaryBodyColor}
             outline={colors.navTextColor}
             dimension={parseInt(20)}
             hoverColor={colors.linkColor}
           />
-          <p>© {year} Kendy Nguyen</p>
+          <p className="text-center sm:text-right">© {year} Kendy Nguyen</p>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   )
 }
 
