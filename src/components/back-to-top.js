@@ -1,5 +1,4 @@
 import React from "react"
-import { css } from "@emotion/core"
 import Arrow from "./svgs/arrow"
 import { colors } from "../styles/theme"
 
@@ -7,8 +6,8 @@ const BackToTop = () => {
   const handleClick = e => {
     e.preventDefault()
     if (
-      e.target.className === `to-top-link` ||
       e.target.id === `arrow-up` ||
+      e.target.id === `button-up` ||
       e.target.className.baseVal === `to-top-link`
     ) {
       window.scroll({ top: 0, left: 0, behavior: "smooth" })
@@ -16,62 +15,21 @@ const BackToTop = () => {
   }
 
   return (
-    <div
-      css={css`
-        margin: 1rem auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        p {
-          color: ${colors.textSecondaryBodyColor};
-          text-transform: uppercase;
-          font-weight: 600;
-        }
-        @media screen and (min-width: 768px) {
-          margin: 6rem auto 2rem;
-        }
-      `}
-    >
-      <div
-        css={css`
-          /* display: inline-block; */
-          background-color: ${colors.linkColor};
-          border-radius: 50%;
-          height: 75px;
-          width: 75px;
-          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-          margin-bottom: 1rem;
-          button {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            background-color: transparent;
-            border: none;
-            outline: none;
-          }
-          @media screen and (min-width: 768px) {
-            &:hover {
-              background-color: ${colors.hoverColor};
-              transform: translateY(-5px);
-              transition: all ease 0.3s;
-            }
-          }
-        `}
+    <div className="my-4 flex flex-col justify-center items-center mx-auto md:mt-24 md:mx-auto md:mb-8 ">
+      <button
+        id="button-up"
+        className="to-top-link bg-violet-400 rounded-full h-20 w-20 mb-4 shadow-md flex justify-center items-center cursor-pointer bg-transparent border-none transition-colors focus:outline-none focus:border-gray-700 md:hover:bg-orange-400 md:hover:shadow-lg md:active:bg-orange-300 md:active:shadow-2xl"
+        onClick={handleClick}
       >
-        <button className="to-top-link" onClick={handleClick}>
-          <Arrow
-            id="arrow-up"
-            onClick={handleClick}
-            size={parseInt(30)}
-            fill={colors.projectCodeBtnTextColor}
-          />
-        </button>
-      </div>
-      <p>Scroll to Top</p>
+        <Arrow
+          id="arrow-up"
+          size={parseInt(30)}
+          fill={colors.projectCodeBtnTextColor}
+        />
+      </button>
+      <p className="text-gray-500 text-opacity-100 uppercase font-semibold">
+        Scroll to Top
+      </p>
     </div>
   )
 }
