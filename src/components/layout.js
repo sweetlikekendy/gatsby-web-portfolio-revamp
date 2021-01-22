@@ -101,7 +101,6 @@ const Layout = ({ children, location }) => {
           }
           .inner {
             max-width: ${pageWidth};
-            margin: 0 auto;
             @media screen and (max-width: 1200px) {
               padding: 1rem;
             }
