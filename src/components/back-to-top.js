@@ -1,6 +1,5 @@
 import React from "react"
 import Arrow from "./svgs/arrow"
-import { colors } from "../styles/theme"
 
 const BackToTop = () => {
   const handleClick = e => {
@@ -23,8 +22,8 @@ const BackToTop = () => {
       >
         <Arrow
           id="arrow-up"
+          className="fill-current text-lightBlue-100"
           size={parseInt(30)}
-          fill={colors.projectCodeBtnTextColor}
         />
       </button>
       <p className="text-gray-500 text-opacity-100 uppercase font-semibold">

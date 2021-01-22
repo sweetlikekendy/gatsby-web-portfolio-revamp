@@ -6,9 +6,6 @@ const SvgComponent = ({ size, fill, ...props }) => {
     <svg
       css={css`
         transform: scale(1, -1);
-        path {
-          fill: ${fill};
-        }
       `}
       height={size}
       viewBox="0 0 451.846 451.847"
