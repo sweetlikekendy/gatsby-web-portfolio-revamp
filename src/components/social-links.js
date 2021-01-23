@@ -1,70 +1,31 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { css } from "@emotion/core"
-import LinkedinIcon from "./svgs/linkedin-icon"
-import GithubIcon from "./svgs/github-icon"
-import EnvelopeIcon from "./svgs/envelope-icon"
+import { FaLinkedin, FaGithubSquare } from "react-icons/fa"
+import { MdEmail } from "react-icons/md"
 
 // TODO make margins reusable as props
 
-const SocialLinks = ({
-  fill,
-  outline,
-  dimension,
-  hoverColor,
-  marginTop,
-  marginRight,
-  marginBottom,
-  marginLeft,
-}) => {
+const SocialLinks = ({ ...rest }) => {
   return (
     <ul
-      css={css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        li {
-          margin-right: 2rem;
-          a {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-          }
-        }
-        li:last-of-type {
-          margin-right: 0;
-        }
-        .github-icon {
-          margin-right: 0;
-        }
-      `}
+      className="mb-4 flex justify-center items-center flex-wrap sm:mb-0"
+      {...rest}
     >
-      <li>
+      <li className="mr-6">
         <a
           href="https://www.linkedin.com/in/kendy-nguyen-a51796a0/"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <LinkedinIcon
-            fill={fill}
-            outline={outline}
-            dimension={dimension}
-            hoverColor={hoverColor}
-          />
+          <FaLinkedin className="w-6 h-6 transition-colors hover:text-orange-400 hover:shadow-md active:text-orange-500 active:shadow-lg" />
         </a>
       </li>
-      <li>
+      <li className="mr-6">
         <a
           href="http://github.com/sweetlikekendy/"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <GithubIcon
-            fill={outline}
-            dimension={dimension}
-            hoverColor={hoverColor}
-          />
+          <FaGithubSquare className="w-6 h-6 transition-colors hover:text-orange-400 hover:shadow-md active:text-orange-500 active:shadow-lg" />
         </a>
       </li>
       <li>
@@ -73,22 +34,11 @@ const SocialLinks = ({
           target="_blank"
           rel="noreferrer noopener"
         >
-          <EnvelopeIcon
-            fill={outline}
-            dimension={dimension}
-            hoverColor={hoverColor}
-          />
+          <MdEmail className="w-6 h-6 transition-colors hover:text-orange-400 hover:shadow-md active:text-orange-500 active:shadow-lg" />
         </a>
       </li>
     </ul>
   )
-}
-
-// Fill color, outline color, square dimensions (width x height)
-SocialLinks.propTypes = {
-  fill: PropTypes.string,
-  outline: PropTypes.string,
-  dimension: PropTypes.number,
 }
 
 export default SocialLinks
