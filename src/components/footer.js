@@ -1,15 +1,11 @@
 import React from "react"
 import SocialLinks from "./social-links"
 import DecorativeHorizontalBar from "./decorative-horizontal-bar"
-import { theme } from "../../tailwind.config"
-
-const { colors } = theme
 
 const Footer = props => {
   const date = new Date()
   const year = date.getFullYear()
 
-  console.log(colors)
   return (
     <footer className="w-full mt-20" {...props}>
       <DecorativeHorizontalBar />
