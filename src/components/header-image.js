@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import BackgroundImage from "gatsby-background-image"
+import { theme } from "../../tailwind.config"
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -36,7 +37,7 @@ const Image = props => {
       }
     }
   `)
-
+  console.log(theme)
   // Set up the array of image data and `media` keys.
   const sources = [
     mobileImage.childImageSharp.fluid,
@@ -50,18 +51,18 @@ const Image = props => {
     <BackgroundImage
       Tag="div"
       fluid={sources}
-      backgroundColor={`#040e18`}
+      className={`bg-primary-800 absolute bg-cover bg-no-repeat bg-center md:bg-fixed bg-scroll`}
       css={css`
         height: 300px;
-        position: absolute;
+        /* position: absolute; */
         z-index: -1;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        /* background-size: cover; */
+        /* background-repeat: no-repeat; */
+        /* background-position: center; */
         @media screen and (min-width: 800px) {
           height: 600px;
-          background-attachment: fixed;
-          background-attachment: scroll;
+          /* background-attachment: fixed; */
+          /* background-attachment: scroll; */
         }
       `}
       {...props}
@@ -70,13 +71,3 @@ const Image = props => {
 }
 
 export default Image
-
-//   <Img
-// css={css`
-//     height: 600px;
-//     position: absolute;
-//     z-index: -1;
-//   `}
-//   fluid={data.placeholderImage.childImageSharp.fluid}
-//   alt="Image of East Village Sunset in San Diego"
-// />

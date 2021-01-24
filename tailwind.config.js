@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors")
+
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
@@ -18,6 +19,12 @@ module.exports = {
         900: "#003956",
       },
     },
+    // height: {
+    //   height: {
+    //     sm: "300px",
+    //     md: "600px",
+    //   },
+    // },
     extend: {},
   },
   variants: {
