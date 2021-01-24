@@ -1,6 +1,4 @@
 import React from "react"
-import { css } from "@emotion/core"
-import { colors } from "../styles/theme"
 import SocialLinks from "./social-links"
 
 const Hero = () => {
