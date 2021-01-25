@@ -151,7 +151,7 @@ const Layout = ({ children, location }) => {
         `}
       />
       <div className="site">
-        <Header location={location} />
+        <Header id="header" location={location} />
         <main className="site-content">{children}</main>
         <Footer />
       </div>

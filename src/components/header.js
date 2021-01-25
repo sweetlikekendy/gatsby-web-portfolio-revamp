@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Nav from "../components/nav"
 
-const Header = ({ location }) => {
+const Header = ({ location, ...rest }) => {
   const [scrolledHeight, setScrolledHeight] = useState(0)
 
   // find how far the user has scrolled
@@ -20,6 +20,7 @@ const Header = ({ location }) => {
     <header
       className={`bg-blueGray-800 p-6 sticky top-0 z-50 transition-colors ${scrolledHeight >
         40 && `shadow-xl`}`}
+      {...rest}
     >
       <div className="max-w-6xl my-0 mx-auto flex justify-between items-center">
         <Link className="no-underline" to="/">
