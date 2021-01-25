@@ -1,6 +1,6 @@
 import React from "react"
 import ContactForm from "./contact-form"
-import { Section } from "./styles"
+import { Section } from "../styles"
 
 const ContactSection = props => {
   return (
