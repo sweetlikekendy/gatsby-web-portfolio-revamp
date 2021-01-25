@@ -3,7 +3,7 @@ import SocialLinks from "./social-links"
 
 const Hero = () => {
   return (
-    <div className="z-2 max-w-4xl bg-white border-2 border-blueGray-200 m-4 md:-mt-36 md:mb-52 mx-auto">
+    <div className="z-2 max-w-4xl bg-white border-2 border-blueGray-200 m-4 md:-mt-36 md:mb-52 lg:mx-auto">
       <div className="h-full py-8 px-4">
         <h2 className="text-2xl font-medium text-left mb-4 sm:text-center">
           Hi! My name is Kendy
@@ -25,7 +25,7 @@ const Hero = () => {
         </p>
       </div>
       <div className="h-16 p-4 bg-blueGray-200 flex justify-center items-center">
-        <SocialLinks />
+        <SocialLinks className="mb-0 flex justify-center items-center" />
       </div>
     </div>
   )
