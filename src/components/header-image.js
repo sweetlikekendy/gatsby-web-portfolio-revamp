@@ -51,18 +51,15 @@ const Image = props => {
     <BackgroundImage
       Tag="div"
       fluid={sources}
-      className={`bg-primary-800 absolute bg-cover bg-no-repeat bg-center md:bg-fixed bg-scroll`}
       css={css`
         height: 300px;
-        /* position: absolute; */
         z-index: -1;
-        /* background-size: cover; */
-        /* background-repeat: no-repeat; */
-        /* background-position: center; */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
         @media screen and (min-width: 800px) {
           height: 600px;
-          /* background-attachment: fixed; */
-          /* background-attachment: scroll; */
         }
       `}
       {...props}
@@ -71,3 +68,4 @@ const Image = props => {
 }
 
 export default Image
+//
