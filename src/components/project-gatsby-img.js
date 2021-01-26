@@ -4,8 +4,11 @@ import Img from "gatsby-image/withIEPolyfill"
 import { css } from "@emotion/core"
 import { colors } from "../styles/theme"
 import { techLinks } from "../allProjects"
+import { GrGithub, GrCirclePlay } from "react-icons/gr"
+import { FaRegPlayCircle, FaGithub } from "react-icons/fa"
 import GithubIcon from "./svgs/github-icon"
 import PlayIcon from "./svgs/play-icon"
+import { Button } from "../styles"
 
 const projectStyles = css`
   margin: 2rem auto;
@@ -57,27 +60,27 @@ const projectInfoStyles = css`
 `
 
 const projectButtonsStyles = css`
-  margin: 2rem auto;
+  ${"" /* margin: 2rem auto;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */}
   a {
-    text-decoration: none;
+    ${"" /* text-decoration: none;
     padding: 1rem;
     border-radius: 3px;
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
+    text-transform: uppercase; */}
   }
   /* Demo button */
   .demo-button {
-    color: #fff;
+    ${"" /* color: #fff;
     background-color: ${colors.linkColor};
     @media screen and (min-width: 1000px) {
       &:hover {
         background-color: ${colors.hoverColor};
       }
-    }
+    } */}
   }
 
   /* Github repo button */
@@ -133,9 +136,16 @@ const ComponentA = () => (
       }
     `}
     render={data => (
-      <div className="projects" css={projectStyles}>
+      <div
+        className="projects mx-auto mt-8 -mb-8 flex justify-center flex-wrap"
+        // css={projectStyles}
+      >
         {data.allDataJson.edges[0].node.projects.map((project, index) => (
-          <div key={index} className="project-card" css={projectCardStyles}>
+          <div
+            key={index}
+            className="project-card mb-8 mx-0 border w-full sm:w-2/5 sm:mx-4 lg:mx-8 md:w-1/3 lg:w-1/4"
+            // css={projectCardStyles}
+          >
             <a
               href={`${project.demoLink}`}
               target="_blank"
@@ -143,14 +153,22 @@ const ComponentA = () => (
             >
               <Img
                 className="image"
-                fluid={project.img.childImageSharp.fluid}
+                fluid={{
+                  ...project.img.childImageSharp.fluid,
+                  aspectRatio: 1,
+                }}
                 alt={project.img.alt}
               />
             </a>
-            <div className="project-info" css={projectInfoStyles}>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <div className="tech-used">
+            <div
+              className="project-info m-7"
+              // css={projectInfoStyles}
+            >
+              <h3 className="mb-2 uppercase text-blueGray-700 font-bold">
+                {project.name}
+              </h3>
+              <p className="mb-4 text-blueGray-700">{project.description}</p>
+              <div className="tech-used flex flex-wrap -mb-2 -mr-2">
                 {project.techStack.map((tech, index) => {
                   switch (tech) {
                     case "gatsby":
@@ -161,7 +179,7 @@ const ComponentA = () => (
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <p className="tech">
+                          <p className="tech text-orange-500 border rounded p-2 mb-2 mr-2 border-orange-500">
                             <span className="underline">{tech}</span>{" "}
                           </p>
                         </a>
@@ -175,7 +193,7 @@ const ComponentA = () => (
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <p className="tech">
+                          <p className="tech text-orange-500 border rounded p-2 mt-2 mr-2 border-orange-500">
                             <span className="underline">{tech}</span>{" "}
                           </p>
                         </a>
@@ -183,37 +201,40 @@ const ComponentA = () => (
 
                     default:
                       return (
-                        <p key={index} className="tech">
+                        <p
+                          key={index}
+                          className="tech text-orange-500 border rounded p-2 mt-2 mr-2 border-orange-500"
+                        >
                           {tech}{" "}
                         </p>
                       )
                   }
                 })}
               </div>
-              <div className="project-buttons" css={projectButtonsStyles}>
+              <div
+                className="project-buttons mx-auto my-8 flex justify-evenly items-center flex-wrap"
+                css={projectButtonsStyles}
+              >
                 {project.demoLink && (
-                  <a
-                    className="demo-button"
+                  <Button
+                    isExternal
                     href={`${project.demoLink}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <PlayIcon fill="#fff" dimension={parseInt(25)} /> Demo
-                  </a>
+                    <FaRegPlayCircle className="mr-2" /> Demo
+                  </Button>
                 )}
                 {project.repoLink && (
-                  <a
-                    className="repo-button"
+                  <Button
+                    isExternal
+                    isSecondary
                     href={`${project.repoLink}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <GithubIcon
-                      fill={colors.projectCodeBtnTextColor}
-                      dimension={parseInt(25)}
-                    />
-                    Code
-                  </a>
+                    <GrGithub className="mr-2" /> Code
+                  </Button>
                 )}
               </div>
             </div>
