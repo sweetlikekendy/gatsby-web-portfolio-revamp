@@ -1,192 +1,74 @@
 import React, { useState } from "react"
-import { css } from "@emotion/core"
-import styled from "@emotion/styled"
-import { colors } from "../styles/theme"
 
-const { linkColor, headerBgColor, navTextColor, sectionUnderline } = colors
+const StyledButton = ({ children, ...rest }) => (
+  <button
+    className="text-lg no-underline text-blueGray-100 bg-transparent cursor-pointer uppercase tracking-wider transition-colors font-semibold hover:text-cyan-300"
+    {...rest}
+  >
+    {children}
+  </button>
+)
 
-const StyledNav = styled.nav`
-  /* Not on index page, display none the nav menus. Ids only exist on index page */
-  display: ${props => (props.location === "/" ? "block" : "none")};
-  .header-nav-menu {
-    display: none;
-  }
-  #mobile-menu {
-    display: block;
-  }
-  @media screen and (min-width: 768px) {
-    .header-nav-menu {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      white-space: nowrap;
-      /* button:hover {
-        color: ${linkColor};
-      } */
-      
-      li {
-        margin-left: 3rem;
-        position: relative;
-      }
-      button {
-        color: #fff;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: 0.15em;
-        
-        display: inline-block;
-        position: relative;
-      }
-      button:after {
-        color: ${linkColor};
-        background: none repeat scroll 0 0 transparent;
-        bottom: -0.75em;
-        content: "";
-        display: block;
-        left: 0;
-        position: absolute;
-        height: 10px;
-        background: ${sectionUnderline};
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
-      }
-      button:hover:after {
-        width: 100%;
-        left: 0;
-      }
-      
-    }
-    #mobile-menu {
-      display: none;
-    }
-  }
-`
-
-const StyledMenu = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: ${headerBgColor};
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-  height: 100vh;
-  text-align: left;
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  transition: transform 0.3s ease-in-out;
-  width: 75%;
-  overflow: hidden;
-
-  button {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: ${navTextColor};
-    text-decoration: none;
-    transition: color 0.3s linear;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  @media screen and (min-width: 576px) {
-    button {
-      &:hover {
-        color: ${linkColor};
-      }
-    }
-  }
-`
-
-const buttonStyles = css`
-  font-size: 18px;
-  text-decoration: none;
-  color: ${navTextColor};
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-`
+const StyledMobileButton = ({ children, ...rest }) => (
+  <button
+    className="text-2xl no-underline p-8 text-center text-blueGray-100 bg-transparent cursor-pointer uppercase tracking-wider transition-colors font-bold hover:text-cyan-300"
+    {...rest}
+  >
+    {children}
+  </button>
+)
 
 const Menu = ({ open, handleClick }) => {
   return (
-    <StyledMenu open={open}>
-      <button
+    <div
+      className={`fixed top-0 right-0 w-3/4 
+      shadow-2xl overflow-hidden flex flex-col justify-center items-center 
+      bg-blueGray-800 h-screen text-left 
+      transform transition ease-in-out duration-500 sm:duration-700
+      ${open ? `translate-x-0` : `translate-x-full`}
+      `}
+    >
+      <StyledMobileButton
         id="mobile-projects-link"
-        css={buttonStyles}
         onClick={handleClick}
         aria-label="scroll to projects"
       >
         Projects
-      </button>
-      <button
+      </StyledMobileButton>
+      <StyledMobileButton
         id="mobile-contact-me-link"
-        css={buttonStyles}
         onClick={handleClick}
         aria-label="scroll to contact me"
       >
         Contact Me
-      </button>
-    </StyledMenu>
+      </StyledMobileButton>
+    </div>
   )
 }
 
-const StyledBurger = styled.button`
-  position: fixed;
-  top: 1.5rem;
-  right: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-
-  &:focus {
-    outline: none;
-  }
-
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background: ${({ open }) => (open ? `${navTextColor}` : "#EFFFFA")};
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: right;
-
-    :first-of-type {
-      transform: ${({ open }) => (open ? "rotate(-43deg)" : "rotate(0)")};
-    }
-
-    :nth-of-type(2) {
-      opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) =>
-        open ? "translateX(-20px)" : "translateX(0)"};
-    }
-
-    :nth-of-type(3) {
-      transform: ${({ open }) => (open ? "rotate(43deg)" : "rotate(0)")};
-    }
-  }
-`
-
 const Burger = ({ open, setOpen }) => {
+  const basicDivClasses = `relative w-8 h-1 bg-blueGray-100 rounded-xl origin-right
+  transform transition ease-in-out duration-500 sm:duration-700`
+
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledBurger>
+    <button
+      // TODO check if border-none is needed
+      className="fixed top-6 right-4 flex flex-col justify-around items-center w-8 h-8 bg-transparent border-none outline-none cursor-pointer p-0 z-20 focus:outline-none"
+      open={open}
+      onClick={() => setOpen(!open)}
+    >
+      <div
+        className={`${basicDivClasses} ${open ? `-rotate-45` : `rotate-0`}`}
+      />
+      <div
+        className={`${basicDivClasses} ${open ? `opacity-0` : `opacity-100`} ${
+          open ? `-translate-x-6` : `translate-x-0`
+        }`}
+      />
+      <div
+        className={`${basicDivClasses} ${open ? `rotate-45` : `rotate-0`}`}
+      />
+    </button>
   )
 }
 
@@ -231,30 +113,32 @@ const Nav = ({ location }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <StyledNav location={location}>
-      <ul className="header-nav-menu">
-        <li>
-          <button
-            css={buttonStyles}
+    /* Not on index page, display none the nav menus. Ids only exist on index page */
+    <nav
+      className={`${location === "/" ? "block" : "hidden"}`}
+      location={location}
+    >
+      <ul className="header-nav-menu hidden md:flex md:items-center md:h-full md:whitespace-nowrap">
+        <li className="relative ml-12 tracking-wider inline-block">
+          <StyledButton
             aria-label="scroll to projects"
             onClick={handleClick}
             id="projects-link"
           >
             Projects
-          </button>
+          </StyledButton>
         </li>
-        <li>
-          <button
-            css={buttonStyles}
+        <li className=" relative ml-12 tracking-wider inline-block">
+          <StyledButton
             aria-label="scroll to contact me"
             onClick={handleClick}
             id="contact-me-link"
           >
             Contact Me
-          </button>
+          </StyledButton>
         </li>
       </ul>
-      <div id="mobile-menu">
+      <div id="mobile-menu" className="block md:hidden">
         <Burger
           open={open}
           setOpen={setOpen}
@@ -262,7 +146,7 @@ const Nav = ({ location }) => {
         />
         <Menu open={open} setOpen={setOpen} handleClick={handleClick} />
       </div>
-    </StyledNav>
+    </nav>
   )
 }
 
