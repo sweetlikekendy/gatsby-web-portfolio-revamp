@@ -53,7 +53,7 @@ const Burger = ({ open, setOpen }) => {
   return (
     <button
       // TODO check if border-none is needed
-      className="fixed top-6 right-4 flex flex-col justify-around items-center w-8 h-8 bg-transparent border-none outline-none cursor-pointer p-0 z-20 focus:outline-none"
+      className="fixed top-6 right-6 flex flex-col justify-around items-center w-8 h-8 bg-transparent border-none outline-none cursor-pointer p-0 z-20 focus:outline-none"
       open={open}
       onClick={() => setOpen(!open)}
     >
