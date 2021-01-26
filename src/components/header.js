@@ -33,11 +33,7 @@ const Header = ({ location, ...rest }) => {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  location: PropTypes.string,
 }
 
 export default Header
