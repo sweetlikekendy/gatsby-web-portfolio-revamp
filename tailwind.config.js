@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors")
+const plugin = require("tailwindcss/plugin")
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -19,13 +20,15 @@ module.exports = {
         900: "#003956",
       },
     },
-    // height: {
-    //   height: {
-    //     sm: "300px",
-    //     md: "600px",
-    //   },
-    // },
-    extend: {},
+
+    extend: {
+      height: theme => ({
+        "screen/2": "50vh",
+        "screen/3": "calc(100vh / 3)",
+        "screen/4": "calc(100vh / 4)",
+        "screen/5": "calc(100vh / 5)",
+      }),
+    },
   },
   variants: {
     extend: {
