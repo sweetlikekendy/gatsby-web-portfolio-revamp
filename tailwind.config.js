@@ -19,21 +19,47 @@ module.exports = {
         900: "#003956",
       },
     },
+    backgroundSize: {
+      auto: "auto",
+      cover: "cover",
+      contain: "contain",
+      szUnderline: "100% 0.2em",
+      szUnderlineHover: "100% 88%",
+    },
+
+    backgroundPosition: {
+      bottom: "bottom",
+      "bottom-4": "center bottom 1rem",
+      center: "center",
+      left: "left",
+      "left-bottom": "left bottom",
+      "left-top": "left top",
+      right: "right",
+      "right-bottom": "right bottom",
+      "right-top": "right top",
+      top: "top",
+      posUnderline: "0 88%",
+    },
 
     extend: {
-      height: theme => ({
+      height: {
         "screen/2": "50vh",
         "screen/3": "calc(100vh / 3)",
         "screen/4": "calc(100vh / 4)",
         "screen/5": "calc(100vh / 5)",
-      }),
+      },
+      transitionProperty: {
+        transition: "background-size",
+      },
     },
   },
   variants: {
     extend: {
       backgroundColor: ["active"],
+      backgroundSize: ["hover", "focus"],
       boxShadow: ["active"],
       textColor: ["active"],
+      transitionProperty: ["hover", "focus"],
     },
   },
   plugins: [],

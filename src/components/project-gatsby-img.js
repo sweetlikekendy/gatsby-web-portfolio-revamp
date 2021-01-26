@@ -2,98 +2,12 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 import { css } from "@emotion/core"
-import { colors } from "../styles/theme"
 import { techLinks } from "../allProjects"
-import { GrGithub, GrCirclePlay } from "react-icons/gr"
-import { FaRegPlayCircle, FaGithub } from "react-icons/fa"
-import GithubIcon from "./svgs/github-icon"
-import PlayIcon from "./svgs/play-icon"
-import { Button } from "../styles"
-
-const projectStyles = css`
-  margin: 2rem auto;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-`
-
-const projectCardStyles = css`
-  border: 1px solid rgb(202, 202, 202);
-  flex-basis: 30%;
-  margin-bottom: 2rem;
-  .image {
-    height: 300px;
-  }
-  @media screen and (max-width: 1000px) {
-    flex-basis: 40%;
-  }
-  @media screen and (max-width: 600px) {
-    flex-basis: 100%;
-  }
-`
-
-const projectInfoStyles = css`
-  margin: 1.5rem;
-  h3 {
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  p {
-    color: ${colors.textSecondaryBodyColor};
-    margin-bottom: 1rem;
-  }
-  .tech-used {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .tech {
-    color: ${colors.hoverColor};
-    border: 1px ${colors.hoverColor} solid;
-    border-radius: 3px;
-    margin: 0.5rem 0.5rem 0 0;
-    padding: 0.5rem;
-  }
-  .tech > p:last-of-type {
-    margin-top: 0.5rem;
-  }
-`
+import { GrGithub } from "react-icons/gr"
+import { FaRegPlayCircle } from "react-icons/fa"
+import { ButtonLink, Underline } from "../styles"
 
 const projectButtonsStyles = css`
-  ${"" /* margin: 2rem auto;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap; */}
-  a {
-    ${"" /* text-decoration: none;
-    padding: 1rem;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase; */}
-  }
-  /* Demo button */
-  .demo-button {
-    ${"" /* color: #fff;
-    background-color: ${colors.linkColor};
-    @media screen and (min-width: 1000px) {
-      &:hover {
-        background-color: ${colors.hoverColor};
-      }
-    } */}
-  }
-
-  /* Github repo button */
-  .repo-button {
-    background-color: ${colors.projectCodeBtnBgColor};
-    color: ${colors.projectCodeBtnTextColor};
-    @media screen and (min-width: 1000px) {
-      &:hover {
-        background-color: ${colors.hoverColor};
-      }
-    }
-  }
-
   @media screen and (max-width: 500px) {
     a {
       width: 100%;
@@ -180,7 +94,7 @@ const ComponentA = () => (
                           rel="noopener noreferrer"
                         >
                           <p className="tech text-orange-500 border rounded p-2 mb-2 mr-2 border-orange-500">
-                            <span className="underline">{tech}</span>{" "}
+                            <Underline>{tech} </Underline>
                           </p>
                         </a>
                       )
@@ -194,7 +108,7 @@ const ComponentA = () => (
                           rel="noopener noreferrer"
                         >
                           <p className="tech text-orange-500 border rounded p-2 mt-2 mr-2 border-orange-500">
-                            <span className="underline">{tech}</span>{" "}
+                            <Underline>{tech} </Underline>
                           </p>
                         </a>
                       )
@@ -213,20 +127,20 @@ const ComponentA = () => (
               </div>
               <div
                 className="project-buttons mx-auto my-8 flex justify-evenly items-center flex-wrap"
-                css={projectButtonsStyles}
+                // css={projectButtonsStyles}
               >
                 {project.demoLink && (
-                  <Button
+                  <ButtonLink
                     isExternal
                     href={`${project.demoLink}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <FaRegPlayCircle className="mr-2" /> Demo
-                  </Button>
+                  </ButtonLink>
                 )}
                 {project.repoLink && (
-                  <Button
+                  <ButtonLink
                     isExternal
                     isSecondary
                     href={`${project.repoLink}`}
@@ -234,7 +148,7 @@ const ComponentA = () => (
                     rel="noopener noreferrer"
                   >
                     <GrGithub className="mr-2" /> Code
-                  </Button>
+                  </ButtonLink>
                 )}
               </div>
             </div>

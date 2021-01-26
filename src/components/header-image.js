@@ -63,7 +63,15 @@ const Image = props => {
         }
       `}
       {...props}
-    />
+    >
+      <div className="flex justify-center items-center w-full h-full">
+        <div className="flex justify-center items-center h-1/2 w-1/2 bg-primary-700 bg-opacity-75">
+          <h1 className="p-6 text-center font-bold text-white text-6xl">
+            Hello, my name is Kendy Nguyen.
+          </h1>
+        </div>
+      </div>
+    </BackgroundImage>
   )
 }
 

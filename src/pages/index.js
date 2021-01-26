@@ -7,13 +7,15 @@ import Hero from "../components/hero"
 import ProjectsSection from "../components/projects-section"
 import ContactSection from "../components/contact-section"
 import BackToTop from "../components/back-to-top"
+import TailwindHero from "../components/tailwind-hero"
 
 const IndexPage = () => (
   <Layout location="/">
     <SEO title="Home" />
-    <HeaderImage />
+    <TailwindHero />
+    {/* <HeaderImage /> */}
     <DecorativeHorizontalBar />
-    <Hero />
+    {/* <Hero /> */}
     <ProjectsSection id="projects" />
     <ContactSection id="contact-me" />
     <BackToTop />
