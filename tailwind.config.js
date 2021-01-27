@@ -51,6 +51,9 @@ module.exports = {
       transitionProperty: {
         transition: "background-size",
       },
+      width: {
+        "45%": "45%",
+      },
     },
   },
   variants: {
@@ -62,5 +65,5 @@ module.exports = {
       transitionProperty: ["hover", "focus"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 }

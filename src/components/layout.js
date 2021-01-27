@@ -11,9 +11,11 @@ import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
 import smoothscroll from "smoothscroll-polyfill"
 
-import Header from "./header"
+// import Header from "./header"
 import { colors, pageWidth } from "../styles/theme"
-import Footer from "./footer"
+// import Footer from "./footer"
+import Footer from "./tailwind/tailwind-footer"
+import Header from "./tailwind/tailwind-header"
 
 const Layout = ({ children, location }) => {
   // const data = useStaticQuery(graphql`
@@ -138,10 +140,10 @@ const Layout = ({ children, location }) => {
             min-height: 100vh;
             flex-direction: column;
             /* overflow-x: hidden; */
-            background: linear-gradient(
+            /* background: linear-gradient(
               180deg,
               rgba(0, 0, 0, 5.07274e-9) 61.98%,
-              rgba(0, 70, 105, 0.25) 100%
+              rgba(0, 70, 105, 0.25) 100% */
             );
           }
 
@@ -151,8 +153,10 @@ const Layout = ({ children, location }) => {
         `}
       />
       <div className="site">
+        <Header />
         {/* <Header id="header" location={location} /> */}
         <main className="site-content">{children}</main>
+        {/* <Footer /> */}
         <Footer />
       </div>
     </>
