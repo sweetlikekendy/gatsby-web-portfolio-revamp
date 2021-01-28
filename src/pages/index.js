@@ -12,12 +12,13 @@ import Projects from "../components/tailwind/tailwind-projects"
 import Form from "../components/tailwind/tailwind-form"
 import BrandAuthority from "../components/tailwind/tailwind-brand-authority"
 import Contact from "../components/tailwind/tailwind-contact"
+import FeatureSection from "../components/tailwind/tailwind-feature-section"
 
 const IndexPage = () => (
   <Layout location="/">
     <SEO title="Home" />
     <TailwindHero />
-
+    <FeatureSection />
     {/* <HeaderImage /> */}
     {/* <DecorativeHorizontalBar /> */}
     <BrandAuthority />
