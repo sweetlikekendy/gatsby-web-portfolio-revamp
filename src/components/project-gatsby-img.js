@@ -28,12 +28,12 @@ const ComponentA = () => (
           edges {
             node {
               projects {
-                name
+                title
                 techStack
                 repoLink
                 description
                 demoLink
-                img {
+                imgSrc {
                   childImageSharp {
                     fixed(width: 350, height: 300) {
                       ...GatsbyImageSharpFixed

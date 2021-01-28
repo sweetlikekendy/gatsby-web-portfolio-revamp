@@ -6,32 +6,27 @@ export default function Header() {
   const handleMobileMenuToggle = () => setOpen(!open)
   return (
     // <!-- This example requires Tailwind CSS v2.0+ -->
-    <div class="relative bg-white">
+    <div className="relative bg-white">
       <div className="max-w-7xl mx-auto">
-        <div class="flex justify-between items-center px-4 py-6 sm:px-6  md:space-x-10">
+        <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:space-x-10 xl:px-0">
           <div>
-            <a href="#" class="flex">
-              <span class="sr-only">KN</span>
+            <a href="#" className="flex">
+              <span className="sr-only">KN</span>
               <p className="text-3xl font-bold text-blue-700 tracking-wider md:text-4xl lg:text-5xl">
                 KN
               </p>
-              {/* <img
-                class="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
-                alt=""
-              /> */}
             </a>
           </div>
-          <div class="-mr-2 -my-2 md:hidden">
+          <div className="-mr-2 -my-2 md:hidden">
             <button
               type="button"
-              class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               onClick={() => handleMobileMenuToggle()}
             >
-              <span class="sr-only">Open menu</span>
+              <span className="sr-only">Open menu</span>
               {/* <!-- Heroicon name: menu --> */}
               <svg
-                class="h-6 w-6"
+                className="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -48,11 +43,11 @@ export default function Header() {
             </button>
           </div>
 
-          <nav class="flex space-x-10 hidden md:block">
-            <div class="flex items-center md:ml-12">
+          <nav className="flex space-x-10 hidden md:block">
+            <div className="flex items-center md:ml-12">
               <a
                 href="#"
-                class="text-base font-medium text-gray-500 px-4 py-2 hover:text-gray-900"
+                className="text-base font-medium text-gray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
               >
                 Portfolio
               </a>
@@ -60,7 +55,7 @@ export default function Header() {
                 href="mailto:kendyhnguyen1991@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="ml-8 inline-flex items-center justify-center "
+                className="ml-8 inline-flex items-center justify-center "
               >
                 <PrimaryButton isSmall> Contact me </PrimaryButton>
               </a>
@@ -73,27 +68,27 @@ export default function Header() {
       "duration-100 ease-in" From: "opacity-100 scale-100" To: "opacity-0
       scale-95" --> */}
         {open && (
-          <div class="z-20 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-            <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-              <div class="pt-5 pb-6 px-5">
-                <div class="flex items-center justify-between">
+          <div className="z-20 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+              <div className="pt-5 pb-6 px-5">
+                <div className="flex items-center justify-between">
                   <div>
                     <img
-                      class="h-8 w-auto"
+                      className="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
                       alt="Workflow"
                     />
                   </div>
-                  <div class="-mr-2">
+                  <div className="-mr-2">
                     <button
                       type="button"
-                      class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                      className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                       onClick={() => handleMobileMenuToggle()}
                     >
-                      <span class="sr-only">Close menu</span>
+                      <span className="sr-only">Close menu</span>
                       {/* <!-- Heroicon name: x --> */}
                       <svg
-                        class="h-6 w-6"
+                        className="h-6 w-6"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -110,32 +105,32 @@ export default function Header() {
                     </button>
                   </div>
                 </div>
-                <div class="mt-6">
-                  <nav class="grid gap-6">
+                <div className="mt-6">
+                  <nav className="grid gap-6">
                     <a
                       href="#"
-                      class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
+                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                     >
-                      <div class="ml-4 text-base font-medium text-gray-900">
+                      <div className="ml-4 text-base font-medium text-gray-900">
                         Projects
                       </div>
                     </a>
 
                     <a
                       href="#"
-                      class="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
+                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
                     >
-                      <div class="ml-4 text-base font-medium text-gray-900">
+                      <div className="ml-4 text-base font-medium text-gray-900">
                         Contact
                       </div>
                     </a>
                   </nav>
                 </div>
               </div>
-              <div class="py-6 px-5">
+              <div className="py-6 px-5">
                 <a
                   href="#"
-                  class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                 >
                   Sign up
                 </a>
