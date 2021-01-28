@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { PrimaryButton } from "../../styles"
-import OutlineButton from "../../styles/outline-button"
+import { OutlineButton, PrimaryButton } from "../../styles"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -12,13 +11,14 @@ export default function Header() {
         <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:space-x-10 xl:px-0">
           <div>
             <a href="#" className="flex">
-              <span className="sr-only">KN</span>
+              <span className="sr-only">Home</span>
               <p className="text-3xl font-bold text-blue-700 tracking-wider md:text-4xl lg:text-5xl">
                 KN
               </p>
             </a>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
+          {/* <div className="-mr-2 -my-2 md:hidden"> */}
+          <div className="md:hidden">
             <button
               type="button"
               className="bg-white rounded-md p-2 inline-flex items-center justify-center text-blueGray-400 hover:text-blueGray-500 hover:bg-blueGray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
@@ -80,11 +80,12 @@ export default function Header() {
               <div className="pt-5 pb-6 px-5">
                 <div className="flex items-center justify-between">
                   <div>
-                    <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
-                      alt="Workflow"
-                    />
+                    <a href="#" className="flex">
+                      <span className="sr-only">Home</span>
+                      <p className="text-3xl font-bold text-blue-700 tracking-wider">
+                        KN
+                      </p>
+                    </a>
                   </div>
                   <div className="-mr-2">
                     <button
