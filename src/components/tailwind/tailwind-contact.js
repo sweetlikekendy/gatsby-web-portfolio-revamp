@@ -1,4 +1,5 @@
 import React from "react"
+import { AiOutlineMail } from "react-icons/ai"
 import { PrimaryButton, StyledLink } from "../../styles"
 
 export default function Contact() {
@@ -17,30 +18,10 @@ export default function Contact() {
               Leave me a message on right or click on the link below!
             </p>
             <dl className="mt-8 text-base text-blueGray-500">
-              {/* <div>
-                <dt className="sr-only">Postal address</dt>
-                <dd>
-                  <p>San Diego, CA 92117</p>
-                </dd>
-              </div> */}
               <div className="mt-6">
                 <dt className="sr-only">Email</dt>
-                <dd className="flex">
-                  <svg
-                    className="flex-shrink-0 h-6 w-6 text-blueGray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+                <dd className="flex items-center">
+                  <AiOutlineMail className="h-6 w-6" />
                   <a
                     className="ml-3"
                     href="mailto:kendyhnguyen1991@gmail.com"
