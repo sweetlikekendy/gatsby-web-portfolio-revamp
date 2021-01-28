@@ -1,7 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { css } from "@emotion/core"
-import BackgroundImage from "gatsby-background-image"
 import Img from "gatsby-image"
 import { PrimaryButton, SecondaryButton } from "../../styles"
 
