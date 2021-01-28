@@ -42,8 +42,8 @@ export default function ProjectCard({
             <p className="text-sm font-medium text-blue-600">{type}</p>
 
             <a href="#" className="block mt-2">
-              <p className="text-xl font-semibold text-gray-900">{title}</p>
-              <p className="mt-3 text-base text-gray-500">{description}</p>
+              <p className="text-xl font-semibold text-blueGray-900">{title}</p>
+              <p className="mt-3 text-base text-blueGray-500">{description}</p>
             </a>
           </div>
           <div className="mt-6 flex items-center">

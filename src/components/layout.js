@@ -123,7 +123,7 @@ const Layout = ({ children, location }) => {
             }
           }
 
-          .underline {
+          /* .underline {
             background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
             background-repeat: no-repeat;
             background-size: 100% 0.2em;
@@ -132,7 +132,7 @@ const Layout = ({ children, location }) => {
             &:hover {
               background-size: 100% 88%;
             }
-          }
+          } */
 
           /* Have footer stay at the bottom */
           .site {

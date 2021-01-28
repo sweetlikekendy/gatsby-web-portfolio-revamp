@@ -11,6 +11,7 @@ import TailwindHero from "../components/tailwind/tailwind-hero"
 import Projects from "../components/tailwind/tailwind-projects"
 import Form from "../components/tailwind/tailwind-form"
 import BrandAuthority from "../components/tailwind/tailwind-brand-authority"
+import Contact from "../components/tailwind/tailwind-contact"
 
 const IndexPage = () => (
   <Layout location="/">
@@ -21,7 +22,8 @@ const IndexPage = () => (
     {/* <DecorativeHorizontalBar /> */}
     <BrandAuthority />
     <Projects />
-    <Form />
+    <Contact />
+    {/* <Form /> */}
     {/* <Hero /> */}
     {/* <ProjectsSection id="projects" /> */}
     {/* <ContactSection id="contact-me" /> */}

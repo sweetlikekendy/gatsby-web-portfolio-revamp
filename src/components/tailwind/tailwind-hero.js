@@ -41,13 +41,13 @@ export default function TailwindHero() {
           <section className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 md:mt-16 lg:px-6 xl:px-0">
             <div className="w-full flex flex-col justify-between items-center lg:flex-row">
               <div className="w-full mb-16 sm:text-center sm:mb-12 md:mb-10 lg:w-45% lg:text-left lg:mb-0">
-                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl">
+                <h1 className="text-4xl tracking-tight font-extrabold text-blueGray-900 sm:text-5xl">
                   <span className="block xl:block">Hello, my name is</span>
                   <span className="block text-blue-600 xl:inline">
                     Kendy Nguyen
                   </span>
                 </h1>
-                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                <p className="mt-3 text-base text-blueGray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   I am a web developer based in San Diego, CA. My work
                   experiences come from freelancing for small businesses. My
                   goal is to help small businesses increase their online
@@ -84,7 +84,7 @@ export default function TailwindHero() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <p className="text-gray-400 italic lg:text-right">
+                  <p className="text-blueGray-400 italic lg:text-right">
                     Photo by Lucas Davies
                   </p>
                 </a> */}

@@ -20,7 +20,7 @@ export default function Header() {
           <div className="-mr-2 -my-2 md:hidden">
             <button
               type="button"
-              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="bg-white rounded-md p-2 inline-flex items-center justify-center text-blueGray-400 hover:text-blueGray-500 hover:bg-blueGray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               onClick={() => handleMobileMenuToggle()}
             >
               <span className="sr-only">Open menu</span>
@@ -47,7 +47,7 @@ export default function Header() {
             <div className="flex items-center md:ml-12">
               <a
                 href="#"
-                className="text-base font-medium text-gray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
+                className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
               >
                 Portfolio
               </a>
@@ -69,7 +69,7 @@ export default function Header() {
       scale-95" --> */}
         {open && (
           <div className="z-20 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-blueGray-50">
               <div className="pt-5 pb-6 px-5">
                 <div className="flex items-center justify-between">
                   <div>
@@ -82,7 +82,7 @@ export default function Header() {
                   <div className="-mr-2">
                     <button
                       type="button"
-                      className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                      className="bg-white rounded-md p-2 inline-flex items-center justify-center text-blueGray-400 hover:text-blueGray-500 hover:bg-blueGray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                       onClick={() => handleMobileMenuToggle()}
                     >
                       <span className="sr-only">Close menu</span>
@@ -109,18 +109,18 @@ export default function Header() {
                   <nav className="grid gap-6">
                     <a
                       href="#"
-                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
+                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-blueGray-50"
                     >
-                      <div className="ml-4 text-base font-medium text-gray-900">
+                      <div className="ml-4 text-base font-medium text-blueGray-900">
                         Projects
                       </div>
                     </a>
 
                     <a
                       href="#"
-                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50"
+                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-blueGray-50"
                     >
-                      <div className="ml-4 text-base font-medium text-gray-900">
+                      <div className="ml-4 text-base font-medium text-blueGray-900">
                         Contact
                       </div>
                     </a>
