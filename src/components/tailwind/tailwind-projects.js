@@ -20,9 +20,6 @@ export default function Projects() {
                   type
                   imgSrc {
                     childImageSharp {
-                      fixed(width: 350, height: 300) {
-                        ...GatsbyImageSharpFixed
-                      }
                       fluid {
                         ...GatsbyImageSharpFluid
                       }
@@ -77,16 +74,6 @@ export default function Projects() {
                     />
                   )
                 )}
-                {/* <ProjectCard
-                  imgSrc="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
-                  imgAlt=""
-                  type="Personal"
-                  title="Lorem Ipsum"
-                  description="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Velit facilis asperiores porro quaerat doloribus, eveniet
-                    dolore. Adipisci tempora aut inventore optio animi., tempore
-                    temporibus quo laudantium."
-                /> */}
               </div>
             </div>
           </div>

@@ -17,16 +17,15 @@ export default function ProjectCard({
   return (
     <div className="flex flex-col shadow-lg overflow-hidden" {...rest}>
       {imgSrc ? (
-        <Img
-          // className="object-cover object-50%-50%"
-          fluid={{
-            ...imgSrc.childImageSharp.fluid,
-            aspectRatio: 4 / 3,
-          }}
-          // objectFit="cover"
-          // objectPosition="50% 50%"
-          alt={imgAlt}
-        />
+        <a href={demoLink} target="_blank" rel="noopener noreferrer nofollow">
+          <Img
+            fluid={{
+              ...imgSrc.childImageSharp.fluid,
+              aspectRatio: 4 / 3,
+            }}
+            alt={imgAlt}
+          />
+        </a>
       ) : (
         <div className="flex-shrink-0">
           <img
@@ -41,15 +40,30 @@ export default function ProjectCard({
           <div className="flex-1">
             <p className="text-sm font-medium text-blue-600">{type}</p>
 
-            <a href="#" className="block mt-2">
-              <p className="text-xl font-semibold text-blueGray-900">{title}</p>
-              <p className="mt-3 text-base text-blueGray-500">{description}</p>
-            </a>
+            <div className="block mt-2">
+              <a
+                href={demoLink}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <p className="text-xl font-semibold text-blueGray-900">
+                  {title}
+                </p>
+                <p className="mt-3 text-base text-blueGray-500">
+                  {description}
+                </p>
+              </a>
+            </div>
           </div>
           <div className="mt-6 flex items-center">
             <div className="flex-1 mt-5 flex flex-col sm:flex-row sm:justify-start lg:flex-col xl:flex-row">
               {demoLink && (
-                <a href="#" className=" ">
+                <a
+                  className=""
+                  href={demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
                   <PrimaryButton isSmall>
                     View demo <AiFillPlayCircle className="ml-2" />
                   </PrimaryButton>
@@ -57,8 +71,10 @@ export default function ProjectCard({
               )}
               {repoLink && (
                 <a
-                  href="#"
                   className="mt-3 sm:mt-0 sm:ml-3 lg:mt-3 lg:ml-0 xl:mt-0 xl:ml-3"
+                  href={repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
                 >
                   <SecondaryButton isSmall>
                     Source code
