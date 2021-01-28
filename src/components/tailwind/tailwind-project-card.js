@@ -10,7 +10,7 @@ export default function ProjectCard({
   ...rest
 }) {
   return (
-    <div class="flex flex-col rounded-lg shadow-lg overflow-hidden" {...rest}>
+    <div class="flex flex-col shadow-lg overflow-hidden" {...rest}>
       {imgSrc && (
         <div class="flex-shrink-0">
           <img class="h-48 w-full object-cover" src={imgSrc} alt={imgAlt} />

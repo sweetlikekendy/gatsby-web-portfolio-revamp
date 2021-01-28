@@ -57,26 +57,24 @@ export default function TailwindHero() {
                   mobile-first mentality!
                 </p>
                 <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div class="rounded-md shadow">
-                    <a
-                      href="mailto:kendyhnguyen1991@gmail.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <PrimaryButton>Get in touch</PrimaryButton>
-                    </a>
-                  </div>
-                  {/* <div class="mt-3 sm:mt-0 sm:ml-3">
-                    <a href="#">
+                  <a
+                    href="mailto:kendyhnguyen1991@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PrimaryButton>Get in touch</PrimaryButton>
+                  </a>
+                  {/* 
+                    <a href="#" class="mt-3 sm:mt-0 sm:ml-3>
                       <SecondaryButton>Live demo</SecondaryButton>
                     </a>
-                  </div> */}
+                    */}
                 </div>
               </div>
 
               <div className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-1/2 lg:h-full">
                 <Img
-                  className="rounded-md "
+                  // className="rounded-md"
                   fluid={{
                     ...desktopImage.childImageSharp.fluid,
                     aspectRatio: 4 / 3,
