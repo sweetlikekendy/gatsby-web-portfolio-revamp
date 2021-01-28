@@ -37,7 +37,7 @@ const Image = props => {
       }
     }
   `)
-  console.log(theme)
+
   // Set up the array of image data and `media` keys.
   const sources = [
     mobileImage.childImageSharp.fluid,

@@ -10,13 +10,16 @@ import BackToTop from "../components/back-to-top"
 import TailwindHero from "../components/tailwind/tailwind-hero"
 import Projects from "../components/tailwind/tailwind-projects"
 import Form from "../components/tailwind/tailwind-form"
+import BrandAuthority from "../components/tailwind/tailwind-brand-authority"
 
 const IndexPage = () => (
   <Layout location="/">
     <SEO title="Home" />
     <TailwindHero />
+
     {/* <HeaderImage /> */}
     {/* <DecorativeHorizontalBar /> */}
+    <BrandAuthority />
     <Projects />
     <Form />
     {/* <Hero /> */}

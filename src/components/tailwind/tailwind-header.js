@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { PrimaryButton } from "../../styles"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -10,12 +11,15 @@ export default function Header() {
         <div class="flex justify-between items-center px-4 py-6 sm:px-6  md:space-x-10">
           <div>
             <a href="#" class="flex">
-              <span class="sr-only">Workflow</span>
-              <img
+              <span class="sr-only">KN</span>
+              <p className="text-3xl font-bold text-blue-700 tracking-wider md:text-4xl lg:text-5xl">
+                KN
+              </p>
+              {/* <img
                 class="h-8 w-auto sm:h-10"
                 src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
                 alt=""
-              />
+              /> */}
             </a>
           </div>
           <div class="-mr-2 -my-2 md:hidden">
@@ -50,19 +54,15 @@ export default function Header() {
                 href="#"
                 class="text-base font-medium text-gray-500 px-4 py-2 hover:text-gray-900"
               >
-                Projects
+                Portfolio
               </a>
               <a
-                href="#"
-                class="text-base font-medium text-gray-500 px-4 py-2 hover:text-gray-900"
+                href="mailto:kendyhnguyen1991@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ml-8 inline-flex items-center justify-center "
               >
-                Contact
-              </a>
-              <a
-                href="#"
-                class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
-              >
-                Sign up
+                <PrimaryButton isSmall> Contact me </PrimaryButton>
               </a>
             </div>
           </nav>
