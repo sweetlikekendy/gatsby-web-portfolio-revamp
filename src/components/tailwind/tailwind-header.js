@@ -50,6 +50,12 @@ export default function Header() {
                 href="#"
                 className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
               >
+                Blog
+              </a>
+              <a
+                href="#"
+                className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
+              >
                 Portfolio
               </a>
               <a
@@ -113,7 +119,7 @@ export default function Header() {
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-blueGray-50"
                     >
                       <div className="ml-4 text-base font-medium text-blueGray-900">
-                        Projects
+                        Blog
                       </div>
                     </a>
 
@@ -122,7 +128,7 @@ export default function Header() {
                       className="-m-3 p-3 flex items-center rounded-lg hover:bg-blueGray-50"
                     >
                       <div className="ml-4 text-base font-medium text-blueGray-900">
-                        Contact
+                        Portfolio
                       </div>
                     </a>
                   </nav>
@@ -131,9 +137,9 @@ export default function Header() {
               <div className="py-6 px-5">
                 <a
                   href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+                  // className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                 >
-                  Sign up
+                  <PrimaryButton>Contact Me</PrimaryButton>
                 </a>
               </div>
             </div>
