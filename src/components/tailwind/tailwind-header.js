@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { PrimaryButton } from "../../styles"
+import OutlineButton from "../../styles/outline-button"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -57,7 +58,7 @@ export default function Header() {
                 rel="noopener noreferrer"
                 className="ml-8 inline-flex items-center justify-center "
               >
-                <PrimaryButton isSmall> Contact me </PrimaryButton>
+                <OutlineButton isSmall> Contact me </OutlineButton>
               </a>
             </div>
           </nav>
