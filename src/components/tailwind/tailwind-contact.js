@@ -37,11 +37,24 @@ export default function Contact() {
         setIsSubmitting(false)
       })
   }
-  // const onSubmit = data => console.log(data)
+
+  // const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+  // const onSubmit = data => {
+  //   wait(3000)
+  //     .then(() => {
+  //       setIsSubmitting(true)
+  //       console.log(data)
+  //     })
+  //     .then(() => {
+  //       setIsSubmitting(false)
+  //     })
+  //     .catch(error => console.log(error))
+  // }
   const { register, handleSubmit, errors, formState } = useForm()
 
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-white lg:mt-16">
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-blueGray-50"></div>
       </div>
@@ -74,13 +87,20 @@ export default function Contact() {
         </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form action="#" method="POST" onSubmit={handleSubmit(onSubmit)}>
+            <form
+              action="/success"
+              method="POST"
+              onSubmit={handleSubmit(onSubmit)}
+              name="contact"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
               <fieldset
                 disabled={isSubmitting || formState.submitCount >= 10}
                 className="grid grid-cols-1 gap-y-6"
               >
-                <p>Message: {message}</p>
-                <p>Submissions: {formState.submitCount}</p>
+                {/* <p>Message: {message}</p> */}
+                {/* <p>Submissions: {formState.submitCount}</p> */}
                 <div>
                   <label htmlFor="full_name" className="sr-only">
                     Full name
@@ -157,6 +177,10 @@ export default function Contact() {
                       {errors.message.message}
                     </p>
                   )}
+                </div>
+                <div className="hidden">
+                  <label htmlFor="beartrap">Beartrap</label>
+                  <textarea name="beartrap" ref={register()}></textarea>
                 </div>
                 <div>
                   <button type="submit">
