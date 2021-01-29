@@ -10,23 +10,28 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center space-x-6 md:order-2">
           <a
-            href="#"
+            href="http://github.com/sweetlikekendy/"
+            target="_blank"
+            rel="noreferrer noopener"
             className="text-blueGray-500 hover:text-blue-600 active:text-blue-700"
           >
-            <span className="sr-only">Facebook</span>
+            <span className="sr-only">GitHub</span>
             <AiFillGithub className="h-6 w-6" />
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/in/kendy-nguyen-a51796a0/"
+            target="_blank"
+            rel="noreferrer noopener"
             className="text-blueGray-500 hover:text-blue-600 active:text-blue-700"
           >
-            <span className="sr-only">Instagram</span>
+            <span className="sr-only">LinkedIn</span>
             <AiFillLinkedin className="h-6 w-6" />
           </a>
           <a
-            href="#"
+            href="mailto:kendyhnguyen1991@gmail.com"
             target="_blank"
+            rel="noreferrer noopener"
             className="text-blueGray-500 hover:text-blue-600 active:text-blue-700"
           >
             <span className="sr-only">Facebook</span>

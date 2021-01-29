@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import { OutlineButton, PrimaryButton } from "../../styles"
 
 export default function Header() {
@@ -10,12 +11,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:space-x-10 xl:px-0">
           <div>
-            <a href="#" className="flex">
+            <Link to="/" className="flex">
               <span className="sr-only">Home</span>
               <p className="text-3xl font-bold text-blue-700 tracking-wider md:text-4xl lg:text-5xl">
                 KN
               </p>
-            </a>
+            </Link>
           </div>
           {/* <div className="-mr-2 -my-2 md:hidden"> */}
           <div className="md:hidden">
@@ -46,18 +47,18 @@ export default function Header() {
 
           <nav className="flex space-x-10 hidden md:block">
             <div className="flex items-center md:ml-12">
-              <a
-                href="#"
+              <Link
+                to="/blog"
                 className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
               >
                 Blog
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/portfolio"
                 className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
               >
                 Portfolio
-              </a>
+              </Link>
               <a
                 href="mailto:kendyhnguyen1991@gmail.com"
                 target="_blank"
@@ -80,12 +81,12 @@ export default function Header() {
               <div className="pt-5 pb-6 px-5">
                 <div className="flex items-center justify-between">
                   <div>
-                    <a href="#" className="flex">
+                    <Link to="/" className="flex">
                       <span className="sr-only">Home</span>
                       <p className="text-3xl font-bold text-blue-700 tracking-wider">
                         KN
                       </p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="-mr-2">
                     <button
@@ -115,29 +116,26 @@ export default function Header() {
                 </div>
                 <div className="mt-6">
                   <nav className="grid gap-6">
-                    <a
-                      href="#"
-                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-blueGray-50"
+                    <Link
+                      to="/blog"
+                      className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
                     >
-                      <div className="ml-4 text-base font-medium text-blueGray-900">
-                        Blog
-                      </div>
-                    </a>
-
-                    <a
-                      href="#"
-                      className="-m-3 p-3 flex items-center rounded-lg hover:bg-blueGray-50"
+                      Blog
+                    </Link>
+                    <Link
+                      to="/portfolio"
+                      className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
                     >
-                      <div className="ml-4 text-base font-medium text-blueGray-900">
-                        Portfolio
-                      </div>
-                    </a>
+                      Portfolio
+                    </Link>
                   </nav>
                 </div>
               </div>
               <div className="py-6 px-5">
                 <a
-                  href="#"
+                  href="mailto:kendyhnguyen1991@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   // className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                 >
                   <PrimaryButton>Contact Me</PrimaryButton>
