@@ -13,7 +13,6 @@ export default function ProjectCard({
   title,
   ...rest
 }) {
-  console.log(imgSrc)
   return (
     <div className="flex flex-col shadow-lg overflow-hidden" {...rest}>
       {imgSrc ? (

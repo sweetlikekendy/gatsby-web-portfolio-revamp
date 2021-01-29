@@ -18,6 +18,12 @@ export default function ReactHookForm() {
   const [message, setMessage] = useState("Nothing to report!")
   const onSubmit = data => {
     setIsSubmitting(true)
+    console.log(formState.submitCount)
+    if (formState.submitCount >= 10) {
+      return setMessage(
+        "Whoa there! You've tried contact me over tens times already! Max submission count is 10 :)"
+      )
+    }
     fetch("/.netlify/functions/contact", {
       method: "POST",
       body: JSON.stringify(data),
