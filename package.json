@@ -45,9 +45,10 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
+    "dev": "npm run clean && npm run lambda && gatsby develop",
     "develop": "gatsby clean && gatsby develop -H 0.0.0.0",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "npm run dev",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "lambda": "netlify-lambda build functions"
