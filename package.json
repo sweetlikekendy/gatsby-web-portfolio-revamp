@@ -23,7 +23,7 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-json": "^2.3.1",
     "gatsby-transformer-sharp": "^2.4.3",
-    "netlify-lambda": "^2.0.3",
+    "netlify-cli": "^3.4.6",
     "postcss": "^8.2.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
@@ -45,13 +45,11 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "dev": "npm run clean && npm run lambda && gatsby develop",
     "develop": "gatsby clean && gatsby develop -H 0.0.0.0",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run dev",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "lambda": "netlify-lambda build functions"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
     "type": "git",

@@ -5,38 +5,38 @@ import { PrimaryButton, StyledLink } from "../../styles"
 import DisabledButton from "../../styles/disabled-button"
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [message, setMessage] = useState("Nothing to report!")
-  const onSubmit = data => {
-    setIsSubmitting(true)
-    fetch("/.netlify/functions/contact", {
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(response => {
-        setMessage(response.message)
-        setIsSubmitting(false)
-      })
-      .catch(error => {
-        // TODO test offline, remove console.log
-        // console.log({ error })
-        if (error.message === "Unexpected token < in JSON at position 0") {
-          setMessage("Uh oh! Something went wrong. Please try again later.")
-          setIsSubmitting(false)
-          return
-        }
-        if (error.message === "Failed to fetch") {
-          setMessage(
-            "Uh oh! Something went wrong. It may be your internet connection."
-          )
-          setIsSubmitting(false)
-          return
-        }
-        setMessage(error.message)
-        setIsSubmitting(false)
-      })
-  }
+  // const [isSubmitting, setIsSubmitting] = useState(false)
+  // const [message, setMessage] = useState("Nothing to report!")
+  // const onSubmit = data => {
+  //   setIsSubmitting(true)
+  //   fetch("/.netlify/functions/contact", {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then(response => response.json())
+  //     .then(response => {
+  //       setMessage(response.message)
+  //       setIsSubmitting(false)
+  //     })
+  //     .catch(error => {
+  //       // TODO test offline, remove console.log
+  //       // console.log({ error })
+  //       if (error.message === "Unexpected token < in JSON at position 0") {
+  //         setMessage("Uh oh! Something went wrong. Please try again later.")
+  //         setIsSubmitting(false)
+  //         return
+  //       }
+  //       if (error.message === "Failed to fetch") {
+  //         setMessage(
+  //           "Uh oh! Something went wrong. It may be your internet connection."
+  //         )
+  //         setIsSubmitting(false)
+  //         return
+  //       }
+  //       setMessage(error.message)
+  //       setIsSubmitting(false)
+  //     })
+  // }
 
   // const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -90,13 +90,13 @@ export default function Contact() {
             <form
               action="/success"
               method="POST"
-              onSubmit={handleSubmit(onSubmit)}
+              // onSubmit={handleSubmit(onSubmit)}
               name="contact"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
               <fieldset
-                disabled={isSubmitting || formState.submitCount >= 10}
+                // disabled={isSubmitting || formState.submitCount >= 10}
                 className="grid grid-cols-1 gap-y-6"
               >
                 {/* <p>Message: {message}</p> */}
@@ -184,11 +184,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <button type="submit">
-                    {isSubmitting || formState.submitCount >= 10 ? (
+                    <PrimaryButton>Submit</PrimaryButton>
+                    {/* {isSubmitting || formState.submitCount >= 10 ? (
                       <DisabledButton>Submit</DisabledButton>
                     ) : (
                       <PrimaryButton>Submit</PrimaryButton>
-                    )}
+                    )} */}
                   </button>
                 </div>
               </fieldset>
