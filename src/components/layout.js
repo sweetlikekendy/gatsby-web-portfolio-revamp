@@ -42,28 +42,17 @@ const Layout = ({ children, location }) => {
             box-sizing: border-box;
             scroll-behavior: smooth;
           }
-          *,
-          *:before,
-          *:after {
-            box-sizing: inherit;
-          }
+
           /* iOS smooth scrolling */
           * {
             -webkit-overflow-scrolling: touch;
           }
-          html,
-          body {
-            height: 100%;
-            box-sizing: border-box;
-            /* overflow-x: hidden; */
-          }
 
           body {
-            font-size: 16px;
-            color: ${colors.textPrimaryBodyColor};
             line-height: 1.6;
             letter-spacing: 0.3em;
           }
+
           body,
           h1,
           h2,
@@ -79,13 +68,6 @@ const Layout = ({ children, location }) => {
             font-weight: normal;
             font-family: Arial, sans-serif;
           }
-          ol,
-          ul {
-            list-style: none;
-          }
-          a {
-            text-decoration: none;
-          }
 
           h1,
           h2,
@@ -98,64 +80,15 @@ const Layout = ({ children, location }) => {
             letter-spacing: 0.075em;
           }
           body {
-            color: ${colors.textColor};
             letter-spacing: 0.05em;
-          }
-          .inner {
-            max-width: ${pageWidth};
-            @media screen and (max-width: 1200px) {
-              padding: 1rem;
-            }
-          }
-          .section-title {
-            position: relative;
-            text-transform: uppercase;
-            font-weight: 700;
-            &:before {
-              content: "";
-              position: absolute;
-              height: 10px;
-              width: 100%;
-              bottom: -3px;
-              left: 0;
-
-              background: ${colors.sectionUnderline};
-            }
-          }
-
-          /* .underline {
-            background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 0.2em;
-            background-position: 0 88%;
-            transition: background-size 0.25s ease-in;
-            &:hover {
-              background-size: 100% 88%;
-            }
-          } */
-
-          /* Have footer stay at the bottom */
-          .site {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-            /* overflow-x: hidden; */
-            /* background: linear-gradient(
-              180deg,
-              rgba(0, 0, 0, 5.07274e-9) 61.98%,
-              rgba(0, 70, 105, 0.25) 100% */
-            );
-          }
-
-          .site-content {
-            flex-grow: 1;
           }
         `}
       />
-      <div className="site">
+      {/* FLex in a column and have the main content grow to keep the footer always at the bottom of the page */}
+      <div className="flex min-h-screen flex-col">
         <Header />
         {/* <Header id="header" location={location} /> */}
-        <main className="site-content">{children}</main>
+        <main className="h-ful flex-grow">{children}</main>
         {/* <Footer /> */}
         <Footer />
       </div>
