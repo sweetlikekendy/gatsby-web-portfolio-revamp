@@ -1,32 +1,23 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { StyledLink } from "../styles"
 
 const SuccessPage = ({ location }) => {
   return (
     <Layout>
       <SEO title="Success" />
-      <div
-        css={css`
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-top: 4rem;
-          padding: 1rem;
-        `}
-      >
-        <div
-          css={css`
-            height: 100%;
-            max-width: 700px;
-          `}
-        >
-          <h1>Thank you for contacting me!</h1>
+      <div className="h-full flex justify-center items-center mt-20">
+        <div className="max-w-6xl h-full text-blueGray-500 text-base p-4">
+          <h2 className="text-blueGray-800 text-xl font-bold mb-3">
+            Thank you for contacting me!
+          </h2>
           <p>I'll respond to you ASAP :)</p>
-          <Link to="/">Go back to the home page</Link>
+          <Link to="/">
+            Click to go back to the
+            <StyledLink> home page</StyledLink>.
+          </Link>
         </div>
       </div>
     </Layout>

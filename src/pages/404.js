@@ -1,31 +1,22 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { StyledLink } from "../styles"
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <div
-      css={css`
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 4rem;
-        padding: 1rem;
-      `}
-    >
-      <div
-        css={css`
-          height: 100%;
-          max-width: 700px;
-        `}
-      >
-        <h1>PAGE NOT FOUND</h1>
+    <div className="h-full flex justify-center items-center mt-20">
+      <div className="max-w-6xl h-full text-blueGray-500 text-base p-4">
+        <h2 className="text-blueGray-800 text-xl font-bold mb-3">
+          PAGE NOT FOUND
+        </h2>
         <p>You just hit a route that doesn't exist... :(</p>
-        <Link to="/">Go back to the home page</Link>
+        <Link to="/">
+          Click to go back to the
+          <StyledLink> home page</StyledLink>.
+        </Link>
       </div>
     </div>
   </Layout>
