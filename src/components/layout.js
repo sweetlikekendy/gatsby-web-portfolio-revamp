@@ -9,8 +9,6 @@ import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 import { Global, css } from "@emotion/core"
-import smoothscroll from "smoothscroll-polyfill"
-
 // import Header from "./header"
 import { colors, pageWidth } from "../styles/theme"
 // import Footer from "./footer"
@@ -28,11 +26,6 @@ const Layout = ({ children, location }) => {
   //   }
   // `)
 
-  // for smooth scroll on safari
-  useEffect(() => {
-    smoothscroll.polyfill()
-  }, [])
-
   return (
     <>
       <Global
@@ -40,12 +33,6 @@ const Layout = ({ children, location }) => {
           html {
             position: relative;
             box-sizing: border-box;
-            scroll-behavior: smooth;
-          }
-
-          /* iOS smooth scrolling */
-          * {
-            -webkit-overflow-scrolling: touch;
           }
 
           body {
