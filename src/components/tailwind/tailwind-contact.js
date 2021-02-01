@@ -109,7 +109,7 @@ export default function Contact() {
                     type="text"
                     name="full_name"
                     id="full_name"
-                    autocomplete="name"
+                    autoComplete="name"
                     className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Full name"
                     ref={register({ required: "Required" })}
@@ -128,7 +128,7 @@ export default function Contact() {
                     id="email"
                     name="email"
                     type="email"
-                    autocomplete="email"
+                    autoComplete="email"
                     className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Email"
                     ref={register({
@@ -151,7 +151,7 @@ export default function Contact() {
                     type="text"
                     name="phone"
                     id="phone"
-                    autocomplete="tel"
+                    autoComplete="tel"
                     className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Phone"
                     ref={register({ required: "Required" })}

@@ -22,7 +22,7 @@ export default function Form() {
       <div className="container px-8 pt-24 pb-24 mx-auto lg:px-4">
         <div className="flex flex-col w-full p-8 mx-auto mt-10 border rounded-lg lg:w-2/6 md:w-1/2 md:ml-auto md:mt-0">
           <div className="relative ">
-            <label for="email" className="text-sm leading-7 text-blueGray-600">
+            <label htmlFor="email" className="text-sm leading-7 text-blueGray-600">
               Email
             </label>
             <input
@@ -34,7 +34,7 @@ export default function Form() {
             />
           </div>
           <div className="relative ">
-            <label for="name" className="text-sm leading-7 text-blueGray-600">
+            <label htmlFor="name" className="text-sm leading-7 text-blueGray-600">
               Name
             </label>
             <input
@@ -48,7 +48,7 @@ export default function Form() {
           <div className="relative mb-4 ">
             <label className="block ">
               <label
-                for="email"
+                htmlFor="email"
                 className="text-sm leading-7 text-blueGray-600"
               >
                 Choose
