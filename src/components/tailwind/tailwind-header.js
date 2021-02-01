@@ -47,12 +47,12 @@ export default function Header() {
 
           <nav className="flex space-x-10 hidden md:block">
             <div className="flex items-center md:ml-12">
-              <Link
+              {/* <Link
                 to="/blog"
                 className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
               >
                 Blog
-              </Link>
+              </Link> */}
               <Link
                 to="/portfolio"
                 className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
@@ -116,12 +116,12 @@ export default function Header() {
                 </div>
                 <div className="mt-6">
                   <nav className="grid gap-6">
-                    <Link
+                    {/* <Link
                       to="/blog"
                       className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
                     >
                       Blog
-                    </Link>
+                    </Link> */}
                     <Link
                       to="/portfolio"
                       className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
