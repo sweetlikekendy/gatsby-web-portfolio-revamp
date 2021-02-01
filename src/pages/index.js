@@ -13,7 +13,7 @@ const IndexPage = () => (
     <TailwindHero />
     {/* <FeatureSection /> */}
     {/* <BrandAuthority /> */}
-    <Projects />
+    <Projects id="portfolio" />
     <Contact />
   </Layout>
 )

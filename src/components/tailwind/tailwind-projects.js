@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import ProjectCard from "./tailwind-project-card"
 
-export default function Projects() {
+export default function Projects(props) {
   return (
     <StaticQuery
       query={graphql`
@@ -34,7 +34,10 @@ export default function Projects() {
       render={data => {
         return (
           // add bg color to here if you want it
-          <div className="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+          <div
+            className="relative pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
+            {...props}
+          >
             {/* uncomment if you want white bg & 1/3 height */}
             {/* <div className="absolute inset-0">
         <div className="bg-white h-1/3 sm:h-2/3"></div>
