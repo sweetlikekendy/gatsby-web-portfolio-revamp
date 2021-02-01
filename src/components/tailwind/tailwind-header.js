@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import { OutlineButton, PrimaryButton } from "../../styles"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -22,6 +23,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               type="button"
+              stripHash
               className="bg-white rounded-md p-2 inline-flex items-center justify-center text-blueGray-400 hover:text-blueGray-500 hover:bg-blueGray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               onClick={() => handleMobileMenuToggle()}
             >
@@ -36,9 +38,9 @@ export default function Header() {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
@@ -53,12 +55,13 @@ export default function Header() {
               >
                 Blog
               </Link> */}
-              <Link
-                to="/portfolio"
-                className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
+              <AnchorLink
+                to="/#portfolio"
+                title="Kendy Nguyen"
+                className="stripped text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blueGray-800 active:text-blue-700"
               >
                 Portfolio
-              </Link>
+              </AnchorLink>
               <a
                 href="mailto:kendyhnguyen1991@gmail.com"
                 target="_blank"
@@ -105,9 +108,9 @@ export default function Header() {
                         aria-hidden="true"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M6 18L18 6M6 6l12 12"
                         />
                       </svg>
@@ -122,12 +125,13 @@ export default function Header() {
                     >
                       Blog
                     </Link> */}
-                    <Link
-                      to="/portfolio"
-                      className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blue-600 active:text-blue-700"
+                    <AnchorLink
+                      to="/#portfolio"
+                      title="Kendy Nguyen"
+                      className="text-base font-medium text-blueGray-500 px-4 py-2 hover:text-blueGray-800 active:text-blue-700"
                     >
                       Portfolio
-                    </Link>
+                    </AnchorLink>
                   </nav>
                 </div>
               </div>

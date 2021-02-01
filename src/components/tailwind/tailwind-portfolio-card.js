@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { AiFillGithub, AiFillPlayCircle } from "react-icons/ai"
 import { PrimaryButton, SecondaryButton } from "../../styles"
 
-export default function ProjectCard({
+export default function PortfolioCard({
   demoLink,
   description,
   imgAlt,
@@ -45,13 +45,11 @@ export default function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer nofollow"
               >
-                <p className="text-xl font-semibold text-blueGray-900">
+                <p className="text-xl font-semibold text-blueGray-900 hover:text-blueGray-500">
                   {title}
                 </p>
-                <p className="mt-3 text-base text-blueGray-500">
-                  {description}
-                </p>
               </a>
+              <p className="mt-3 text-base text-blueGray-500">{description}</p>
             </div>
           </div>
           <div className="mt-6 flex items-center">

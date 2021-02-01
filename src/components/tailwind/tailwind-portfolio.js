@@ -1,8 +1,8 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import ProjectCard from "./tailwind-project-card"
+import ProjectCard from "./tailwind-portfolio-card"
 
-export default function Projects(props) {
+export default function Portfolio(props) {
   return (
     <StaticQuery
       query={graphql`
