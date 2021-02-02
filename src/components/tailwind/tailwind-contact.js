@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { navigate } from "gatsby"
 import { useForm } from "react-hook-form"
 import { AiOutlineMail } from "react-icons/ai"
 import { PrimaryButton, StyledLink } from "../../styles"
@@ -37,21 +38,37 @@ export default function Contact() {
   //       setIsSubmitting(false)
   //     })
   // }
+  const { register, handleSubmit, errors, formState, reset } = useForm()
 
-  // const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
+  const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-  // const onSubmit = data => {
-  //   wait(3000)
-  //     .then(() => {
-  //       setIsSubmitting(true)
-  //       console.log(data)
-  //     })
-  //     .then(() => {
-  //       setIsSubmitting(false)
-  //     })
-  //     .catch(error => console.log(error))
-  // }
-  const { register, handleSubmit, errors, formState } = useForm()
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const onSubmit = (formData, event) => {
+    console.log("in onSubmit()", formData)
+    console.log(
+      "in onSubmit()",
+      encode({ "form-name": "contact-me", ...formData })
+    )
+    fetch(`/`, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact-me", ...formData }),
+    })
+      .then(response => {
+        navigate("/success/")
+        reset()
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    event.preventDefault()
+  }
 
   return (
     <div className="relative bg-white lg:mt-16">
@@ -90,8 +107,8 @@ export default function Contact() {
             <form
               action="/success"
               method="POST"
-              // onSubmit={handleSubmit(onSubmit)}
-              name="contact"
+              onSubmit={handleSubmit(onSubmit)}
+              name="contact-me"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
@@ -161,6 +178,25 @@ export default function Contact() {
                   )}
                 </div>
                 <div>
+                  <label htmlFor="subject" className="sr-only">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    autoComplete="tel"
+                    className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    placeholder="Subject"
+                    ref={register({ required: "Required" })}
+                  />
+                  {errors.subject && (
+                    <p className="mt-2 text-red-500">
+                      {errors.subject.message}
+                    </p>
+                  )}
+                </div>
+                <div>
                   <label htmlFor="message" className="sr-only">
                     Message
                   </label>
@@ -179,8 +215,11 @@ export default function Contact() {
                   )}
                 </div>
                 <div className="hidden">
-                  <label htmlFor="beartrap">Beartrap</label>
-                  <textarea name="beartrap" ref={register()}></textarea>
+                  <label htmlFor="trap-card">
+                    Don't activate this bot trap card by filling this input if
+                    you're human
+                  </label>
+                  <textarea name="trap-card" ref={register()}></textarea>
                 </div>
                 <div>
                   <button type="submit">
