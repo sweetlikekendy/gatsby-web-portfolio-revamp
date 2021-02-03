@@ -7,16 +7,27 @@ import { StyledLink } from "../styles"
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <div className="h-full flex justify-center items-center mt-20">
-      <div className="max-w-6xl h-full text-blueGray-500 text-base p-4">
-        <h2 className="text-blueGray-800 text-xl font-bold mb-3">
-          PAGE NOT FOUND
-        </h2>
-        <p>You just hit a route that doesn't exist... :(</p>
-        <Link to="/">
-          Click to go back to the
-          <StyledLink> home page</StyledLink>.
-        </Link>
+    <div className="max-w-7xl mx-auto relative overflow-hidden my-auto px-4 py-8 sm:px-8 lg:py-24 ">
+      <div className="text-blueGray-500 text-base">
+        <h2 className="text-blueGray-800 text-5xl mb-5">Page not found!</h2>
+        <p className="text-2xl mb-10">
+          Sorry, but the page you were looking for could not be found.
+        </p>
+        <p className="text-2xl">
+          You can
+          <Link to="/">
+            <StyledLink> return to the home page, </StyledLink>
+          </Link>
+          or{" "}
+          <a
+            href="mailto:kendyhnguyen1991@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledLink>contact me</StyledLink>
+          </a>{" "}
+          if you can't find what you're looking for.
+        </p>
       </div>
     </div>
   </Layout>

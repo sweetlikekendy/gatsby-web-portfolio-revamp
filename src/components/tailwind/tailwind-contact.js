@@ -65,11 +65,12 @@ export default function Contact() {
       <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
         <div className="flex items-center bg-blueGray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-16 xl:pr-12">
           <div className="max-w-lg mx-auto">
-            <h2 className="text-2xl font-extrabold tracking-tight text-blueGray-900 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-normal text-blueGray-900 sm:text-3xl">
               Ready to connect?
             </h2>
             <p className="mt-3 text-lg leading-6 text-blueGray-500">
-              Leave me a message on right or click on the link below!
+              Leave me a message by filling out the form or click on my email
+              address!
             </p>
             <dl className="mt-8 text-base text-blueGray-500">
               <div className="mt-6">

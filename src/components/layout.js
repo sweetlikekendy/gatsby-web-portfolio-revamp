@@ -37,23 +37,9 @@ const Layout = ({ children, location }) => {
 
           body {
             line-height: 1.6;
-            letter-spacing: 0.3em;
-          }
-
-          body,
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6,
-          p,
-          ol,
-          ul {
-            margin: 0;
-            padding: 0;
-            font-weight: normal;
-            font-family: Arial, sans-serif;
+            /* letter-spacing: 0.3em; */
+            letter-spacing: 0.025em;
+            font-family: "Ubuntu", sans-serif;
           }
 
           h1,
@@ -62,20 +48,17 @@ const Layout = ({ children, location }) => {
           h4,
           h5,
           h6 {
-            /* font-family: "Cabin"; */
+            font-family: "Roboto", Arial;
             color: hsl(0, 0%, 0%);
-            letter-spacing: 0.075em;
-          }
-          body {
-            letter-spacing: 0.05em;
+            letter-spacing: 0.025em;
           }
         `}
       />
       {/* FLex in a column and have the main content grow to keep the footer always at the bottom of the page */}
-      <div className="flex min-h-screen flex-col">
+      <div className="flex flex-col min-h-screen">
         <Header />
         {/* <Header id="header" location={location} /> */}
-        <main className="h-ful flex-grow">{children}</main>
+        <main className="flex-grow">{children}</main>
         {/* <Footer /> */}
         <Footer />
       </div>

@@ -3,21 +3,31 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StyledLink } from "../styles"
+import TailwindHero from "../components/tailwind/tailwind-hero"
 
 const SuccessPage = ({ location }) => {
   return (
     <Layout>
       <SEO title="Success" />
-      <div className="h-full flex justify-center items-center mt-20">
-        <div className="max-w-6xl h-full text-blueGray-500 text-base p-4">
-          <h2 className="text-blueGray-800 text-xl font-bold mb-3">
+      <div className="flex-grow max-w-7xl mx-auto relative overflow-hidden my-auto px-4 py-8 sm:px-8 lg:py-24 ">
+        <div className="text-blueGray-500 text-base">
+          <h2 className="text-blueGray-800 text-5xl mb-5">
             Thank you for contacting me!
           </h2>
-          <p>I'll respond to you ASAP :)</p>
-          <Link to="/">
-            Click to go back to the
-            <StyledLink> home page</StyledLink>.
-          </Link>
+          <p className="text-2xl mb-10">
+            I'll respond to you ASAP{" "}
+            <span role="img" aria-label="Happy face">
+              😁
+            </span>
+            !
+          </p>
+          <p className="text-2xl">
+            You can
+            <Link to="/">
+              <StyledLink> return to the home page,</StyledLink> or close the
+              tab if you're done.
+            </Link>
+          </p>
         </div>
       </div>
     </Layout>
