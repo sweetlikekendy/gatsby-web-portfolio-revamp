@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.kendyhnguyen.com`,
     title: `Kendy Nguyen`,
     description: `Kendy Nguyen's Portfolio`,
     author: `@kendynguyen`,
