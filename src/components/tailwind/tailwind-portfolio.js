@@ -21,7 +21,7 @@ export default function Portfolio(props) {
                   imgSrc {
                     childImageSharp {
                       fluid {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                       }
                     }
                   }
