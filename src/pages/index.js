@@ -9,7 +9,7 @@ import { FeatureSection } from "../components/tailwind"
 
 const IndexPage = () => (
   <Layout location="/">
-    <SEO title="Home" />
+    <SEO title="Kendy Nguyen's Portfolio" />
     <Hero />
     {/* <FeatureSection /> */}
     {/* <BrandAuthority /> */}
