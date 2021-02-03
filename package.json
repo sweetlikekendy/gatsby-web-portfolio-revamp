@@ -10,7 +10,6 @@
     "@emotion/styled": "^10.0.27",
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.2.3",
-    "formik": "^2.1.4",
     "gatsby": "^2.19.36",
     "gatsby-background-image": "^0.9.19",
     "gatsby-cli": "^2.10.5",
@@ -33,9 +32,7 @@
     "react-helmet": "^5.2.1",
     "react-hook-form": "^6.14.2",
     "react-icons": "^4.1.0",
-    "smoothscroll-polyfill": "^0.4.4",
-    "tailwindcss": "^2.0.2",
-    "yup": "^0.28.3"
+    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -54,6 +51,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "build-serve": "npm run build && npm run serve",
     "clean": "gatsby clean",
     "develop": "gatsby clean && gatsby develop",
     "develop-host": "gatsby clean && gatsby develop -H 0.0.0.0",
