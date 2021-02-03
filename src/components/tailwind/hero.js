@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { PrimaryButton, SecondaryButton } from "../../styles"
+import { PrimaryButton } from "../../styles"
 
 export default function TailwindHero() {
   const { desktopImage } = useStaticQuery(graphql`
@@ -65,7 +65,6 @@ export default function TailwindHero() {
 
           <div className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-1/2 lg:h-full">
             <Img
-              // className="rounded-md"
               fluid={{
                 ...desktopImage.childImageSharp.fluid,
                 aspectRatio: 4 / 3,

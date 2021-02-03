@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StyledLink } from "../styles"
-import TailwindHero from "../components/tailwind/tailwind-hero"
 
 const SuccessPage = ({ location }) => {
   return (

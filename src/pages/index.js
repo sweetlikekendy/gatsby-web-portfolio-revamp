@@ -1,16 +1,16 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import TailwindHero from "../components/tailwind/tailwind-hero"
-import Portfolio from "../components/tailwind/tailwind-portfolio"
-import BrandAuthority from "../components/tailwind/tailwind-brand-authority"
-import Contact from "../components/tailwind/tailwind-contact"
-import FeatureSection from "../components/tailwind/tailwind-feature-section"
+import { Hero } from "../components/tailwind"
+import { Portfolio } from "../components/tailwind"
+import { BrandAuthority } from "../components/tailwind"
+import { Contact } from "../components/tailwind"
+import { FeatureSection } from "../components/tailwind"
 
 const IndexPage = () => (
   <Layout location="/">
     <SEO title="Home" />
-    <TailwindHero />
+    <Hero />
     {/* <FeatureSection /> */}
     {/* <BrandAuthority /> */}
     <Portfolio id="portfolio" />

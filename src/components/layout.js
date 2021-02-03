@@ -9,11 +9,8 @@ import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 import { Global, css } from "@emotion/core"
-// import Header from "./header"
-import { colors, pageWidth } from "../styles/theme"
-// import Footer from "./footer"
-import Footer from "./tailwind/tailwind-footer"
-import Header from "./tailwind/tailwind-header"
+import Footer from "./tailwind/footer"
+import Header from "./tailwind/header"
 
 const Layout = ({ children, location }) => {
   // const data = useStaticQuery(graphql`
@@ -37,7 +34,6 @@ const Layout = ({ children, location }) => {
 
           body {
             line-height: 1.6;
-            /* letter-spacing: 0.3em; */
             letter-spacing: 0.025em;
             font-family: "Ubuntu", sans-serif;
           }
@@ -57,9 +53,7 @@ const Layout = ({ children, location }) => {
       {/* FLex in a column and have the main content grow to keep the footer always at the bottom of the page */}
       <div className="flex flex-col min-h-screen">
         <Header />
-        {/* <Header id="header" location={location} /> */}
         <main className="flex-grow">{children}</main>
-        {/* <Footer /> */}
         <Footer />
       </div>
     </>
