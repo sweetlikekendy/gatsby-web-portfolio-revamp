@@ -53,8 +53,46 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `static/favicon-diamond.svg`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: `/static/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/static/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+          {
+            src: `/static/safari-pinned-tab.svg`,
+            sizes: `512x512`,
+            type: `image/png`,
+            purpose: `maskable`,
+          },
+        ],
+        name: `Kendy Nguyen's Portfolio`,
+        short_name: `Kendy Nguyen`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#3B82F6`,
+        display: `standalone`,
+        cache_busting_mode: "none",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/static*"],
+        },
+      },
+    },
   ],
 }
