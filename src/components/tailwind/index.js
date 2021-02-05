@@ -1,3 +1,5 @@
+import BlogIndex from "./blog-index"
+import BlogPreview from "./blog-preview"
 import BrandAuthority from "./brand-authority"
 import Contact from "./contact"
 import FeatureSection from "./feature-section"
@@ -9,6 +11,8 @@ import PortfolioCard from "./portfolio-card"
 import Portfolio from "./portfolio"
 
 export {
+  BlogIndex,
+  BlogPreview,
   BrandAuthority,
   Contact,
   FeatureSection,

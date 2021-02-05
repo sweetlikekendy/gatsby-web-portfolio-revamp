@@ -1,11 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Hero } from "../components/tailwind"
-import { Portfolio } from "../components/tailwind"
-import { BrandAuthority } from "../components/tailwind"
-import { Contact } from "../components/tailwind"
-import { FeatureSection } from "../components/tailwind"
+import {
+  BlogIndex,
+  BrandAuthority,
+  Contact,
+  FeatureSection,
+  Hero,
+  Portfolio,
+} from "../components/tailwind"
 
 const IndexPage = () => (
   <Layout location="/">
@@ -14,6 +17,7 @@ const IndexPage = () => (
     {/* <FeatureSection /> */}
     {/* <BrandAuthority /> */}
     <Portfolio id="portfolio" />
+    <BlogIndex />
     <Contact />
   </Layout>
 )

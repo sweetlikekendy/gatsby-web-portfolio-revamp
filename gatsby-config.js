@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.kendyhnguyen.com`,
@@ -51,6 +53,16 @@ module.exports = {
           // Avoids sending pageview hits from custom paths
           // exclude: ["/preview/**", "/do-not-track/me/too/"],
         },
+      },
+    },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: process.env.SANITY_ID,
+        dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN,
+        watchMode: true,
+        overlayDrafts: true,
       },
     },
     {

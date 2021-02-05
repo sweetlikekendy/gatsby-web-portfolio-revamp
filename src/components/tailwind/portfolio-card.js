@@ -15,28 +15,28 @@ export default function PortfolioCard({
 }) {
   return (
     <div className="flex flex-col shadow-lg overflow-hidden" {...rest}>
-      {imgSrc ? (
-        <a href={demoLink} target="_blank" rel="noopener noreferrer nofollow">
-          <Img
-            fluid={{
-              ...imgSrc.childImageSharp.fluid,
-              aspectRatio: 4 / 3,
-            }}
-            alt={imgAlt}
-          />
-        </a>
-      ) : (
-        <div className="flex-shrink-0">
+      <div className="flex-shrink-0">
+        {imgSrc ? (
+          <a href={demoLink} target="_blank" rel="noopener noreferrer nofollow">
+            <Img
+              fluid={{
+                ...imgSrc.childImageSharp.fluid,
+                aspectRatio: 4 / 3,
+              }}
+              alt={imgAlt}
+            />
+          </a>
+        ) : (
           <img
             className="h-48 w-full object-cover"
             src="http://via.placeholder/400/300"
             alt={imgAlt}
           />
-        </div>
-      )}
+        )}
+      </div>
       {type && title && description && (
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-          <div className="flex-1">
+          <div>
             <p className="text-sm font-medium text-blue-600">{type}</p>
 
             <div className="block mt-2">
