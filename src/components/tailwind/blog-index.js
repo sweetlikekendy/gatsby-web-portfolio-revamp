@@ -34,9 +34,9 @@ export default function BlogIndex() {
             Recent Blog Posts
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-blueGray-500 sm:mt-4">
-            If you're interested in reading more,{" "}
+            See what else I've written about{" "}
             <Link to="/blog">
-              <StyledLink>click here.</StyledLink>
+              <StyledLink>here.</StyledLink>
             </Link>
           </p>
         </div>
