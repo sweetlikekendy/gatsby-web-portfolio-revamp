@@ -40,15 +40,17 @@ export default function Blog({ data }) {
             </p>
           </div>
         ) : (
-          <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-            {blogPostsArray.map(blog => (
+          <div className="my-12 grid gap-16 py-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+            {blogPostsArray.map(post => (
               <BlogPreview
-                key={blog.title}
-                category={blog.categories[0].title}
-                title={blog.title}
-                description={blog.description}
-                createdAt={blog._createdAt}
-                slug={`blog/${blog.slug.current}`}
+                key={post.title}
+                category={post.categories[0].title}
+                title={post.title}
+                description={post.description}
+                createdAt={post._createdAt}
+                slug={`blog/${post.slug.current}`}
+                imageSrc={post.mainImage.asset.fluid}
+                imageAlt={post.imageAlt}
               />
             ))}
           </div>

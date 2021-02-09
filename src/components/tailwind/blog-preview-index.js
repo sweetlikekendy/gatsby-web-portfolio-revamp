@@ -15,18 +15,18 @@ export default function BlogPreviewIndex({
       <div>
         <Link to={slug} className="inline-block">
           {category === `Dev Talk` && (
-            <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+            <span className="inline-flex items-center px-3 py-0.5 rounded-md text-sm font-medium bg-green-100 text-green-800">
               {category}
             </span>
           )}
           {category === `Hobbies` && (
-            <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+            <span className="inline-flex items-center px-3 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800">
               {category}
             </span>
           )}
 
           {category === `Technology` && (
-            <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">
+            <span className="inline-flex items-center px-3 py-0.5 rounded-md text-sm font-medium bg-pink-100 text-pink-800">
               {category}
             </span>
           )}
