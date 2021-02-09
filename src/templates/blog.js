@@ -48,7 +48,7 @@ export default function Blog({ data }) {
                 title={post.title}
                 description={post.description}
                 createdAt={post._createdAt}
-                slug={`blog/${post.slug.current}`}
+                slug={`${post.slug.current}`}
                 imageSrc={post.mainImage.asset.fluid}
                 imageAlt={post.imageAlt}
               />
@@ -61,10 +61,19 @@ export default function Blog({ data }) {
 }
 
 export const query = graphql`
-  query {
-    posts: allSanityPost(sort: { fields: [publishedAt], order: [DESC] }) {
+  # query PostQuery($category: String, $skip: Int, $postsPerPage: Int) {
+  query PostQuery($skip: Int, $postsPerPage: Int) {
+    posts: allSanityPost(
+      # filter: {
+      #   categories: { elemMatch: { slug: { current: { eq: $category } } } }
+      # }
+      limit: $postsPerPage
+      skip: $skip
+      sort: { fields: [publishedAt], order: [DESC] }
+    ) {
       totalCount
       nodes {
+        # feature
         _createdAt(formatString: "MMM D, YYYY")
         _updatedAt(formatString: "MMM D, YYYY")
         publishedAt(formatString: "MMM D, YYYY")
@@ -87,3 +96,31 @@ export const query = graphql`
     }
   }
 `
+
+// export const query = graphql`
+//   query {
+//     posts: allSanityPost(sort: { fields: [publishedAt], order: [DESC] }) {
+//       totalCount
+//       nodes {
+//         _createdAt(formatString: "MMM D, YYYY")
+//         _updatedAt(formatString: "MMM D, YYYY")
+//         publishedAt(formatString: "MMM D, YYYY")
+//         title
+//         description
+//         slug {
+//           current
+//         }
+//         categories {
+//           title
+//         }
+//         mainImage {
+//           asset {
+//             fluid(maxWidth: 300) {
+//               ...GatsbySanityImageFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
