@@ -14,7 +14,10 @@ export default function PortfolioCard({
   ...rest
 }) {
   return (
-    <div className="flex flex-col shadow-lg overflow-hidden" {...rest}>
+    <div
+      className="flex flex-col shadow-lg overflow-hidden rounded-md"
+      {...rest}
+    >
       <div className="flex-shrink-0">
         {imgSrc ? (
           <a href={demoLink} target="_blank" rel="noopener noreferrer nofollow">

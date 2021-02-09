@@ -62,7 +62,7 @@ export default function Contact() {
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-blueGray-50"></div>
       </div>
-      <div className="relative max-w-6xl mx-auto lg:grid lg:grid-cols-5">
+      <div className="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
         <div className="flex items-center bg-blueGray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-16 xl:pr-12">
           <div className="max-w-lg mx-auto">
             <h2 className="text-2xl font-extrabold tracking-normal text-blueGray-900 sm:text-3xl">
@@ -157,7 +157,7 @@ export default function Contact() {
                     name="full_name"
                     id="full_name"
                     autoComplete="name"
-                    className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Full name"
                     ref={register({ required: "Required" })}
                   />
@@ -176,7 +176,7 @@ export default function Contact() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Email"
                     ref={register({
                       required: "Required",
@@ -199,7 +199,7 @@ export default function Contact() {
                     name="phone"
                     id="phone"
                     autoComplete="tel"
-                    className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Phone"
                     ref={register({ required: "Required" })}
                   />
@@ -216,7 +216,7 @@ export default function Contact() {
                     name="subject"
                     id="subject"
                     autoComplete="tel"
-                    className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Subject"
                     ref={register({ required: "Required" })}
                   />
@@ -234,7 +234,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows="4"
-                    className="block w-full shadow-sm py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
                     placeholder="Message"
                     ref={register({ required: "Required" })}
                   ></textarea>
