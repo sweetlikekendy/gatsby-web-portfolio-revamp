@@ -19,7 +19,7 @@ export default function TailwindHero() {
   `)
 
   return (
-    <div className="max-w-7xl mx-auto relative bg-white overflow-hidden">
+    <div className="max-w-6xl mx-auto relative bg-white overflow-hidden">
       <div
         className="relative h-full z-10 px-4 py-4 bg-white sm:py-16 md:py-20 lg:w-full lg:py-24 lg:px-8
         "

@@ -1,21 +1,17 @@
 import React from "react"
-import Img from "gatsby-image"
 import { StyledLink } from "../../styles"
 import { format } from "date-fns"
 import { Link } from "gatsby"
 
-export default function BlogPreview({
+export default function BlogPreviewIndex({
   category,
   title,
   description,
   createdAt,
   slug,
-  imageSrc,
-  imageAlt,
 }) {
   return (
     <div className="flex flex-col">
-      <Img fluid={imageSrc} alt={imageAlt} />
       <div>
         <Link to={slug} className="inline-block">
           {category === `Dev Talk` && (

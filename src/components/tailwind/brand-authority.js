@@ -3,7 +3,7 @@ import React from "react"
 export default function BrandAuthority() {
   return (
     <div className="my-20 bg-blue-200 bg-opacity-25 lg:my-0">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 xl:px-0">
+      <div className="max-w-6xl mx-auto py-16 px-4 sm:py-24 sm:px-6 xl:px-0">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8">
           <h2 className="max-w-md mx-auto text-3xl font-extrabold text-blue-900 text-center lg:max-w-xl lg:text-left">
             The world's most innovative companies use Workflow

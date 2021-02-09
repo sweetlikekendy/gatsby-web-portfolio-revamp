@@ -15,9 +15,7 @@ import {
 export default function IndexPage({ data }) {
   const { posts } = data
   // Destructure the posts.nodes into a blogsArray
-  const { nodes: blogsArray } = posts
-
-  console.log(blogsArray)
+  const { nodes: blogPostsArray } = posts
 
   return (
     <Layout location="/">
@@ -26,7 +24,7 @@ export default function IndexPage({ data }) {
       {/* <FeatureSection /> */}
       {/* <BrandAuthority /> */}
       <Portfolio id="portfolio" />
-      <BlogIndex blogs={blogsArray} />
+      <BlogIndex blogPosts={blogPostsArray} />
       <Contact />
     </Layout>
   )
@@ -35,7 +33,6 @@ export default function IndexPage({ data }) {
 export const query = graphql`
   query {
     posts: allSanityPost(
-      # filter: { feature: { eq: true } }
       limit: 3
       sort: { fields: [publishedAt], order: [DESC] }
     ) {

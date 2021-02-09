@@ -3,7 +3,7 @@ import React from "react"
 export default function FeatureSection() {
   return (
     <div className="py-12 bg-white">
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-6xl lg:px-8">
         <h2 className="sr-only">A better way to send money.</h2>
         <dl className="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
           <div>

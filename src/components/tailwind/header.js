@@ -10,7 +10,7 @@ export default function Header(props) {
 
   return (
     <div className="flex-shrink-0 relative bg-white">
-      <div className="max-w-7xl mx-auto flex justify-between items-center p-4 sm:py-8 sm:px-8 md:space-x-10">
+      <div className="max-w-6xl mx-auto flex justify-between items-center p-4 sm:py-8 sm:px-8 md:space-x-10">
         <div>
           <Link to="/" className="flex">
             <span className="sr-only">Home</span>

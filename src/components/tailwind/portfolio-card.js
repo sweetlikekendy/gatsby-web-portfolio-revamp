@@ -68,7 +68,7 @@ export default function PortfolioCard({
               )}
               {repoLink && (
                 <a
-                  className="mt-3 sm:mt-0 sm:ml-3 lg:mt-3 lg:ml-0 xl:mt-0 xl:ml-3"
+                  className="mt-2 sm:mt-0 sm:ml-2 lg:mt-2 lg:ml-0 xl:mt-0 xl:ml-2"
                   href={repoLink}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
