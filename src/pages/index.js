@@ -13,7 +13,12 @@ import {
 } from "../components/tailwind"
 
 export default function IndexPage({ data }) {
-  console.log(data)
+  const { posts } = data
+  // Destructure the posts.nodes into a blogsArray
+  const { nodes: blogsArray } = posts
+
+  console.log(blogsArray)
+
   return (
     <Layout location="/">
       <SEO title="Kendy Nguyen" />
@@ -21,7 +26,7 @@ export default function IndexPage({ data }) {
       {/* <FeatureSection /> */}
       {/* <BrandAuthority /> */}
       <Portfolio id="portfolio" />
-      {/* <BlogIndex /> */}
+      <BlogIndex blogs={blogsArray} />
       <Contact />
     </Layout>
   )
@@ -31,14 +36,16 @@ export const query = graphql`
   query {
     posts: allSanityPost(
       # filter: { feature: { eq: true } }
+      limit: 3
       sort: { fields: [publishedAt], order: [DESC] }
     ) {
       totalCount
       nodes {
-        # feature
-        publishedAt
+        _createdAt(formatString: "MMM D, YYYY")
+        _updatedAt(formatString: "MMM D, YYYY")
+        publishedAt(formatString: "MMM D, YYYY")
         title
-        # description
+        description
         slug {
           current
         }
