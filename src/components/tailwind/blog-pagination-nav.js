@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import tw from "twin.macro"
-import { GrFormNext, GrFormPrevious } from "react-icons/gr"
+import { HiArrowNarrowRight, HiArrowNarrowLeft } from "react-icons/hi"
 
 export default function BlogPaginationNav({
   postsPerPage,
@@ -25,7 +25,7 @@ export default function BlogPaginationNav({
             rel="prev"
             className="border-t-2 border-transparent pt-4 pr-1 inline-flex items-center text-sm font-medium text-blueGray-500 hover:text-blueGray-800 hover:border-blueGray-400"
           >
-            <GrFormPrevious className="mr-3 h-5 w-5 text-blueGray-400" />
+            <HiArrowNarrowLeft className="mr-3 h-5 w-5 text-blueGray-400" />
             Previous
           </Link>
         )}
@@ -51,7 +51,7 @@ export default function BlogPaginationNav({
             className="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-sm font-medium text-blueGray-500 hover:text-blueGray-800 hover:border-blueGray-400"
           >
             Next
-            <GrFormNext className="ml-3 h-5 w-5 text-blueGray-400" />
+            <HiArrowNarrowRight className="ml-3 h-5 w-5 text-blueGray-400" />
           </Link>
         )}
       </div>
