@@ -24,7 +24,13 @@ async function buildPosts({ actions, graphql }) {
     }
   `)
 
-  console.log(data)
+  // Define how many posts we want to show up on each page
+  // const postsPerPage = +process.env.GATSBY_POSTS_PER_PAGE || 10
+  const postsPerPage = +process.env.GATSBY_POSTS_PER_PAGE || 3
+
+  // Calculate the numbers of needed pages (n)
+  const pageCount = Math.ceil(data.posts.totalCount / postsPerPage)
+
   // Go through each post and push to the corresponding arrays
   data.posts.nodes.forEach((post, index, array) => {
     // Use another forEach as there can be multiple categories per post
@@ -34,23 +40,35 @@ async function buildPosts({ actions, graphql }) {
     const prev = array[index - 1]
     const next = array[index + 1]
 
-    // Create pages for each post
-    actions.createPage({
-      path: `${base}/${post.slug.current}`,
-      component: path.resolve("./src/templates/post.js"),
-      context: {
-        slug: post.slug.current,
-        prev,
-        next,
-        base,
-      },
+    // Loop from 1 to n and create the pages for them
+    Array.from({ length: pageCount }).forEach((_, i) => {
+      actions.createPage({
+        path:
+          i === 0
+            ? `${base}/${post.slug.current}`
+            : `${base}/${i + 1}/${post.slug.current}`,
+        component: path.resolve("./src/templates/post.js"),
+        context: {
+          slug: post.slug.current,
+          prev,
+          next,
+          base,
+        },
+      })
     })
-  })
-  // Define how many posts we want to show up on each page
-  const postsPerPage = +process.env.GATSBY_POSTS_PER_PAGE || 10
 
-  // Calculate the numbers of needed pages (n)
-  const pageCount = Math.ceil(data.posts.totalCount / postsPerPage)
+    // Create pages for each post
+    //   actions.createPage({
+    //     path: `${base}/${post.slug.current}`,
+    //     component: path.resolve("./src/templates/post.js"),
+    //     context: {
+    //       slug: post.slug.current,
+    //       prev,
+    //       next,
+    //       base,
+    //     },
+    //   })
+  })
 
   // Loop from 1 to n and create the pages for them
   Array.from({ length: pageCount }).forEach((_, i) => {

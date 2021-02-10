@@ -1,4 +1,5 @@
 import BlogIndex from "./blog-index"
+import BlogPaginationNav from "./blog-pagination-nav"
 import BlogPreview from "./blog-preview"
 import BlogPreviewIndex from "./blog-preview-index"
 import BrandAuthority from "./brand-authority"
@@ -13,6 +14,7 @@ import Portfolio from "./portfolio"
 
 export {
   BlogIndex,
+  BlogPaginationNav,
   BlogPreview,
   BlogPreviewIndex,
   BrandAuthority,

@@ -13,7 +13,7 @@ export default function Footer() {
             href="http://github.com/sweetlikekendy/"
             target="_blank"
             rel="noreferrer noopener"
-            className="text-blueGray-500 hover:text-blue-600 active:text-blue-700"
+            className="text-blueGray-600 hover:text-blue-600 active:text-blue-700"
           >
             <span className="sr-only">GitHub</span>
             <AiFillGithub className="h-6 w-6" />
@@ -23,7 +23,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/kendy-nguyen-a51796a0/"
             target="_blank"
             rel="noreferrer noopener"
-            className="text-blueGray-500 hover:text-blue-600 active:text-blue-700"
+            className="text-blueGray-600 hover:text-blue-600 active:text-blue-700"
           >
             <span className="sr-only">LinkedIn</span>
             <AiFillLinkedin className="h-6 w-6" />
@@ -32,7 +32,7 @@ export default function Footer() {
             href="mailto:kendyhnguyen1991@gmail.com"
             target="_blank"
             rel="noreferrer noopener"
-            className="text-blueGray-500 hover:text-blue-600 active:text-blue-700"
+            className="text-blueGray-600 hover:text-blue-600 active:text-blue-700"
           >
             <span className="sr-only">Facebook</span>
             <AiOutlineMail className="h-6 w-6" />

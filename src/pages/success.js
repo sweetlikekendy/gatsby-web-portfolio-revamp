@@ -10,7 +10,7 @@ const SuccessPage = ({ location }) => {
       <SEO title="Success" />
       <div className="flex-grow max-w-6xl mx-auto relative overflow-hidden my-auto px-4 py-8 sm:px-8 lg:py-24 ">
         <div className="text-blueGray-500 text-base">
-          <h2 className="text-blueGray-800 text-5xl mb-5">
+          <h2 className="text-blueGray-800 text-6xl mb-5">
             Thank you for contacting me!
           </h2>
           <p className="text-2xl mb-10">

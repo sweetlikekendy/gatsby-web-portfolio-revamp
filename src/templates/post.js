@@ -1,40 +1,37 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
+import BlockContent from "@sanity/block-content-to-react"
 import Layout from "../components/layout"
 
 export default function Post({ data, pageContext }) {
   const { post } = data
   const { prev, next, base } = pageContext
+
   return (
     <Layout>
-      <div className="max-w-6xl mx-auto p-4 sm:px-8 sm:py-16 lg:py-24">
-        <p className="py-1 text-gray-900 text-sm font-normal">
+      <div className="max-w-3xl mx-auto p-4 sm:px-8 sm:py-16 lg:py-24">
+        <p className="py-1 text-blueGray-600 text-sm font-normal">
           {post.publishedAt}
         </p>
-        <h1 className="pb-2 text-gray-900 text-3xl font-extrabold leading-tight">
+        <h1 className="pb-2 text-blueGray-900 text-3xl font-extrabold leading-tight">
           {post.title}
         </h1>
         <Img
-          className="w-full h-80 rounded-lg"
+          className="w-full h-96"
           fluid={{ ...post.mainImage.asset.fluid, aspectRatio: 1 }}
         />
-        <div className="py-4">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab numquam
-            blanditiis libero eos similique voluptates quos minus velit nisi ad
-            dolorem quia animi sint officia, quo laboriosam iste aliquam
-            placeat?
-          </p>
+        <div className="py-4 text-blueGray-500">
+          <BlockContent blocks={post._rawBody} />
         </div>
-        <div className="flex justify-between py-4 border-t-2 border-gray-100">
+        <div className="flex justify-between py-4 border-t-2 border-blueGray-100">
           {prev ? (
             <Link to={`${base}/${prev.slug.current}`}>
               <span className="text-blueGray-700 hover:text-blue-600 font-bold">
                 Previous
               </span>
               <br />
-              <span className="inline-block max-w-xs text-black text-sm font-normal">
+              <span className="inline-block max-w-xs text-blueGray-500 text-sm font-normal">
                 {prev.title}
               </span>
             </Link>
@@ -48,7 +45,7 @@ export default function Post({ data, pageContext }) {
                 Next
               </span>
               <br />
-              <span className="inline-block max-w-xs text-black text-sm font-normal">
+              <span className="inline-block max-w-xs text-blueGray-600 text-sm font-normal">
                 {next.title}
               </span>
             </Link>
@@ -67,6 +64,7 @@ export const query = graphql`
       _createdAt(formatString: "MMM D, YYYY")
       _updatedAt(formatString: "MMM D, YYYY")
       publishedAt(formatString: "MMM D, YYYY")
+      _rawBody
       mainImage {
         asset {
           fluid {
