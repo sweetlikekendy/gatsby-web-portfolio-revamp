@@ -4,6 +4,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { GrClose, GrMenu } from "react-icons/gr"
 import { SecondaryButton, PrimaryButton } from "../../styles"
 import tw from "twin.macro"
+import PartialNavLink from "../../styles/partial-nav-link"
 
 export default function Header(props) {
   const [open, setOpen] = useState(false)
@@ -23,7 +24,7 @@ export default function Header(props) {
         {/* <div className="-mr-2 -my-2 md:hidden"> */}
         <div className="md:hidden">
           <button
-            type="button" 
+            type="button"
             stripHash
             className="bg-white rounded-md p-2 inline-flex items-center justify-center text-blueGray-600 hover:text-blueGray-700 hover:bg-blueGray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             onClick={() => handleMobileMenuToggle()}
@@ -35,13 +36,7 @@ export default function Header(props) {
 
         <nav className="flex space-x-10 hidden md:block">
           <div className="flex items-center md:ml-12">
-            <Link
-              to="/blog"
-              activeStyle={tw`border-blue-500 text-blue-600 border-b-2 inline-flex items-center`}
-              className="text-base font-medium text-blueGray-600 px-4 py-2 hover:text-blue-600 active:text-blue-700"
-            >
-              Blog
-            </Link>
+            <PartialNavLink to="/blog">Blog</PartialNavLink>
             <AnchorLink
               to="/#portfolio"
               title="Kendy Nguyen"
@@ -93,13 +88,7 @@ export default function Header(props) {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-6">
-                  <Link
-                    to="/blog"
-                    activeStyle={tw`border-blue-500 text-blue-600 border-b-2 inline-flex items-center`}
-                    className="text-base font-medium text-blueGray-600 px-4 py-2 hover:text-blue-600 active:text-blue-700"
-                  >
-                    Blog
-                  </Link>
+                  <PartialNavLink to="/blog">Blog</PartialNavLink>
                   <AnchorLink
                     to="/#portfolio"
                     title="Kendy Nguyen"
