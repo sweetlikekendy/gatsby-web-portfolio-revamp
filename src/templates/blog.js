@@ -9,7 +9,7 @@ export default function Blog({ data, pageContext }) {
   const { posts } = data
   const { totalCount: totalNumOfPosts, nodes: blogPostsArray } = posts
   const { category, postsPerPage, currentPage, skip, base } = pageContext
-  console.log(currentPage)
+
   return (
     <Layout>
       <SEO title="Blog Posts" />

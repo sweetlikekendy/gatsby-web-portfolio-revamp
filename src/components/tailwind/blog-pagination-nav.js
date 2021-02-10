@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import tw from "twin.macro"
+import { GrFormNext, GrFormPrevious } from "react-icons/gr"
 
 export default function BlogPaginationNav({
   postsPerPage,
@@ -24,19 +25,7 @@ export default function BlogPaginationNav({
             rel="prev"
             className="border-t-2 border-transparent pt-4 pr-1 inline-flex items-center text-sm font-medium text-blueGray-500 hover:text-blueGray-800 hover:border-blueGray-400"
           >
-            <svg
-              className="mr-3 h-5 w-5 text-blueGray-400"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <GrFormPrevious className="mr-3 h-5 w-5 text-blueGray-400" />
             Previous
           </Link>
         )}
@@ -62,19 +51,7 @@ export default function BlogPaginationNav({
             className="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-sm font-medium text-blueGray-500 hover:text-blueGray-800 hover:border-blueGray-400"
           >
             Next
-            <svg
-              className="ml-3 h-5 w-5 text-blueGray-400"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <GrFormNext className="ml-3 h-5 w-5 text-blueGray-400" />
           </Link>
         )}
       </div>
