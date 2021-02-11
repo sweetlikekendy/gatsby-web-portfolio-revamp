@@ -70,7 +70,7 @@ export default function Blog({ data, pageContext }) {
               </p>
             </div>
           ) : (
-            <div className="my-12 grid gap-16 py-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+            <div className="my-0 grid gap-16 py-12 sm:my-6 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
               {blogPostsArray.map(post => (
                 <BlogPreview
                   key={post.title}
