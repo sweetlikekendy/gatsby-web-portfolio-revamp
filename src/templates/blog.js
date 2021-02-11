@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
+import { useFlexSearch } from "react-use-flexsearch"
 import SEO from "../components/seo"
 import { StyledLink } from "../styles"
 import { BlogPaginationNav, BlogPreview } from "../components/tailwind"
@@ -72,6 +73,10 @@ export default function Blog({ data, pageContext }) {
 export const query = graphql`
   # query PostQuery($category: String, $skip: Int, $postsPerPage: Int) {
   query PostQuery($skip: Int, $postsPerPage: Int) {
+    localSearchPages {
+      index
+      store
+    }
     posts: allSanityPost(
       # filter: {
       #   categories: { elemMatch: { slug: { current: { eq: $category } } } }
