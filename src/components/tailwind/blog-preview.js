@@ -13,7 +13,6 @@ export default function BlogPreview({
   imageSrc,
   imageAlt,
 }) {
-  console.log(slug)
   return (
     <div className="flex flex-col">
       <div className="mb-4 h-60 w-full overflow-hidden">

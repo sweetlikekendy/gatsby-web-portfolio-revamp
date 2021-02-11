@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { useFlexSearch } from "react-use-flexsearch"
@@ -6,10 +6,26 @@ import SEO from "../components/seo"
 import { StyledLink } from "../styles"
 import { BlogPaginationNav, BlogPreview } from "../components/tailwind"
 
+export const unflattenResults = results =>
+  results.map(post => {
+    const { date, slug, tags, title } = post
+    return { slug, frontmatter: { title, date, tags } }
+  })
+
 export default function Blog({ data, pageContext }) {
-  const { posts } = data
+  const { posts, localSearchPages } = data
   const { totalCount: totalNumOfPosts, nodes: blogPostsArray } = posts
+  const { index, store } = localSearchPages
   const { category, postsPerPage, currentPage, skip, base } = pageContext
+
+  // Search related vars
+  const { search } = window.location
+  const query = new URLSearchParams(search).get("s")
+  const [searchQuery, setSearchQuery] = useState(query || "")
+
+  const results = useFlexSearch(searchQuery, index, store)
+  const searchedPosts = searchQuery ? unflattenResults(results) : posts
+  console.log(localSearchPages)
 
   return (
     <Layout>
