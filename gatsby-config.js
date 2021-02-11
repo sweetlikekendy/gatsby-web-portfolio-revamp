@@ -56,6 +56,43 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-local-search`,
+      options: {
+        name: `pages`,
+        engine: `flexsearch`,
+        query: `
+          query {
+              posts: allSanityPost {
+                nodes {
+                  title
+                  _rawBody
+                  slug {
+                    current
+                  }
+                  description
+                  publishedAt
+                  author {
+                    name
+                  }
+                }
+              }
+            }
+          `,
+        ref: `slug`,
+        index: [`title`, `description`, `text`],
+        store: [`title`, `slug`, `description`, `publishedAt`, `author`],
+        normalizer: ({ data }) =>
+          data.posts.nodes.map(post => ({
+            title: post.title,
+            text: post._rawBody,
+            slug: post.slug.current,
+            description: post.description,
+            publishedAt: post.publishedAt,
+            author: post.author.name,
+          })),
+      },
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: process.env.SANITY_ID,
