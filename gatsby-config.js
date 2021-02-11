@@ -69,8 +69,13 @@ module.exports = {
                   slug {
                     current
                   }
+                  categories{
+                    title
+                  }
                   description
-                  publishedAt
+                  _createdAt(formatString: "MMM D, YYYY")
+                  _updatedAt(formatString: "MMM D, YYYY")
+                  publishedAt(formatString: "MMM D, YYYY")
                   author {
                     name
                   }
@@ -80,7 +85,15 @@ module.exports = {
           `,
         ref: `slug`,
         index: [`title`, `description`, `text`],
-        store: [`title`, `slug`, `description`, `publishedAt`, `author`],
+        store: [
+          `title`,
+          `slug`,
+          `description`,
+          `publishedAt`,
+          `author`,
+          `category`,
+          `text`,
+        ],
         normalizer: ({ data }) =>
           data.posts.nodes.map(post => ({
             title: post.title,
@@ -89,6 +102,7 @@ module.exports = {
             description: post.description,
             publishedAt: post.publishedAt,
             author: post.author.name,
+            category: post.categories[0].title,
           })),
       },
     },

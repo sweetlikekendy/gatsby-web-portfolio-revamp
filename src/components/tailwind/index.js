@@ -11,6 +11,7 @@ import Hero from "./hero"
 import PortfolioCard from "./portfolio-card"
 import Portfolio from "./portfolio"
 import SearchBar from "./search-bar"
+import SearchResults from "./search-results"
 
 export {
   BlogIndex,
@@ -26,4 +27,5 @@ export {
   PortfolioCard,
   Portfolio,
   SearchBar,
+  SearchResults,
 }
