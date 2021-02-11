@@ -61,7 +61,7 @@ const Layout = ({ children, location }) => {
               If you notice anything not working or out of place, that is
               because my website is currently undergoing some changes
             </p>
-            <button
+            {/* <button
               type="button"
               stripHash
               className="ml-3 inline-flex items-center p-2 rounded-md justify-center text-blueGray-100 hover:text-blueGray-700 hover:bg-blueGray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
@@ -69,7 +69,7 @@ const Layout = ({ children, location }) => {
             >
               <span className="sr-only">Close banner</span>
               <CgClose className="w-5 h-5" />
-            </button>
+            </button> */}
           </div>
         </div>
       )}
