@@ -25,15 +25,12 @@ export default function Blog({ data, pageContext }) {
   const { category, postsPerPage, currentPage, skip, base } = pageContext
 
   // Search related vars
-  const { search } = window.location
+  const { search } = typeof window !== "undefined" && window.location
   const query = new URLSearchParams(search).get("s")
   const [searchQuery, setSearchQuery] = useState(query || "")
 
   const results = useFlexSearch(searchQuery, index, store)
   const searchedPosts = searchQuery ? unflattenResults(results) : posts
-
-  console.log(localSearchPages)
-  console.log(blogPostsArray)
 
   return (
     <Layout>
