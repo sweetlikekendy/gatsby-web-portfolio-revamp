@@ -58,7 +58,8 @@ export default function Contact() {
   }
 
   return (
-    <div className="relative bg-white lg:mt-16">
+    // Remove negative margin if you use this form and it's not on the bottom on top of the footer
+    <div className="relative bg-white lg:mt-16 -mb-10 sm:-mb-12 lg:-mb-16">
       <div className="absolute inset-0">
         <div className="absolute inset-y-0 left-0 w-1/2 bg-blueGray-50"></div>
       </div>
@@ -157,7 +158,7 @@ export default function Contact() {
                     name="full_name"
                     id="full_name"
                     autoComplete="name"
-                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block text-blueGray-600 w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 border-blueGray-300 focus:placeholder-blueGray-400 focus:ring-blue-500 focus:border-blue-500  "
                     placeholder="Full name"
                     ref={register({ required: "Required" })}
                   />
@@ -176,7 +177,7 @@ export default function Contact() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block text-blueGray-600 w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 border-blueGray-300 focus:placeholder-blueGray-400 focus:ring-blue-500 focus:border-blue-500  "
                     placeholder="Email"
                     ref={register({
                       required: "Required",
@@ -199,7 +200,7 @@ export default function Contact() {
                     name="phone"
                     id="phone"
                     autoComplete="tel"
-                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block text-blueGray-600 w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 border-blueGray-300 focus:placeholder-blueGray-400 focus:ring-blue-500 focus:border-blue-500  "
                     placeholder="Phone"
                     ref={register({ required: "Required" })}
                   />
@@ -216,7 +217,7 @@ export default function Contact() {
                     name="subject"
                     id="subject"
                     autoComplete="tel"
-                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block text-blueGray-600 w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 border-blueGray-300 focus:placeholder-blueGray-400 focus:ring-blue-500 focus:border-blue-500  "
                     placeholder="Subject"
                     ref={register({ required: "Required" })}
                   />
@@ -234,7 +235,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows="4"
-                    className="block w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 focus:ring-blue-500 focus:border-blue-500 border-blueGray-300 "
+                    className="block text-blueGray-600 w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 border-blueGray-300 focus:placeholder-blueGray-400 focus:ring-blue-500 focus:border-blue-500  "
                     placeholder="Message"
                     ref={register({ required: "Required" })}
                   ></textarea>
