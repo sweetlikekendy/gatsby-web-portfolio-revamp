@@ -1,17 +1,15 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
-import {
-  AiFillCheckCircle,
-  AiFillCloseCircle,
-  AiOutlineClose,
-  AiOutlineMail,
-} from "react-icons/ai"
+import { AiOutlineMail } from "react-icons/ai"
+import { ContactConfirmationModal } from "."
 import { PrimaryButton, StyledLink } from "../../styles"
 
 export default function Contact() {
   const [message, setMessage] = useState("Nothing to report!")
-  const [isErrorAlert, setErrorAlert] = useState(false)
-  const [isSuccessAlert, setSuccessAlert] = useState(false)
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    isSuccess: false,
+  })
 
   const { register, handleSubmit, errors, formState, reset } = useForm()
 
@@ -32,20 +30,23 @@ export default function Contact() {
 
         switch (status) {
           case 200:
-            setSuccessAlert(true)
+            // setSuccessAlert(true)
+            setModalState({ isOpen: true, isSuccess: true })
             setMessage(
               "Thank you for reaching to me 😁 I will reply to your message ASAP."
             )
             reset()
             break
           case 400:
-            setErrorAlert(true)
+            // setErrorAlert(true)
+            setModalState({ isOpen: true, isSuccess: false })
             setMessage(
               "Hmm...unable to send your message. Double check the form and try again. If this error message shows up again, please try again later."
             )
             break
           case 404:
-            setErrorAlert(true)
+            // setErrorAlert(true)
+            setModalState({ isOpen: true, isSuccess: false })
             setMessage("The server cannot be found! Please try again later.")
             break
         }
@@ -94,7 +95,6 @@ export default function Contact() {
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-16 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
             <form
-              // action="/success"
               method="POST"
               onSubmit={handleSubmit(onSubmit)}
               name="contact-me"
@@ -102,48 +102,12 @@ export default function Contact() {
               data-netlify-honeypot="bot-field"
               disabled={formState.isSubmitting}
             >
-              {isErrorAlert && (
-                <div className="rounded-md bg-red-50 p-4 mb-4">
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                      <div className="flex-shrink-0">
-                        <AiFillCloseCircle className="h-5 w-5 text-red-400" />
-                      </div>
-                      <div className="ml-3">
-                        <h3 className="text-sm font-medium text-red-800">
-                          {message}
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 flex items-center">
-                      <button onClick={() => setErrorAlert(!isErrorAlert)}>
-                        <AiOutlineClose className="h-5 w-5 text-red-800 " />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {isSuccessAlert && (
-                <div className="rounded-md bg-green-50 p-4 mb-4">
-                  <div className="flex justify-between items-center">
-                    <div className="flex">
-                      <div className="flex-shrink-0">
-                        <AiFillCheckCircle className="h-5 w-5 text-green-400" />
-                      </div>
-                      <div className="ml-3">
-                        <h3 className="text-sm font-medium text-green-800">
-                          {/* Order completed */}
-                          {message}
-                        </h3>
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 flex items-center">
-                      <button onClick={() => setSuccessAlert(!isSuccessAlert)}>
-                        <AiOutlineClose className="h-5 w-5 text-green-800 " />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              {modalState.isOpen && (
+                <ContactConfirmationModal
+                  modalState={modalState}
+                  setModalState={setModalState}
+                  message={message}
+                />
               )}
               <fieldset
                 // disabled={isSubmitting || formState.submitCount >= 10}
@@ -216,7 +180,6 @@ export default function Contact() {
                     type="text"
                     name="subject"
                     id="subject"
-                    autoComplete="tel"
                     className="block text-blueGray-600 w-full shadow-sm rounded-md py-3 px-4 placeholder-blueGray-500 border-blueGray-300 focus:placeholder-blueGray-400 focus:ring-blue-500 focus:border-blue-500  "
                     placeholder="Subject"
                     ref={register({ required: "Required" })}

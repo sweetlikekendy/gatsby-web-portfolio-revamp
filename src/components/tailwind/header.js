@@ -41,7 +41,7 @@ export default function Header(props) {
               to="/#portfolio"
               title="Kendy Nguyen"
               activeStyle={tw`border-blue-500 text-blue-600 border-b-2 inline-flex items-center`}
-              className="stripped text-base font-medium text-blueGray-600 px-4 py-2 hover:text-blueGray-800 active:text-blueGray-900"
+              className="stripped text-base font-medium text-blueGray-600 px-4 py-2 hover:text-blue-700 active:text-blue-800"
             >
               Portfolio
             </AnchorLink>

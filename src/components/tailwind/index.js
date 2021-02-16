@@ -4,6 +4,7 @@ import BlogPreview from "./blog-preview"
 import BlogPreviewIndex from "./blog-preview-index"
 import BrandAuthority from "./brand-authority"
 import Contact from "./contact"
+import ContactConfirmationModal from "./contact-confirmation-modal"
 import FeatureSection from "./feature-section"
 import Footer from "./footer"
 import Header from "./header"
@@ -20,6 +21,7 @@ export {
   BlogPreviewIndex,
   BrandAuthority,
   Contact,
+  ContactConfirmationModal,
   FeatureSection,
   Footer,
   Header,
