@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/react"
 import React from "react"
 import BlockContent from "@sanity/block-content-to-react"
 // import { css } from "@emotion/core"
@@ -8,11 +10,20 @@ import clientConfig from "../../client-config"
 export default function PortableBlockContent({ blocks }) {
   return (
     <BlockContent
-      tw="bg-red-100"
-      // css={[tw`bg-red-100`]}
       css={css`
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          ${tw`mb-5 sm:mb-6 lg:mb-7`}
+        }
+
+        ul,
+        ol,
+        figure,
         p {
-          ${tw`mb-4`}
+          ${tw`mb-4 sm:mb-5 lg:mb-6`}
         }
       `}
       blocks={blocks}

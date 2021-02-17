@@ -8,7 +8,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
-import { Global, css } from "@emotion/core"
+import { Global, css } from '@emotion/react'
 import Footer from "./tailwind/footer"
 import Header from "./tailwind/header"
 import { CgClose } from "react-icons/cg"

@@ -11,7 +11,8 @@
     // "react/prop-types": "warn",
     "react-hooks/rules-of-hooks": "error",
     "no-console": "warn",
-    "@emotion/pkg-renaming": "error"
+    "@emotion/pkg-renaming": "error",
+    "@emotion/jsx-import": "error"
   },
   "parser": "babel-eslint",
   "plugins": ["@emotion", "react", "import", "jsx-a11y", "react-hooks"],
