@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import BlockContent from "@sanity/block-content-to-react"
 import Layout from "../components/layout"
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi"
+import PortableBlockContent from "../components/portable-block-content"
 
 export default function Post({ data, pageContext }) {
   const { post } = data
@@ -23,7 +23,7 @@ export default function Post({ data, pageContext }) {
           fluid={{ ...post.mainImage.asset.fluid, aspectRatio: 1 }}
         />
         <div className="py-4 text-blueGray-500">
-          <BlockContent blocks={post._rawBody} />
+          <PortableBlockContent blocks={post._rawBody} />
         </div>
         <div className="border-t border-blueGray-200 px-0">
           <nav className="-mt-px flex items-center justify-between">
