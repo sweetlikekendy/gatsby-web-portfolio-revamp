@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import { getFluidGatsbyImage } from "gatsby-source-sanity"
 import clientConfig from "../../client-config.js"
-import "twin.macro"
+import tw, { css } from "twin.macro"
 
 export default function Figure({ node }) {
   const fluidProps = getFluidGatsbyImage(
@@ -11,7 +11,7 @@ export default function Figure({ node }) {
     clientConfig.sanity
   )
   return (
-    <figure className="mx-auto">
+    <figure>
       <Img fluid={fluidProps} alt={node.alt} />
       <figcaption>{node.caption}</figcaption>
     </figure>
