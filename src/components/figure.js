@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/react"
 import React from "react"
 import Img from "gatsby-image"
 import { getFluidGatsbyImage } from "gatsby-source-sanity"
@@ -11,7 +13,11 @@ export default function Figure({ node }) {
     clientConfig.sanity
   )
   return (
-    <figure>
+    <figure
+      css={css`
+        ${tw`mx-auto`}
+      `}
+    >
       <Img fluid={fluidProps} alt={node.alt} />
       <figcaption>{node.caption}</figcaption>
     </figure>

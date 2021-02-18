@@ -2,7 +2,6 @@
 import { jsx } from "@emotion/react"
 import React from "react"
 import BlockContent from "@sanity/block-content-to-react"
-// import { css } from "@emotion/core"
 import tw, { css } from "twin.macro"
 import serializers from "./serializers"
 import clientConfig from "../../client-config"
@@ -19,16 +18,17 @@ export default function PortableBlockContent({ blocks }) {
           ${tw`mb-5 sm:mb-6 lg:mb-7`}
         }
 
+        p,
         ul,
         ol,
         figure,
-        p {
+        pre {
           ${tw`mb-4 sm:mb-5 lg:mb-6`}
         }
       `}
       blocks={blocks}
       serializers={serializers}
-      imageOptions={{ w: 320, h: 240, fit: "max" }}
+      // imageOptions={{ w: 320, h: 240, fit: "max" }}
       {...clientConfig.sanity}
     />
   )
