@@ -21,23 +21,32 @@ export default function Post({ data, pageContext }) {
           {post.publishedAt}
         </p>
         <div tw="mb-8 sm:mb-9 lg:mb-10">
-          <Img
-            tw="w-full h-96 mb-3"
-            fluid={{ ...post.mainImage.asset.fluid, aspectRatio: 1 }}
-            alt={post.imageAlt}
-          />
-          {post.imageCreditPhotographer && post.imageCreditUrl && (
-            <p tw=" text-blueGray-500 italic sm:text-center">
-              Photo by{" "}
-              <a
-                href={post.imageCreditUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <StyledLink>{post.imageCreditPhotographer}</StyledLink>
-              </a>
-            </p>
-          )}
+          <figure>
+            <Img
+              tw="w-full h-96 mb-3"
+              fluid={{ ...post.mainImage.asset.fluid, aspectRatio: 1 }}
+              alt={post.alt}
+            />
+          </figure>
+          <figcaption tw=" text-blueGray-500 italic sm:text-center">
+            {post.mainImage.caption}
+            {post.mainImage.imageCreditPhotographer &&
+              post.mainImage.imageCreditUrl && (
+                <span>
+                  . Photographed by{" "}
+                  <a
+                    href={post.mainImage.imageCreditUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <StyledLink>
+                      {post.mainImage.imageCreditPhotographer}
+                    </StyledLink>
+                  </a>
+                  .
+                </span>
+              )}
+          </figcaption>
         </div>
         <div tw="py-4 text-blueGray-500">
           <PortableBlockContent blocks={post._rawBody} />
@@ -89,18 +98,19 @@ export const query = graphql`
       _updatedAt(formatString: "MMM D, YYYY")
       publishedAt(formatString: "MMM D, YYYY")
       _rawBody
-      imageCreditUrl
-      imageCreditPhotographer
-      imageAlt
       categories {
         title
       }
       mainImage {
+        imageCreditUrl
+        imageCreditPhotographer
+        alt
         asset {
           fluid {
             ...GatsbySanityImageFluid
           }
         }
+        caption
       }
     }
   }

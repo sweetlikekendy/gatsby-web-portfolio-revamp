@@ -18,6 +18,16 @@ export default function PortableBlockContent({ blocks }) {
           ${tw`mb-5 sm:mb-6 lg:mb-7`}
         }
 
+        h2 {
+          ${tw`text-2xl sm:text-3xl lg:text-4xl`}
+        }
+        h3 {
+          ${tw`text-xl sm:text-2xl lg:text-3xl`}
+        }
+        h4 {
+          ${tw`text-lg sm:text-xl lg:text-2xl`}
+        }
+
         p,
         ul,
         ol,
