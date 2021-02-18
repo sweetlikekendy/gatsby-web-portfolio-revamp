@@ -1,7 +1,8 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import CategoryTag from "../../styles/category-tag"
+import { format } from "date-fns"
+import { CategoryTag } from "../../styles"
 
 export default function BlogPreview({
   category,
@@ -32,9 +33,11 @@ export default function BlogPreview({
       </div>
       <div className="mt-6 flex items-center justify-between">
         <div className="flex space-x-1 text-sm text-blueGray-500">
-          <time dateTime={`${createdAt}`}>{createdAt}</time>
-          <span aria-hidden="true">&middot;</span>
-          <span>6 min read</span>
+          <time dateTime={createdAt}>
+            {format(new Date(createdAt), `MMM d, yyyy`)}
+          </time>
+          {/* <span aria-hidden="true">&middot;</span> */}
+          {/* <span>6 min read</span> */}
         </div>
       </div>
     </div>

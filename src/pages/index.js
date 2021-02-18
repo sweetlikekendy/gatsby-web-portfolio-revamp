@@ -38,9 +38,9 @@ export const query = graphql`
     ) {
       totalCount
       nodes {
-        _createdAt(formatString: "MMM D, YYYY")
-        _updatedAt(formatString: "MMM D, YYYY")
-        publishedAt(formatString: "MMM D, YYYY")
+        _createdAt
+        _updatedAt
+        publishedAt
         title
         description
         slug {

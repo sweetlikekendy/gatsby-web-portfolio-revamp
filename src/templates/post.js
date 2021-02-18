@@ -1,11 +1,13 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../components/layout"
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi"
-import PortableBlockContent from "../components/portable-block-content"
+import { format } from "date-fns"
 import "twin.macro"
-import { StyledLink } from "../styles"
+
+import Layout from "../components/layout"
+import PortableBlockContent from "../components/portable-block-content"
+import { CategoryTag, StyledLink } from "../styles"
 
 export default function Post({ data, pageContext }) {
   const { post } = data
@@ -14,12 +16,18 @@ export default function Post({ data, pageContext }) {
   return (
     <Layout>
       <div tw="max-w-3xl mx-auto p-4 sm:px-8 sm:py-16 lg:py-24">
-        <h1 tw="pb-2 text-blueGray-900 text-5xl leading-tight ">
-          {post.title}
-        </h1>
-        <p tw="py-1 text-blueGray-500 text-sm font-normal mb-8 sm:mb-9 lg:mb-10">
-          {post.publishedAt}
-        </p>
+        <div tw="mb-8 sm:mb-9 lg:mb-10">
+          <CategoryTag category={post.categories[0].title} />
+          <h1 tw="pb-2 text-blueGray-900 text-5xl leading-tight mb-1">
+            {post.title}
+          </h1>
+          <time
+            dateTime={post.publishedAt}
+            tw="py-1 text-blueGray-500 text-sm font-normal"
+          >
+            {format(new Date(post.publishedAt), `MMM d, yyyy`)}
+          </time>
+        </div>
         <div tw="mb-8 sm:mb-9 lg:mb-10">
           <figure>
             <Img
@@ -94,9 +102,9 @@ export const query = graphql`
   query($slug: String!) {
     post: sanityPost(slug: { current: { eq: $slug } }) {
       title
-      _createdAt(formatString: "MMM D, YYYY")
-      _updatedAt(formatString: "MMM D, YYYY")
-      publishedAt(formatString: "MMM D, YYYY")
+      _createdAt
+      _updatedAt
+      publishedAt
       _rawBody
       categories {
         title

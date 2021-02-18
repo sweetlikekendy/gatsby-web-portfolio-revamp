@@ -116,9 +116,9 @@ export const query = graphql`
       totalCount
       nodes {
         # feature
-        _createdAt(formatString: "MMM D, YYYY")
-        _updatedAt(formatString: "MMM D, YYYY")
-        publishedAt(formatString: "MMM D, YYYY")
+        _createdAt
+        _updatedAt
+        publishedAt
         title
         description
         slug {
@@ -138,31 +138,3 @@ export const query = graphql`
     }
   }
 `
-
-// export const query = graphql`
-//   query {
-//     posts: allSanityPost(sort: { fields: [publishedAt], order: [DESC] }) {
-//       totalCount
-//       nodes {
-//         _createdAt(formatString: "MMM D, YYYY")
-//         _updatedAt(formatString: "MMM D, YYYY")
-//         publishedAt(formatString: "MMM D, YYYY")
-//         title
-//         description
-//         slug {
-//           current
-//         }
-//         categories {
-//           title
-//         }
-//         mainImage {
-//           asset {
-//             fluid(maxWidth: 300) {
-//               ...GatsbySanityImageFluid
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

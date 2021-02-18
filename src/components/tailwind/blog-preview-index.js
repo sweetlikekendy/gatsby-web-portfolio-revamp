@@ -2,7 +2,7 @@ import React from "react"
 import { StyledLink } from "../../styles"
 import { format } from "date-fns"
 import { Link } from "gatsby"
-import CategoryTag from "../../styles/category-tag"
+import { CategoryTag } from "../../styles"
 
 export default function BlogPreviewIndex({
   category,
@@ -26,9 +26,11 @@ export default function BlogPreviewIndex({
       </div>
       <div className="mt-6 flex items-center justify-between">
         <div className="flex space-x-1 text-sm text-blueGray-500">
-          <time dateTime={`${createdAt}`}>{createdAt}</time>
-          <span aria-hidden="true">&middot;</span>
-          <span>6 min read</span>
+          <time dateTime={createdAt}>
+            {format(new Date(createdAt), `MMM d, yyyy`)}
+          </time>
+          {/* <span aria-hidden="true">&middot;</span> */}
+          {/* <span>6 min read</span> */}
         </div>
       </div>
     </div>
